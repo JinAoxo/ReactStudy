@@ -6,7 +6,7 @@
 
 ### 2022-11-24 : 1. react start
 
-<https://jinaoxo.github.io/Ajinstudy/reactstudy/src/App.js>
+<https://jinaoxo.github.io/ReactStudy>
 
 ---
 
@@ -35,7 +35,10 @@
 
 <!-- summary 아래 한칸 공백 두어야함 -->
 <div  markdown="1" >
-### 2022-06-02 :
+
+### 2022-06-02 : 이전 내용 AjinStudy git(html) 에서 관리
+
+<https://jinaoxo.github.io/Ajinstudy/>
 
 </div>
 </details>
