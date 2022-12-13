@@ -11,13 +11,17 @@ function App() {
   // *. [state] 만들기 / 상단에 import 생성
   // const [first, setfirst] = useState(second); 
   
-  // first : data 이름
-  // setfirst : 변경을 도와주는 함수
-  
+  // first : data 이름 / setfirst : 변경을 도와주는 함수
 
   let [title1, title1Change] = useState(['리스트 정리', 'data2', 'data3']);
-  // let [data, b] = useState(['data1', 'data2', 'data3']);
-  // let [글제목, 글제목변경] = useState( ['남자코트 추천', '강남 우동맛집', '파이썬 독학'] ); 
+  let [title2, title2Change] = useState(['강의1', '강의2', '강의3']);
+  let [text, textChange] = useState(['리스트 정리', 'data2', 'data3']);
+  let [누르기, 누르기변경] = useState(0);
+
+  // *. onClick에 넣는 방법
+  function 함수() { 
+    console.log(1);
+  }
 
   return (
     <div className="App">
@@ -28,13 +32,32 @@ function App() {
         </div>
         <div className="list-wrap">
           <div className="item">
-            {/* <h4>{ 제목 }</h4>
-            <p>{ 내용 }</p> */}
-            <h4> 제목 </h4>
-            <p> 내용 </p>
-
-            <button> 확인하기</button>
+            <h4>{ title2[0] }</h4>
+            <p>{ text[0] }</p>
+            {/* <button onClick={() => { console.log(1); }}> 🌙 확인하기 {누르기}</button> */}
+            {/* <button onClick={() => { 누르기변경(1) }}> 🌙 확인하기 {누르기}</button> */}
+            {/* <button className='item-btn' onClick={() => { 누르기변경(누르기+1) }}> 🌙 확인하기 {누르기}</button> */}
+            <button className='item-btn' onClick={() => { 누르기변경(누르기+1) }}> 🌙 확인하기 {누르기}</button>
+            {/* <button className='item-btn' onClick={() => { 누르기변경(['1', '2', '3']) }}> 🌙 확인하기 {누르기}</button> */}
+            {/* <button className='item-btn' onClick={() => {
+              // 누르기[0] ='1'
+              // 누르기변경(누르기)
+              // let copy = 누르기; (안됨)
+              let copy = [...누르기];
+              copy[0] = '변경된것';
+              누르기변경(copy);
+            }}> 🌙 확인하기 {누르기}</button> */}
           </div>
+
+          {/* *. 컴포넌트를 만들어 쓰는 방법*/}
+          {/* <div className='modal'>
+            <h4>제목</h4>
+            <p>날짜</p>
+            <p>상세내용</p>
+          </div> */}
+
+          <Modal></Modal>
+          {/* <Modal/> */}
         </div>
       </div>
       
@@ -98,5 +121,26 @@ function App() {
     </div>
   );
 }
+
+function Modal() { 
+  return (
+    <div className='modal'>
+      <h4>제목</h4>
+      <p>날짜</p>
+      <p>상세내용</p>
+    </div>
+  )
+}
+
+// *. 이렇게 만들기도함, const로 만드는 경우 오류  메세지 자동 출력
+// let Modal = () => {
+//   return (
+//     <div className='modal'>
+//       <h4>제목</h4>
+//       <p>날짜</p>
+//       <p>상세내용</p>
+//     </div>
+//   )
+// }
 
 export default App;
