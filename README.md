@@ -42,6 +42,20 @@
 </div>
 </details>
 
+<details>
+<summary>9. 명령어 정리</summary>
+
+<div  markdown="1" >
+
+> - `npm start` : 개발 서버를 시작
+> - `npm run build` : 운영을 위해 앱을 정적 파일로 번들
+> - `npm test` : 테스트 실행기를 시작
+> - `npm run eject` : 이 도구를 제거하고 빌드 종속성, 구성 파일을 복사 그리고 스크립트를 앱 디렉터리에 입력/ 하면 돌아갈 수 없기 때문에 사용 금지
+>   `cd reactstudy` `npm start`
+
+</div>
+</details>
+
 ---
 
 ## study log 정리
