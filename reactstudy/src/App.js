@@ -57,7 +57,7 @@ function App() {
             {/* <button className='item-btn' onClick={() => { setModal(true) }}> 🌙 </button> */}
             <button className='item-btn' onClick={() => { setModal(!modal) }}> 🌙 </button>
              <input onChange={(e) => {
-                입력값변경(e.target.value) 
+                // 입력값변경(e.target.value) 
                 console.log(1)
               }} />
           </div>
