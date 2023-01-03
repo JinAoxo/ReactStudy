@@ -40,6 +40,7 @@
 > - `Failed to load plugin 'jsx-a11y' ` errer 의 경우 `npm install --force` 재설치가 가장 효율적인 방법 .... jsx-z11y 란? [참고](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)-> [해결중 해결 안됨 :setting 다시 함 ]
 > - 해당 셋팅에 대해서 확인 필요 `package.json`
 > - `"scripts": { "start": "set DISABLE_ESLINT_PLUGIN=true && react-scripts start",    "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",    "test": DISABLE_ESLINT_PLUGIN=true react-scripts test",    "eject": "react-scripts eject"  },`
+> - Cannot find module 'babel-loader' 오류에 대해서 : `yarn add babel-loader` 설치 혹은 babel-loader 7.x 버전으로 설치
 
 </div>
 </details>
