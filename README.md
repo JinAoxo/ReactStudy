@@ -36,6 +36,8 @@
 > - 'npm i'를 했을 경우 errer fix가 안된다면 터미널에 안내 되는 데로 `npm audit fix --force` 사용해서 모든 문제 해결 하는 방법 사용
 > - `'react-scripts'은(는) 내부 또는 외부 명령, 실행할 수 있는 프로그램, 또는 배치 파일이 아닙니다.` [참고](https://thespoiler.tistory.com/21)
 > - `npm ERR! errno -4058` 오류시에 시도 해볼수 있는 방법 `npm cache clean --force`, `rm -rf node_modules`, `rm -rf package-lock.json`, `npm install`, `npm run dev` [참고](https://jae04099.tistory.com/entry/ERROR-npm-ERR-code-ELIFECYCLE-errno-1)
+> - errer code: 'ERR_OSSL_EVP_UNSUPPORTED' 의 경우 기존 사용하던 버전에서 버전이 업그레이드 되면서 나타나는 에러로 react-scripts를 업그레이드 하면 문제 해결 `npm audit fix --force` , 업그레이드가 불가 하다면 nodejs 를 다운그레이드 하는 방법 or 기존 옵션 사용을 설정해서 사용 하는 방법 `react-scripts --openssl-legacy-provider start` 이 있음
+> - `Failed to load plugin 'jsx-a11y' ` errer 의 경우 `npm install --force` 재설치가 가장 효율적인 방법 .... jsx-z11y 란? [참고](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)-> [해결중 해결 안됨]
 
 </div>
 </details>

@@ -55,7 +55,11 @@ function App() {
             }}> 🌙 확인하기 {누르기}</button> */}
 
             {/* <button className='item-btn' onClick={() => { setModal(true) }}> 🌙 </button> */}
-            <button className='item-btn' onClick={() => { setModal(!modal)}}> 🌙 </button>
+            <button className='item-btn' onClick={() => { setModal(!modal) }}> 🌙 </button>
+             <input onChange={(e) => {
+                입력값변경(e.target.value) 
+                console.log(1)
+              }} />
           </div>
 
           {/* 3. 컴포넌트를 만들어 쓰는 방법 : 내부에 만들수 있고 외부에 만들어서 불러올 수 있음*/}
@@ -97,6 +101,29 @@ function App() {
             </div> )
             })
           }
+
+          {/* 
+          <input type="text"/>
+          <input type="range"/>
+          <input type="date"/>
+          <input type="number"/>
+          <textarea></textarea>
+          <select></select> 
+          */}
+
+          {/* 
+          <input onChange={()=>{ 실행할코드 }}/>
+          - event handler
+          onChange
+          onInput
+
+          onMouseOver
+          onScroll
+
+          e.target : 이벤트가 발생하는 곳 
+          e.preventDefault() : 기본 동작을 막아줌 
+          e.stopPropagaion() : 이벤트 버블링을 막아줌
+          */}
 
           
         </div>
