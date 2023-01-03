@@ -58,6 +58,32 @@
 </div>
 </details>
 
+<details>
+<summary>10. package.json 수정 이슈</summary>
+
+<div  markdown="1" >
+
+> - 무슨 차이인지 확인 필요
+
+> "scripts": {
+
+> officepc-setting
+> "start": "react-scripts start",
+> "build": "react-scripts build",
+> "test": "react-scripts test",
+> "eject": "react-scripts eject"
+
+> homepc-setting
+> "start": "set DISABLE_ESLINT_PLUGIN=true && react-scripts start",
+> "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
+> "test": "DISABLE_ESLINT_PLUGIN=true react-scripts test",
+> "eject": "react-scripts eject"
+
+> },
+
+</div>
+</details>
+
 ---
 
 ## study log 정리
