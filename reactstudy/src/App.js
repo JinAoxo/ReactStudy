@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 
+// import 'bootstrap/dist/css/bootstrap.min.css';
+
 // 안쓰고 있는것에 대한 warning 메세지를 제거 해주는 방법  /* eslint-disable */ 최상단에 활성화 
 
 function App() {
