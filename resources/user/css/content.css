@@ -1,0 +1,165 @@
+@charset "UTF-8";
+.video-wrap {
+  position: relative;
+}
+
+.video-header {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 25px;
+  background-color: blanchedalmond;
+  z-index: 10;
+}
+.video-header .btn-group {
+  margin-right: 10px;
+}
+.video-header .label-live {
+  position: relative;
+}
+.video-header .label-live::after {
+  position: absolute;
+  top: 60%;
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background-color: red;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.video-body {
+  position: relative;
+  padding-top: 25px;
+}
+.video-body .live-countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  background-color: cadetblue;
+  opacity: 0.5;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+/* video API 커스텀 테스트 */
+.video-js {
+  position: relative;
+  border-style: double;
+  border-width: thick;
+}
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  background-color: yellowgreen;
+}
+.video-js .vjs-control-bar {
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  background: none;
+}
+.video-js .vjs-slider {
+  border: 1px solid red;
+}
+.video-js .vjs-volume-level,
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: yellow;
+}
+.video-js .vjs-load-progress {
+  background: blue;
+}
+.video-js .vjs-load-progress div {
+  background-color: #B37D5B;
+  opacity: 0.75;
+}
+.video-js .vjs-progress-control {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 25px;
+  background-color: aqua;
+  opacity: 0.5;
+}
+.video-js .vjs-progress-control .vjs-mouse-display {
+  background-color: red;
+}
+.video-js .vjs-progress-control.vjs-control {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+}
+.video-js .vjs-big-play-button {
+  background-color: red;
+  /* opacity: .6; */
+}
+.video-js .vjs-play-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  background: blueviolet;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.video-js .vjs-control {
+  position: absolute;
+  height: 25px;
+}
+.video-js .vjs-volume-panel,
+.video-js .vjs-fullscreen-control,
+.video-js .vjs-picture-in-picture-control {
+  right: 0;
+}
+.video-js .vjs-picture-in-picture-control {
+  display: none;
+}
+.video-js .vjs-time-control {
+  bottom: 0;
+}
+.video-js .vjs-fullscreen-control {
+  top: 0;
+}
+.video-js .vjs-mute-control {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+.video-js .vjs-volume-panel {
+  top: 50px;
+}
