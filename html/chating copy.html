@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+
+	<!-- JavaScript -->
+	<script src="/resources/user/js/jquery-1.12.4.min.js"></script>
+
+	<link rel="stylesheet" href="/resources/user/css/content.css">
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(function () {});
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="container">
+			<!-- 본문 영역 -->
+			<div class="container">
+				<h2 class="content-title">chat</h2>
+
+				<div class="chat-container">
+					<div class="chat-header">
+						<h3 class="chat-title">Chat Room</h3>
+					</div>
+					<div class="chat-body">
+						<div class="chat-messages-wrap">
+							<div class="chat-message">
+								<div class="msg-box">
+									<span class="chat-username">User 1:</span>
+									<p class="chat-text">텍스트가 길어졌을 경우도 확인이 필요합니다. 텍스트가 길어졌을 경우도 확인이 필요합니다.</p>
+								</div>
+							</div>
+							<div class="chat-message">
+								<div class="msg-box">
+									<span class="chat-username">User 2:</span>
+									<p class="chat-text">good</p>
+								</div>
+							</div>
+							<!-- mymsg -->
+							<div class="chat-message my-msg">
+								<div class="msg-box">
+									<span class="chat-username">User 3:</span>
+									<p class="chat-text">12345678901234567890</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="chat-footer">
+						<form class="chat-form" id="chat-form">
+							<label for="chat-input" class="visually-hidden">Enter your message:</label>
+							<textarea id="chat-input" name="chat-input" placeholder="Enter your message"></textarea>
+							<button type="submit" class="chat-submit-button">Send</button>
+						</form>
+					</div>
+				</div>
+			</div>
+			<!-- // 본문 영역 -->
+		</div>
+	</div>
+
+</body>
+
+
+</html>

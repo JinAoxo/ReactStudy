@@ -11,18 +11,18 @@
 	<!-- JavaScript -->
 	<script src="/resources/user/js/jquery-1.12.4.min.js"></script>
 
-	<link href="https://vjs.zencdn.net/8.0.3/video-js.css" rel="stylesheet">
-	<script src="https://vjs.zencdn.net/8.0.3/video.js"></script>
+	<!-- <link href="https://vjs.zencdn.net/8.0.3/video-js.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/8.0.3/video.js"></script> -->
 
-	<!-- <link href="https://cdn.jsdelivr.net/npm/video.js@7.7.7/dist/video-js.min.css" rel="stylesheet" />
-	<script src="https://cdn.jsdelivr.net/npm/video.js@7.7.7/dist/video.min.js"></script> -->
+	<!-- 기본 셋팅이 좀 다름 -->
+	<!-- <link href="https://vjs.zencdn.net/7.12.6/video-js.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/7.12.6/video.js"></script>
+	<script src="https://vjs.zencdn.net/7.12.6/videojs-controls.js"></script> -->
 
-	<!-- <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
-	<script src="https://unpkg.com/video.js@7/dist/video.min.js"></script> -->
+	<link href="../node_modules/video.js/dist/video-js.css" rel="stylesheet">
+	<script src="../node_modules/video.js/dist/video.js"></script>
+	<!-- <script src="https://players.brightcove.net/videojs-quality-menu/1/videojs-quality-menu.min.js"></script> -->
 
-
-	<!-- Video.js base CSS -->
-	<!-- <link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet" /> -->
 
 	<link rel="stylesheet" href="/resources/user/css/content.css">
 
@@ -38,58 +38,110 @@
 			// 7. preload : 웹페이지 로드 시 source로 제공 된 동영상 경로를 재생 버튼을 클릭 시 영상을 다운로드 받는 지 재생 전에 미리 일부분을 다운로드 받아 로딩이 없이 제공받을 지 여부를 설정할 수 있습니다. "auto"의 경우 컨텐츠를 미리 로드하여 로딩이 없이 동영상을 시작
 			// 8. playToggle(재생/일시정지), pictureInPictureToggle(pip모드), remainingTimeDisplay(남은 시간), progressControl(재생 바)
 
-			var player = videojs("my-video");
+			var player = videojs('myPlayer', {
+				controls: true,
+				autoplay: true,
+				// preload: 'auto',
+				// width: 540,
+				// height: 320,
+				controlBar: {
+					volumePanel: {
+						inline: false,
+						vertical: true
+					},
 
-			// player.autoplay('muted');
-			player.muted(true);
-			player.poster('https://vjs.zencdn.net/v/oceans.png');
-			// player.audioTracks({
-			// 	length: 50
-			// });
+					qualityMenuButton: {
+						inline: false,
+						title: "Quality"
+					},
 
-			// player.volumeControl({
-			// 	inline: false,
-			// 	vertical: true,
-			// 	volumeBar: {
-			// 		vertical: true
-			// 	}
-			// });
-			// player.videojs({
-			// 	controls: false,
-			// });
-			// player.volumeControl({
-			// 	vertical: true
-			// });
-
-			// videojs('my-video', {
-			// 	playbackRates: [0.5, 1, 1.5, 2]
-			// });
-
-			// videojs("my-video", {
-			// 	sources: [{
-			// 		src: "https://vjs.zencdn.net/v/oceans.mp4",
-			// 		type: "video/mp4"
-			// 	}],
-			// poster: "https://vjs.zencdn.net/v/oceans.png",
-			// 	controls: true,
-			// 	// muted: false,
-			// 	playsinline: false,
-			// 	// muted: true,
-			// 	preload: "auto",
-			// 	controlBar: {
-			// 		playToggle: true,
-			// 		pictureInPictureToggle: false,
-			// 		remainingTimeDisplay: false,
-			// 		progressControl: true,
-			// 	}
-			// });
-
-			$("#backward").click(function () {
-				player.currentTime(player.currentTime() - 5);
+					qualitySelector: true,
+					playToggle: {
+						order: 0,
+						align: 'center'
+					},
+					// customControlSpacer: {
+					// 	order: 1
+					// },
+					// rewind: {
+					// 	order: 2
+					// },
+					// forward: {
+					// 	order: 3
+					// },
+					currentTimeDisplay: {},
+					timeDivider: {},
+					durationDisplay: {},
+					progressControl: {},
+					// volumeControl: {},
+					fullscreenToggle: {},
+					// qualityMenu: {
+					// 	useResolutionLabels: true
+					// }
+				}
 			});
 
-			$("#forward").click(function () {
+			// player.hlsQualitySelector({
+			// 	diplayCurrentQuality: true,
+			// });
+
+			// myPlayer.qualityMenu({
+			// 	defaultResolution: '720p'
+			// });
+
+			// 아래 동작안함
+			// var player = videojs('myPlayer');
+
+			// player.ready(function () {
+			// 	var qualitySelector = player.qualityLevels();
+
+			// 	if (qualitySelector) {
+			// 		var menuButton = player.controlBar.addChild('qualityMenuButton');
+
+			// 		qualitySelector.on('addqualitylevel', function () {
+			// 			menuButton.updateLabel();
+			// 		});
+
+			// 		qualitySelector.on('change', function () {
+			// 			menuButton.updateLabel();
+			// 		});
+			// 	}
+			// });
+
+			// myPlayer.ready(function () {
+			var backButton = $('<button class="vjs-back-button vjs-control vjs-button">Back</button>');
+			var forwardButton = $('<button class="vjs-forward-button vjs-control vjs-button">Forward</button>');
+
+			backButton.on("click", function () {
+				player.currentTime(player.currentTime() - 5);
+			});
+			forwardButton.on("click", function () {
 				player.currentTime(player.currentTime() + 5);
+			});
+
+			player.on('play', function () {
+				$(".vjs-control-bar").append(backButton).append(forwardButton);
+			});
+
+			player.on('play', function () {
+				$(backButton).css('display', 'block');
+				$(forwardButton).css('display', 'block');
+			});
+
+			player.on('ended', function () {
+				$(backButton).hide();
+				$(forwardButton).hide();
+			});
+
+			var btnSetting = $('.video-setting .btn-setting');
+			var btnQuality = $('.video-setting .setting-wrap button');
+			btnSetting.click(function () {
+				$('.setting-wrap').toggleClass('on');
+			});
+			btnQuality.click(function () {
+				if ($('.setting-wrap').hasClass('on')) {
+					$('.setting-wrap').removeClass('on');
+				}
 			});
 		});
 	</script>
@@ -105,7 +157,19 @@
 					<div class="video-header">
 						<strong class="title">hynn's Last Vlog 30 :: <span class="label-live">Live</span></strong>
 						<div class="btn-group">
-							<button class="btn-setting">setting</button>
+							<div class="video-setting">
+								<button type="button" class="btn-setting">setting</button>
+								<div class="setting-wrap">
+									<ul>
+										<li><button type="button">1080p<span class="label-hd">HD</span></button></li>
+										<li><button type="button">720p<span class="label-hd">HD</span></button></li>
+										<li><button type="button">540p</button></li>
+										<li><button type="button">350p</button></li>
+										<li><button type="button">270p</button></li>
+										<li><button type="button">자동</button></li>
+									</ul>
+								</div>
+							</div>
 							<button class="btn-full">full</button>
 							<button class="btn-close">X</button>
 						</div>
@@ -124,42 +188,41 @@
 							<p>라이브 상태를 확인하고 있습니다. 잠시만 기다려주세요.</p>
 						</div> -->
 
-						<video id="my-video" class="video-js vjs-tech vjs-fluid vjs-16-9 _vjs-big-play-button _vjs-big-play-centered" controls preload="auto" width="640" height="264" poster="_https://vjs.zencdn.net/v/oceans.png" data-setup="{}">
+						<video id="myPlayer" class="video-js vjs-fluid vjs-16-9" controls preload="auto">
 							<source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
-							<source src="https://vjs.zencdn.net/v/oceans.webm" type="video/webm">
-							<!-- <p class="vjs-no-js">
-								To view this video please enable JavaScript, and consider upgrading to a
-								web browser that
+							<!-- <source src="https://vjs.zencdn.net/v/oceans.webm" type="video/webm"> -->
+							<p class="vjs-no-js">
+								To view this video please enable JavaScript, and consider upgrading to a web browser that
 								<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
-							</p> -->
+							</p>
 						</video>
-						<button id="backward">Backward</button>
-						<button id="forward">Forward</button>
+
+						<!-- 
+							1. id : <video>의 식별자 / 뒤에 video.js 스크립트에서 해당 태그를 컨트롤하기 위한 정보
+							2. class : video-js vjs-default-skin 클래스를 적용하여 video.js가 제공하는 css를 적용 가능
+							3. webkit-playsinline : 이 속성은 ios 웹뷰 환경에서 video플레이어를 웹뷰 인라인형태로 제공할 경우 설정하는 속성
+							-
+							1. 설정 video tag의 class => class="video-js" 
+							2. 자동 설정 => data-setup='{}'
+							2. 수동 설정 => videojs('my-player'); -> 호출하여 수정하여 사용	-> 사용시 videojs.getPlayer() , videojs.players
+							4. 옵션 <video controls autoplay preload="auto" ...>
+											<video data-setup='{"controls": true, "autoplay": false, "preload": "auto"}' ...>
+									- 둘중 하나 선택 
+												videojs('my-player', {
+											controls: true,
+											autoplay: false,
+											preload: 'auto'
+											});
+
+							vjs-fluid : 크기 100% 화면
+
+						-->
+
 					</div>
 				</div>
 			</div>
 			<!-- // 본문 영역 -->
 
-			<!-- 
-				1. id : <video>의 식별자 / 뒤에 video.js 스크립트에서 해당 태그를 컨트롤하기 위한 정보
-				2. class : video-js vjs-default-skin 클래스를 적용하여 video.js가 제공하는 css를 적용 가능
-				3. webkit-playsinline : 이 속성은 ios 웹뷰 환경에서 video플레이어를 웹뷰 인라인형태로 제공할 경우 설정하는 속성
-				-
-				1. 설정 video tag의 class => class="video-js" 
-				2. 자동 설정 => data-setup='{}'
-				2. 수동 설정 => videojs('my-player'); -> 호출하여 수정하여 사용	-> 사용시 videojs.getPlayer() , videojs.players
-				4. 옵션 <video controls autoplay preload="auto" ...>
-								<video data-setup='{"controls": true, "autoplay": false, "preload": "auto"}' ...>
-						- 둘중 하나 선택 
-									videojs('my-player', {
-								controls: true,
-								autoplay: false,
-								preload: 'auto'
-								});
-
-				vjs-big-play-centerd : 말 그대로 중앙에 버튼을 위치 시키는 css
-				vjs-fluid : 가로 사이즈를 100% 플레이 창으로 만드는 css 
-			-->
 		</div>
 	</div>
 
