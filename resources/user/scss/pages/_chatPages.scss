@@ -83,25 +83,42 @@
 
 
 .chat-footer {
+	width: 100%;
 	background-color: #f5f5f5;
 	padding: 10px;
 	border-top: 1px solid #ccc;
 	text-align: right;
-}
+	box-sizing: border-box;
 
-form input[type="text"] {
-	width: 80%;
-	padding: 10px;
-	font-size: 16px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
+	.chat-label {
+		position: absolute;
+		left: -9999px;
+		width: 1px;
+		height: 1px;
+		margin: 0 !important;
+		font-size: 0;
+		line-height: 0;
+		overflow: hidden;
+	}
 
-form button[type="submit"] {
-	padding: 10px 20px;
-	background-color: #007bff;
-	color: #fff;
-	border: 1px solid #007bff;
-	border-radius: 5px;
-	cursor: pointer;
+	textarea {
+		width: 100%;
+		height: 100px;
+		padding: 10px;
+		box-sizing: border-box;
+		font-size: 16px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		//textarea size fixed
+		resize: none;
+	}
+
+	button[type="submit"] {
+		padding: 10px 20px;
+		background-color: #007bff;
+		color: #fff;
+		border: 1px solid #007bff;
+		border-radius: 5px;
+		cursor: pointer;
+	}
 }
