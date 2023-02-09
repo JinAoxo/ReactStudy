@@ -19,5 +19,6 @@
 // 3. 색상값 등 변수 사용 필수 : _variables.scss 참고
 // @import "pages/guidePages"; // SCSS 작성방법 가이드
 
+@import "pages/basicsSettingPages"; // 기본 설정 가이드
 @import "pages/videoApiPages"; // 영상api 사용
 @import "pages/chatPages"; // 채팅창 구현

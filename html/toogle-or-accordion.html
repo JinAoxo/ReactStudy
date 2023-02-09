@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+
+	<!-- JavaScript -->
+	<script src="/resources/user/js/jquery-1.12.4.min.js"></script>
+
+	<link rel="stylesheet" href="/resources/user/css/content.css">
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(function () {});
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="container">
+			<!-- 본문 영역 -->
+			<div class="container">
+				<h2 class="content-title">chat</h2>
+
+				<div class="toggle-container">
+					<h3 class="page-title text-bold text-left">Toggle or accordion 기본 구조</h3>
+					<div>
+						<p>
+							사용 예시
+							<button type="button" data-toggle-btn="content1" class="btn btn-sm btn-primary">
+								더보기
+							</button>
+						</p>
+						<div data-toggle-content="content1" class="toggle-content">
+							content
+						</div>
+					</div>
+				</div>
+
+				<div class="toggle-container">
+					<h3 class="page-title text-bold text-left">Toggle or accordion 변형 구조(faq인 경우)</h3>
+					<div class="faq-content">
+						<div class="text-right">
+							<button type="button" class="btn btn-sm btn-primary btn-toggle-all">
+								<span class="text">답변 모두 여닫기</span>
+							</button>
+						</div>
+						<div class="toggle-list mt-2">
+							<div class="toggle-title">
+								<a href="#;" class="btn">
+									<dl class="question">
+										<dt>Q</dt>
+										<dd>캠프하우즈 공원 및 도시개발사업의 사업개요는 무엇인가요?</dd>
+									</dl>
+								</a>
+							</div>
+							<div class="toggle-content">
+								<dl class="answer">
+									<dt>A</dt>
+									<dd>
+										<div class="table table-scroll">
+											<div class="scroll-container">
+												<table style="min-width: 500px;">
+													<caption class="sr-only">${표제목 노출 영역}</caption>
+													<colgroup>
+														<col>
+														<col style="width: 40%;">
+														<col style="width: 40%;">
+													</colgroup>
+													<thead>
+														<tr>
+															<th scope="col">구 분</th>
+															<th scope="col">공원조성</th>
+															<th scope="col">도시개발</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<th scope="row">면 적</th>
+															<td class="text-left">610,808㎡(185천평)</td>
+															<td class="text-left">475,736㎡(144천평)</td>
+														</tr>
+														<tr>
+															<th scope="row">사업비</th>
+															<td class="text-left">1,603억원(국 721, 시 882)</td>
+															<td class="text-left">2,690억원</td>
+														</tr>
+														<tr>
+															<th scope="row">기 간</th>
+															<td class="text-left">2010 ~ 향후 확정예정</td>
+															<td class="text-left">2010 ~ 향후 확정예정</td>
+														</tr>
+														<tr>
+															<th scope="row">시행자</th>
+															<td class="text-left">용인시</td>
+															<td class="text-left">-</td>
+														</tr>
+														<tr>
+															<th scope="row">관련법</th>
+															<td class="text-left">미군공여구역법, 국토계획법</td>
+															<td class="text-left">미군공여구역법, 도시개발법</td>
+														</tr>
+														<tr>
+															<th scope="row">시설계획</th>
+															<td class="text-left">체육, 문화·예술, 어린이, 편의시설 등</td>
+															<td class="text-left">공동주택 4,400세대, 단독주택 120세대, 초등학교</td>
+														</tr>
+														<tr>
+															<th scope="row">기타사항</th>
+															<td class="text-left">주한미군이 주둔했던 <strong>공여구역</strong>으로 대부분이 국방부 토지</td>
+															<td class="text-left">공여구역의 <strong>주변지역</strong>으로 대부분이 사유 토지</td>
+														</tr>
+														<tr>
+															<th scope="row">추진사항</th>
+															<td class="text-left">
+																· 2014. 9월 : 공원시설 결정<br>
+																· 2018.현재 : 사업계획 수립 예정
+															</td>
+															<td class="text-left">
+																· 2014. 9월 : 도시개발구역 지정<br>
+																· 2017. 12월 : 환경영향평가 완료<br>
+																· 2018. 3월 : 道의제협의(자문) 회신<br>
+																※2018. 9. 17. 사업시행자 지정 취소 처분되어 추후 사업시행자 변경을 통해 사업추진 예정
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</dd>
+								</dl>
+							</div>
+							<div class="toggle-title">
+								<a href="#;" class="btn">
+									<dl class="question">
+										<dt>Q</dt>
+										<dd>캠프하우즈 도시개발 사업시행자 취소 후 향후 추진계획은?</dd>
+									</dl>
+								</a>
+							</div>
+							<div class="toggle-content">
+								<dl class="answer">
+									<dt>A</dt>
+									<dd>
+										새로운 사업시행자는 실시계획 인가 요건을 갖추고 사업시행 승인 조건 및 협약사항 이행이 가능한 사업자로 선정하되 주민의견을 반영한 공모 등을 통해 사업을 재추진할
+										예정입니다.
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- // 본문 영역 -->
+		</div>
+	</div>
+
+</body>
+
+
+</html>
