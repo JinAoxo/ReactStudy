@@ -15,7 +15,19 @@
 
 	<!-- 페이지 개별 스크립트 -->
 	<script>
-		$(function () {});
+		// todo : faq 아코디언 형식 1
+		$(document).ready(function () {
+			$(".toggle-list .toggle-title").click(function () {
+				$(".toggle-content").slideUp();
+				$(".toggle-title .icon-area").text("펼치기");
+				if ($(this).next().is(":visible")) {
+					$(this).children('.icon-area').text("펼치기");
+				} else {
+					$(this).children('.icon-area').text("접기");
+					$(this).next().slideDown();
+				}
+			});
+		});
 	</script>
 </head>
 
@@ -152,6 +164,48 @@
 								</dl>
 							</div>
 						</div>
+					</div>
+				</div>
+
+				<!-- todo : faq 아코디언 형식 1 -->
+				<h3 class="page-title">Toggle or accordion 변형 구조(faq인 경우)</h3>
+				<div class="faq-area">
+					<div class="faq-content">
+						<ul class="toggle-list">
+							<li class="item">
+								<button type="button" class="toggle-title">
+									<strong class="question">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pellentesque ex, sit amet
+										hendrerit urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pellentesque ex,
+										sit amet hendrerit urna.
+									</strong>
+									<span class="icon-area"><i class="ico ico-arr-open"></i>펼치기</span>
+								</button>
+								<div class="toggle-content">
+									<p class="answer">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pellentesque ex, sit amet
+										hendrerit urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pellentesque ex,
+										sit amet hendrerit urna.
+									</p>
+								</div>
+							</li>
+
+							<li class="item">
+								<button type="button" class="toggle-title">
+									<strong class="question">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pellentesque ex, sit amet
+										hendrerit urna.
+									</strong>
+									<span class="icon-area"><i class="ico ico-arr-open"></i>펼치기</span>
+								</button>
+								<div class="toggle-content">
+									<p class="answer">
+										Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget pellentesque ex, sit amet
+										hendrerit urna.
+									</p>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
