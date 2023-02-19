@@ -9,6 +9,11 @@
 <https://jinaoxo.github.io/ReactStudy>
 
 ---
+### storybox 설정법 정리
+>  npm run storybook 
+> $ getstorybook -> 명령어 사용시 storybook 설치 (자동으로 의존성 및 스크립트 ,필요 폴더 및 파일 추가)
+> [**storybox 사이트**](https://storybook.js.org/tutorials/intro-to-storybook/react/ko/simple-component/)
+---
 
 ### react 설정법 정리
 
