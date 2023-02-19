@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">테이블 셀 강조 예제</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+					<div class="container">
+						<h3 class="title1 mt-lg">.cell-accent-red</h3>
+						<p class="mb-sm">th, td에 각각 cell-accent-red 클래스 추가</p>
+						<div class="table">
+							<table>
+								<caption class="sr-only">${표제목}</caption>
+								<colgroup>
+									<col style="width: 25%;">
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">동해물과</th>
+										<th scope="col">백두산이</th>
+										<th scope="col" class="cell-accent-red">마르고 닳도록</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>.vertical-middle<br> (미지정시 기본)</td>
+										<td class="vertical-top">.vertical-top</td>
+										<td class="vertical-bottom cell-accent-red">.vertical-bottom</td>
+									</tr>
+									<tr>
+										<td class="text-center">.text-center<br> (미지정시 기본)</td>
+										<td class="text-left">.text-left</td>
+										<td class="text-right cell-accent-red">.text-right</td>
+									</tr>
+									<tr>
+										<td>내용</td>
+										<td>내용</td>
+										<td class="cell-accent-red">내용</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h3 class="title1 mt-lg">.cell-accent-blue</h3>
+						<p class="mb-sm">th, td에 각각 cell-accent-blue 클래스 추가</p>
+						<div class="table">
+							<table>
+								<caption class="sr-only">${표제목}</caption>
+								<colgroup>
+									<col style="width: 25%;">
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">동해물과</th>
+										<th scope="col">백두산이</th>
+										<th scope="col" class="cell-accent-blue">마르고 닳도록</th>
+										<th scope="col">백두산이</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>.vertical-middle<br> (미지정시 기본)</td>
+										<td class="vertical-top">.vertical-top</td>
+										<td class="vertical-bottom cell-accent-blue">.vertical-bottom</td>
+									</tr>
+									<tr>
+										<td class="text-center">.text-center<br> (미지정시 기본)</td>
+										<td class="text-left">.text-left</td>
+										<td class="text-right cell-accent-blue">.text-right</td>
+										<td>내용</td>
+									</tr>
+									<tr>
+										<td>내용</td>
+										<td>내용</td>
+										<td class="cell-accent-blue">내용</td>
+										<td>내용</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<h3 class="title1 mt-lg">조합 사용 예제</h3>
+						<div class="table table-point">
+							<table>
+								<caption class="sr-only">${표제목}</caption>
+								<colgroup>
+									<col style="width: 25%;">
+									<col>
+									<col>
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">동해물과</th>
+										<th scope="col" class="cell-accent-red">백두산이</th>
+										<th scope="col" class="cell-accent-blue">마르고 닳도록</th>
+										<th scope="col">백두산이</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>.vertical-middle<br> (미지정시 기본)</td>
+										<td class="vertical-top cell-accent-red">.vertical-top</td>
+										<td class="vertical-bottom cell-accent-blue">.vertical-bottom</td>
+									</tr>
+									<tr>
+										<td class="text-center">.text-center<br> (미지정시 기본)</td>
+										<td class="text-left cell-accent-red">.text-left</td>
+										<td class="text-right cell-accent-blue">.text-right</td>
+										<td>내용</td>
+									</tr>
+									<tr>
+										<td>내용</td>
+										<td class="cell-accent-red">내용</td>
+										<td class="cell-accent-blue">내용</td>
+										<td>내용</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

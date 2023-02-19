@@ -1,0 +1,155 @@
+/* 박스 */
+
+.box,
+.box-info,
+.box-point {
+	position: relative;
+	border-radius: 10px;
+	// margin: $spacing-md 0;
+
+	dt {
+		display: flex;
+		align-items: center;
+		font-size: $font-size-lg;
+		font-weight: bold;
+		margin-bottom: $spacing-sm;
+	}
+
+	dd {
+		font-size: $font-size-sm;
+	}
+}
+
+/* 기본형 */
+.box {
+	border: 1px solid $border-base;
+	padding: 15px 19px;
+}
+
+/* 부가정보형 */
+.box-info {
+	border: 1px solid transparent;
+	padding: 15px 19px;
+	background-color: $bg-lightgray;
+}
+
+/* 강조형 */
+.box-point {
+	padding: 20px 25px;
+	background: url(#{$url-img}/bg-box-pattern.png);
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: 5px;
+		left: 5px;
+		right: 5px;
+		bottom: 5px;
+		border-radius: 5px;
+		background-color: #fff;
+	}
+
+	>* {
+		position: relative;
+	}
+}
+
+/* 이미지 박스 */
+.box-image {
+	display: flex;
+	align-items: center;
+
+	.image {
+		flex: 1 1 auto;
+		max-width: 240px;
+		margin-right: $spacing-md - 10;
+		padding: 5px 10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.content {
+		flex: 1 1 auto;
+	}
+
+	@include media-breakpoint-down(sm) {
+		display: block;
+
+		.image {
+			max-width: none;
+			margin: 0 0 20px;
+			padding: 0;
+		}
+	}
+}
+
+/* 토글박스 */
+.box-toggle {
+	border: 1px solid $border-base;
+	border-radius: 10px;
+	overflow: hidden;
+
+	+.box-toggle {
+		margin-top: 5px;
+	}
+
+	.toggle-title {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-between;
+		font-size: $font-size-lg;
+		background-color: $bg-lightgray;
+
+		.title {
+			display: inline-flex;
+			align-items: center;
+			padding: 15px 0 15px 30px;
+			font-size: $font-size-lg;
+			font-weight: bold;
+		}
+
+		.btn {
+			flex: 0 0 auto;
+			margin: 10px;
+			padding: 10px;
+			transition-duration: .2s;
+		}
+
+		&.on {
+			background-color: $bg-lightprimary;
+			border-bottom: 1px dashed $border-base;
+
+			.btn {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+
+	.toggle-content {
+		display: none;
+		padding: 15px 30px;
+	}
+
+	@include media-breakpoint-down(md) {
+		.toggle-title {
+			.title {
+				padding-left: 20px;
+			}
+
+			.btn {
+				padding: 10px 5px;
+			}
+		}
+
+		.toggle-content {
+			padding: 15px 20px;
+		}
+	}
+}
+
+/* 탭 하단 박스 */
+.box-tab {
+	border-radius: 0;
+	border-top: 0;
+}

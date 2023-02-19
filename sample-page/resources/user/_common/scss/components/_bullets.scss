@@ -1,0 +1,172 @@
+/* 불릿 시스템 */
+
+// 타이틀
+.title1,
+.title2 {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	&:before {
+		flex: 0 0 auto;
+		content: '';
+	}
+
+	.btn {
+		// position: relative;
+		vertical-align: initial;
+		flex: 0 0 auto;
+	}
+}
+
+.title1 {
+	font-weight: bold;
+	padding-left: 11px;
+	font-family: $font-family-title;
+	font-size: 18px;
+	font-weight: 500;
+
+	&:before {
+		position: absolute;
+		left: 0;
+		width: 5px;
+		height: 18px;
+		background-color: $primary;
+		border-radius: 3px;
+
+		top: 3px;
+	}
+
+	// .btn-xs {
+	// 	top: -2px;
+	// }
+}
+
+.title2 {
+	padding-left: 18px;
+	font-weight: 500;
+	font-size: 16px;
+
+	&:before {
+		content: '';
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		width: 11px;
+		height: 11px;
+		border: 3px solid $primary;
+		border-radius: 50%;
+
+		top: 7px;
+	}
+
+	.btn-xs {
+		top: -1px;
+	}
+}
+
+.title-check {
+	font-size: $font-size-xl;
+	font-weight: 500;
+
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: -2px;
+		margin-right: 5px;
+		width: 12px;
+		height: 12px;
+		background: url(#{$url-img}/ico-check-lightprimary.png);
+	}
+}
+
+.list {
+	>li {
+		position: relative;
+		@include clearfix;
+
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+		}
+	}
+}
+
+.list1 {
+	>li {
+		padding-left: 10px;
+
+		&:before {
+			content: '';
+			display: block;
+			box-sizing: border-box;
+			position: absolute;
+			left: 0;
+			top: 7px;
+			width: 6px;
+			height: 6px;
+			border: 2px solid $darkprimary;
+		}
+
+		+li {
+			margin-top: 8px;
+		}
+	}
+}
+
+.list2 {
+	font-size: $font-size-sm;
+
+	>li {
+		padding-left: 9px;
+
+		+li {
+			margin-top: 5px;
+		}
+
+		&:before {
+			width: 5px;
+			height: 2px;
+			background-color: #647285;
+			top: 9px;
+		}
+	}
+}
+
+.list3 {
+	font-size: $font-size-sm;
+
+	>li {
+		padding-left: 9px;
+
+		+li {
+			margin-top: 5px;
+		}
+
+		&:before {
+			width: 3px;
+			height: 3px;
+			background-color: #647285;
+			top: 9px;
+		}
+	}
+}
+
+.list-check {
+	>li {
+		padding-left: 15px;
+
+		+li {
+			margin-top: 5px;
+		}
+
+		&:before {
+			top: .25em;
+			width: 12px;
+			height: 12px;
+			background: url(#{$url-img}/ico-check-lightprimary.png);
+		}
+	}
+}

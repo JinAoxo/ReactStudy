@@ -1,0 +1,82 @@
+//
+// Icons
+// 
+
+.ico {
+	@include ir;
+}
+
+/* 범용 비규격 아이콘  */
+@include ico2x('times-white', 18px, 18px);
+@include ico2x('chevron-down', 13px, 7px);
+@include ico2x('chevron-down-lg', 19px, 10px);
+@include ico2x('chevron-down-sm-white', 9px, 5px);
+@include ico2x('chevron-up-white', 18px, 10px);
+@include ico2x('download', 12px, 14px);
+@include ico2x('download-primary', 12px, 14px);
+@include ico2x('external-link', 16px, 15px);
+@include ico2x('popup', 18px, 14px);
+@include ico2x('search-primary', 20px, 22px);
+@include ico2x('close-primary', 17px, 17px);
+@include ico2x('search-white', 14px, 14px);
+@include ico2x('notice-primary', 22px, 20px);
+@include ico2x('datepicker-primary', 22px, 22px);
+@include ico2x('file-gif', 19px, 22px);
+@include ico2x('file-hwp', 19px, 22px);
+@include ico2x('file-jpg', 19px, 22px);
+@include ico2x('file-pdf', 19px, 22px);
+@include ico2x('file-png', 19px, 22px);
+@include ico2x('file-word', 19px, 22px);
+@include ico2x('file-xls', 19px, 22px);
+@include ico2x('file', 20px, 20px);
+@include ico2x('nodata-gray', 41px, 36px);
+@include ico2x('reply-gray', 14px, 17px);
+@include ico2x('lock-gray', 16px, 20px);
+@include ico2x('play-black', 44px, 44px);
+@include ico2x('play-circle-white', 41px, 41px);
+@include ico2x('view-gray', 18px, 10px);
+@include ico2x('plus-white', 16px, 16px);
+@include ico2x('minus-white', 16px, 16px);
+@include ico2x('chevron-up-gray', 9px, 5px);
+@include ico2x('chevron-down-gray', 9px, 5px);
+@include ico2x('chevron-right-sm-gray', 5px, 9px);
+@include ico2x('chevron-left-sm-gray', 5px, 9px);
+@include ico2x('times-sm-gray', 12px, 12px);
+@include ico2x('like-white', 19px, 19px);
+@include ico2x('print-gray', 24px, 19px);
+@include ico2x('sns-sm-facebook', 16px, 19px);
+@include ico2x('sns-sm-twitter', 16px, 19px);
+@include ico2x('sns-sm-twitter', 16px, 19px);
+@include ico2x('rank-up', 10px, 13px);
+@include ico2x('rank-down', 10px, 13px);
+@include ico2x('chevron-right-md-gray', 8px, 13px);
+@include ico2x('chevron-left-md-gray', 8px, 13px);
+@include ico2x('download-white', 12px, 14px);
+@include ico2x('download-sm', 10px, 13px);
+@include ico('tropy', 14px, 16px);
+
+/* 레이아웃 공통 아이콘 */
+@include ico2x('allmenu', 16px, 14px);
+@include ico('login-white', 19px, 19px);
+@include ico('logout-white', 22px, 20px);
+@include ico('join-white', 20px, 19px);
+@include ico2x('login-gray', 17px, 17px);
+@include ico2x('logout-gray', 18px, 17px);
+@include ico2x('join-gray', 18px, 17px);
+
+@include ico2x('plus', 13px, 13px);
+@include ico2x('minus', 13px, 13px);
+@include ico('home', 23px, 19px);
+@include ico('new-window', 15px, 12px);
+@include ico('new-window-lg', 18px, 14px);
+@include ico2x('satisfy1', 28px, 28px);
+@include ico2x('satisfy2', 28px, 28px);
+@include ico2x('satisfy3', 28px, 28px);
+@include ico2x('satisfy4', 28px, 28px);
+@include ico2x('satisfy5', 28px, 28px);
+@include ico2x('bag-gray', 20px, 20px);
+@include ico2x('tel-gray', 20px, 20px);
+
+// 가이드 임시 아이콘 (추후 교체)
+@include ico2x('datepicker-gray', 23px, 24px);
+@include ico2x('write-white', 20px, 20px);

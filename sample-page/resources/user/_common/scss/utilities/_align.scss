@@ -1,0 +1,110 @@
+.clearfix {
+	position: relative;
+	@include clearfix;
+}
+
+.float-left {
+	float: left !important;
+}
+
+.float-right {
+	float: right !important;
+}
+
+.float-none {
+	float: none !important;
+}
+
+.text-left {
+	text-align: left !important;
+}
+
+.text-right {
+	text-align: right !important;
+}
+
+.text-center {
+	text-align: center !important;
+}
+
+@include media-breakpoint-up(lg) {
+	.text-lg-left {
+		text-align: left !important;
+	}
+
+	.text-lg-right {
+		text-align: right !important;
+	}
+
+	.text-lg-center {
+		text-align: center !important;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.text-md-left {
+		text-align: left !important;
+	}
+
+	.text-md-right {
+		text-align: right !important;
+	}
+
+	.text-md-center {
+		text-align: center !important;
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.text-sm-left {
+		text-align: left !important;
+	}
+
+	.text-sm-right {
+		text-align: right !important;
+	}
+
+	.text-sm-center {
+		text-align: center !important;
+	}
+}
+
+.vertical-top {
+	vertical-align: top !important;
+}
+
+.vertical-middle {
+	vertical-align: middle !important;
+}
+
+.vertical-bottom {
+	vertical-align: bottom !important;
+}
+
+.flex-container {
+	display: flex;
+
+	.flex-item {
+		flex: 1 1 50%;
+	}
+
+	.flex-item-fit {
+		flex: 0 0 auto;
+	}
+}
+
+.flex-justify-between {
+	justify-content: space-between;
+}
+
+.flex-justify-center {
+	justify-content: center;
+}
+
+.flex-align-stretch {
+	align-items: stretch;
+}
+
+.flex-align-center {
+	align-items: center;
+}

@@ -1,0 +1,104 @@
+#container {
+	@include media-breakpoint-up(lg) {
+		min-height: calc(100vh - #{$header-height + $footer-height + $breadcrumb-height});
+	}
+}
+
+#breadcrumb.d-down-sm+#container {
+	@include media-breakpoint-up(lg) {
+		min-height: calc(100vh - #{$header-height + $footer-height});
+	}
+}
+
+#content {
+	@include media-breakpoint-up(lg) {
+		// 메인형 레이아웃
+		min-height: calc(100vh - #{$header-height + $footer-height});
+
+		.fixed-header & {
+			min-height: calc(100vh - #{$header-height-closed + $footer-height});
+		}
+
+		#container & {
+			@include media-breakpoint-up(lg) {
+				min-height: auto;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		min-height: calc(100vh - #{$mobile-header-height + $mobile-footer-height});
+	}
+}
+
+.content-header {
+	.content-title {
+		font-family: $font-family-title;
+		color: #222;
+	}
+
+	@include media-breakpoint-up(lg) {
+		@include container;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		padding-top: 34px;
+		padding-bottom: 31px;
+		line-height: 1;
+		border-bottom: 1px solid $border-base;
+		margin-bottom: 42px;
+
+		.content-title {
+			font-size: 30px;
+		}
+
+		.breadcrumb-list {
+			display: flex;
+			font-size: 14px;
+			color: $gray;
+			padding-left: 21px;
+			background: url(#{$url-img-common}/ico-home-sm.png) no-repeat;
+			background-size: auto 14px;
+
+			li {
+				+li {
+					&:before {
+						content: '';
+						display: inline-block;
+						margin: 0 8px;
+						width: 6px;
+						height: 11px;
+						background: url(#{$url-img-common}/ico-chevron-right-xs.png) no-repeat;
+					}
+
+					&:last-child {
+						color: $default;
+					}
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		text-align: center;
+		padding-top: 36px;
+		padding-bottom: 26px;
+
+		.content-title {
+			font-size: 24px;
+		}
+
+		.breadcrumb-list {
+			display: none;
+		}
+	}
+}
+
+// IE에서 탭메뉴 호버시 콘텐츠 영역 너비 커지는 오류 수정
+#sidebar+#content {
+	.content-body {
+		.container {
+			max-width: 920px;
+		}
+	}
+}

@@ -1,0 +1,153 @@
+#content-info {
+	margin-top: $spacing-lg;
+
+	@include media-breakpoint-down(md) {
+		font-size: 13px;
+	}
+}
+
+.last-update {
+	text-align: right;
+	margin-bottom: 10px;
+	padding-right: 10px;
+}
+
+.content-copyright {
+	+.content-copyright {
+		margin-top: 20px;
+	}
+
+	.mark {
+		height: 50px;
+		width: auto;
+	}
+
+	@include media-breakpoint-up(lg) {
+		display: flex;
+		padding: 20px 30px;
+		align-items: center;
+
+		.mark {
+			margin-right: 20px;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		// padding: $mobile-spacing $mobile-spacing 12px;
+		flex-direction: column;
+
+		.desc {
+			margin-top: 10px;
+		}
+	}
+}
+
+.content-satisfy {
+	margin-top: 20px;
+
+	.satisfy-score {
+		margin: 15px 0;
+		@include clearfix;
+
+		li {
+			float: left;
+			margin-right: 25px;
+		}
+
+		.ico {
+			margin: 0 3px;
+		}
+	}
+
+	.contact-info {
+		border-top: 1px solid $border-base;
+		background-color: $bg-lightgray;
+		border-radius: 0 0 10px 10px;
+
+		dt {
+			position: relative;
+			font-weight: bold;
+			padding-right: 10px;
+			margin: 0 10px 0 0;
+		}
+
+		.ico {
+			margin-top: -2px;
+			vertical-align: middle;
+		}
+
+		.text {
+			vertical-align: middle;
+		}
+
+		.item {
+			+.item {
+				margin-left: 1em;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding: 25px 30px 30px;
+
+		dt,
+		dd {
+			display: inline-block;
+		}
+
+		dt {
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				margin-top: -7px;
+				content: '';
+				width: 1px;
+				height: 14px;
+				background-color: #888;
+			}
+		}
+
+		.contact-info {
+			margin: 30px -30px -30px;
+			padding: 17px 30px;
+
+			dt {
+				font-size: inherit;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		.satisfy-score {
+			margin-left: -6px;
+			margin-right: -6px;
+
+			li {
+				margin: 3px 6px;
+
+				.ico {
+					margin: 0 2px;
+				}
+			}
+		}
+
+		.contact-info {
+			margin: 20px -19px -15px;
+			padding: 10px 19px;
+
+			dt {
+				display: none;
+				margin-bottom: 5px;
+			}
+
+			dd {
+				font-size: 13px;
+			}
+
+			.ico {
+				display: none;
+			}
+		}
+	}
+}

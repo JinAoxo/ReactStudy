@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">게시판 등록 : 일반형</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="terms-area">
+							<div class="box box-terms">
+								<h3 class="text-bold text-xl">개인정보 수집·이용 목적</h3>
+								<ul class="list list2 mt-1">
+									<li>입력하신 개인정보는 게시자 의견 확인을 위해 참고용으로 수집·이용됩니다.(상담 또는 문의에 대한 답변 등)</li>
+									<li>게시자 등록내용 확인/수정/삭제 등 게시판 이용에 필요한 최소한의 정보를 수집합니다.</li>
+								</ul>
+							</div>
+							<div class="content-row mt-2 terms-agree">
+								<div class="inner">
+									<div class="col-item-fit">
+										<a href="#" class="btn btn-sm btn-primary">개인정보취급처리방침</a>
+									</div>
+									<div class="col-item pr-lg-1 text-lg-right">
+										<span class="ckeck-item-custom">
+											<input type="checkbox" id="inputCheck">
+											<label for="inputCheck">위 사항에 대해 인지하고 입력항목에 대해 수집 및 활용에 동의합니다.</label>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<p class="mt-7 mb-1 text-sm text-right"><span class="req">*</span> 필수 입력항목입니다.</p>
+						<form action="#">
+							<div class="table table-form">
+								<table>
+									<caption class="sr-only">${표제목}</caption>
+									<colgroup>
+										<col style="width: 140px;">
+										<col>
+										<col style="width: 140px;">
+										<col style="width: 290px;">
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">작성자</th>
+											<td colspan="3">홍길동</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="inputTel">전화번호 <span class="req">*</span></label>
+											</th>
+											<td>
+												<div class="form-row">
+													<span class="input-item" style="width: 87px">
+														<input type="text" id="inputTel" class="form-control" title="연락처 맨 앞자리">
+													</span>
+													<span class="text-item">-</span>
+													<span class="input-item" style="width: 86px">
+														<input type="text" class="form-control" title="연락처 가운데 네자리">
+													</span>
+													<span class="text-item">-</span>
+													<span class="input-item" style="width: 86px">
+														<input type="text" class="form-control" title="연락처 마지막 네자리">
+													</span>
+												</div>
+												<p class="text-secondary text-sm mt-sm">숫자만 입력 가능하며, 3~4자까지만 입력 가능합니다.</p>
+											</td>
+											<th scope="row"><label for="inputEmail">이메일 <span class="req">*</span></label></th>
+											<td>
+												<input type="text" id="inputEmail" class="form-control" style="width: 100%;">
+												<p class="text-secondary text-sm mt-sm">이메일형식에 맞게 입력하세요</p>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">
+												<label for="inputSubject">제목 <span class="req">*</span></label>
+											</th>
+											<td colspan="3">
+												<input type="text" id="inputSubject" class="form-control full">
+											</td>
+										</tr>
+										<tr>
+											<th scope="row"><label for="inputContent">내용 <span class="req">*</span></label></th>
+											<td colspan="3">
+												<div class="form-row">
+													<textarea class="form-control" cols="80" rows="5" id="inputContent" style="width: 100%;"></textarea>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">첨부파일</th>
+											<td colspan="3">
+												<!-- 첨부파일 기본 항목 -->
+												<div class="file-attatch-item">
+													<div class="form-row">
+														<div class="col-item">
+															<input type="file" class="form-file" id="input-file1">
+															<input type="text" class="form-control file-name" title="첨부파일명">
+														</div>
+														<div class="col-item-fit">
+															<!-- label for와 id 매칭 필수 -->
+															<label class="btn btn-md btn-outline-primary" for="input-file1">파일선택</label>
+														</div>
+													</div>
+	
+													<div class="file-desc">
+														<div class="form-row">
+															<div class="col-item">
+																<input type="text" class="form-control file-name" placeholder="첨부파일 설명을 입력해주세요." title="첨부파일 설명을 입력해주세요.">
+															</div>
+															<div class="col-item-fit">
+																<button type="button" class="btn btn-md btn-primary">
+																	<i class="ico ico-plus-white"></i>
+																	<span class="sr-only">추가</span>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+	
+												<!-- 첨부파일 추가 항목 -->
+												<div class="file-attatch-item">
+													<div class="form-row">
+														<div class="col-item">
+															<input type="file" class="form-file" id="input-file2">
+															<input type="text" class="form-control file-name" title="첨부파일명">
+														</div>
+														<div class="col-item-fit">
+															<!-- label for와 id 매칭 필수 -->
+															<label class="btn btn-md btn-outline-primary" for="input-file2">파일선택</label>
+														</div>
+													</div>
+
+													<div class="file-desc">
+														<div class="form-row">
+															<div class="col-item">
+																<input type="text" class="form-control file-name" placeholder="첨부파일 설명을 입력해주세요." title="첨부파일 설명을 입력해주세요.">
+															</div>
+															<div class="col-item-fit">
+																<button type="button" class="btn btn-md btn-default">
+																	<i class="ico ico-minus-white"></i>
+																	<span class="sr-only">삭제</span>
+																</button>
+															</div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="btn-group btn-group-form">
+								<a href="#;" class="btn btn-lg btn-default">목록</a>
+								<button type="submit" class="btn btn-lg btn-primary">등록</button>
+							</div>
+						</form>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

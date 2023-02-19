@@ -1,0 +1,56 @@
+.box-login {
+	max-width: 450px;
+	margin: auto;
+
+	.login-header {
+		float: left;
+		width: calc(100% + 38px);
+		margin: -15px -19px 0;
+		padding: 10px 19px;
+		border-radius: 10px 10px 0 0;
+		font-family: $font-family-title;
+		text-align: center;
+		font-weight: 500;
+		font-size: $font-size-xl;
+	}
+
+	.login-body {
+		clear: both;
+		padding: 15px 15px 5px;
+	}
+
+	.row {
+		margin-top: 10px;
+		min-height: 30px;
+
+		.label {
+			display: block;
+			padding: 6px 0 3px;
+			font-weight: 500;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		.row {
+			display: flex;
+			align-items: center;
+
+			.label {
+				flex: 0 0 auto;
+				padding: 0;
+				min-width: 100px;
+				margin-right: 10px;
+			}
+
+			&.btn-area {
+				padding-left: 110px;
+			}
+		}
+	}
+
+	@include media-breakpoint-down(sm) {
+		.login-body {
+			padding: 15px 0 5px;
+		}
+	}
+}

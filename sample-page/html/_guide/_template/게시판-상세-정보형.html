@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">게시판 상세 : 정보형</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="article-view">
+							<div class="article-header">
+								<div class="info-area">
+									<h1 class="article-subject text-center">ABC마트 옥외광고물 신청</h1>
+								</div>
+							</div>
+							<div class="table table-form">
+								<table>
+									<caption class="sr-only">${표제목}</caption>
+									<colgroup>
+										<col style="width: 20%;">
+										<col style="width: 30%;">
+										<col style="width: 20%;">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">신청인</th>
+											<td>홍길동</td>
+											<th scope="row">신청일시</th>
+											<td>0000-00-00</td>
+										</tr>
+										<tr>
+											<th scope="row">옥외광고업 등록번호</th>
+											<td colspan="3">1234-1234567-12-1-12345</td>
+										</tr>
+										<tr>
+											<th scope="row">전화번호</th>
+											<td>031-134-1234</td>
+											<th scope="row">휴대전화</th>
+											<td>010-1234-1241</td>
+										</tr>
+										<tr>
+											<th scope="row">설치지역 (행정동)</th>
+											<td>교하동</td>
+											<th scope="row">이메일</th>
+											<td>gildong@naver.com</td>
+										</tr>
+										<tr>
+											<th scope="row">주소</th>
+											<td colspan="3">(10922) 경기 파주시 가나무로 79(금촌동) 123-1</td>
+										</tr>
+										<tr>
+											<th scope="row">첨부파일</th>
+											<td colspan="3">
+												<ul class="file-list file-shortcut">
+													<li>
+														<i class="ico ico-file-png"></i>
+														<span class="sr-only">PNG</span>
+														<a href="#;">옥외광고물 이미지.png</a>
+														<a href="#;" class="btn btn-xs btn-outline-primary" target="_blank" title="새창">바로보기</a>
+														<div class="file-attatch-desc mt-2">
+															<span class="title">첨부파일 설명 :</span>
+															<span class="content">첨부파일에 대한 설명글입니다. 첨부파일에 대한 설명글입니다. 첨부파일에 대한 설명글입니다. 첨부파일에 대한
+																설명글입니다. 첨부파일에 대한
+																설명글입니다. 첨부파일에 대한 설명글입니다.</span>
+														</div>
+													</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">문의사항</th>
+											<td colspan="3">
+												<p>문의사항 영역입니다.</p>
+												<p>문의사항 영역입니다.</p>
+												<p>문의사항 영역입니다.</p>
+												<p>문의사항 영역입니다.</p>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="btn-group btn-group-form">
+							<button type="button" class="btn btn-lg btn-primary">수정</button>
+							<button type="button" class="btn btn-lg btn-outline-default">삭제</button>
+							<a href="#;" class="btn btn-lg btn-default">목록</a>
+						</div>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

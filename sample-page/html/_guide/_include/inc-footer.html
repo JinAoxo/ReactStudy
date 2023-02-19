@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- 공통 UI 컴포넌트 -->
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+</head>
+
+<body>
+	<footer id="footer">
+		<!--
+			[개발] 푸터 배경 컬러 옵션 안내
+			Mobile 모드는 컬러 흰색 통일,
+			Desktop 모드는 회색(기본) 흰색(일부 메인만) 2종 존재하며
+			흰색 적용 원할시 class="bg-white" 추가 활용
+			예) <footer id="footer" class="bg-white">
+		-->
+		<div class="container footer-util-container">
+			<p class="logo-bottom">
+				<a href="#;">
+					<img src="../../../resources/user/_common/images/logo-paju-gray.png" alt="파주시">
+				</a>
+			</p>
+
+			<!-- [개발] 자주찾는 사이트 : '대표홈 메인'에만 사용 -->
+			<a href="#;" class="btn btn-favorite-site" onclick="openModal('#layer-related-site', this);">
+				<span class="text">자주찾는 사이트</span>
+				<i class="ico ico-chevron-up-white"></i>
+			</a>
+			<div class="modal-popup modal-md hide" id="layer-related-site">
+				<div class="dimed"></div>
+				<div class="popup-inner">
+					<div class="popup-header sr-only">
+						<h2 class="popup-title">자주 찾는 사이트</h2>
+					</div>
+					<div class="popup-body">
+						<div class="scroll-inner">
+							<dl class="site-list">
+								<dt>패밀리 사이트</dt>
+								<dd>
+									<ul>
+										<li><a href="#;" target="_blank" title="새창">파주뉴스</a></li>
+										<li><a href="#;" target="_blank" title="새창">문화관광</a></li>
+										<li><a href="#;" target="_blank" title="새창">On시장실</a></li>
+										<li><a href="#;" target="_blank" title="새창">평생교육포털</a></li>
+										<li><a href="#;" target="_blank" title="새창">보건소</a></li>
+										<li><a href="#;" target="_blank" title="새창">재난안전</a></li>
+										<li><a href="#;" target="_blank" title="새창">농업기술센터</a></li>
+										<li><a href="#;" target="_blank" title="새창">읍면동 행정복지센터</a></li>
+									</ul>
+								</dd>
+								<dt>주요 사이트</dt>
+								<dd>
+									<ul>
+										<li><a href="#;" target="_blank" title="새창">파주시 통계 홈페이지</a></li>
+										<li><a href="#;" target="_blank" title="새창">자치법규</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시 교통정보센터</a></li>
+										<li><a href="#;" target="_blank" title="새창">주정차 단속조회</a></li>
+										<li><a href="#;" target="_blank" title="새창">주정차단속 문자알림</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시 도서관</a></li>
+									</ul>
+								</dd>
+								<dt>관련기관</dt>
+								<dd>
+									<ul>
+										<li><a href="#;" target="_blank" title="새창">파주드림스타트센터</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주문화원</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주도시관광공사</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시스포츠센터</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주청년회의소</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시체육회</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주팜(농특산물쇼핑몰)</a></li>
+										<li><a href="#;" target="_blank" title="새창">한국예총파주지부</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시행복장학회</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주상공회의소관</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시 비정규직노동자 지원센터</a></li>
+										<li><a href="#;" target="_blank" title="새창">파주시 도시재생지원센터</a></li>
+									</ul>
+								</dd>
+							</dl>
+						</div>
+					</div>
+					<button type="button" class="btn btn-close-popup">닫기</button>
+				</div>
+			</div>
+			<!-- // [개발] 자주찾는 사이트 : '대표홈 메인'에만 사용 -->
+
+			<div class="btn-group-util">
+				<ul class="sns-list">
+					<li>
+						<a href="#;" target="_blank" title="새창">
+							<img src="../../../resources/user/_common/images/ico-sns-twitter@2x.png" alt="트위터">
+						</a>
+					</li>
+					<li>
+						<a href="#;" target="_blank" title="새창">
+							<img src="../../../resources/user/_common/images/ico-sns-facebook@2x.png" alt="페이스북">
+						</a>
+					</li>
+					<li>
+						<a href="#;" target="_blank" title="새창">
+							<img src="../../../resources/user/_common/images/ico-sns-yutube@2x.png" alt="유튜브">
+						</a>
+					</li>
+					<li>
+						<a href="#;" target="_blank" title="새창">
+							<img src="../../../resources/user/_common/images/ico-sns-blog@2x.png" alt="블로그">
+						</a>
+					</li>
+					<li>
+						<a href="#;" target="_blank" title="새창">
+							<img src="../../../resources/user/_common/images/ico-sns-insta@2x.png" alt="인스타그램">
+						</a>
+					</li>
+				</ul>
+
+				<!-- [개발] 웹접근성 마크 불필요한 사이트는 삭제 -->
+				<a href="#;" class="wa-mark">
+					<img src="../../../resources/user/_common/images/wa-mark.png" alt="미래창조과학부 WEB ACCESSIBILITY">
+				</a>
+			</div>
+		</div>
+		<div class="container address-container">
+			<ul class="policy-list">
+				<li class="text-bold"><a href="#;">개인정보처리방침</a></li>
+				<li><a href="#;">저작권정책</a></li>
+				<li><a href="#;">이용안내</a></li>
+				<li><a href="#;">찾아오시는길</a></li>
+			</ul>
+			<p class="no-spam">파주시 홈페이지에 게시된 전자우편주소는 무단으로<br class="d-down-sm"> 수집할 수 없으며, 위반시 정보통신망법에 의해 처벌됩니다.</p>
+			<address class="address">
+				<p>(우 10932) 경기도 파주시 시청로 50 | 대표전화 : 031) 940-4114</p>
+				<p>COPYRIGHT(C) 2015, PAJU CITY ALL RIGHTS RESERVED</p>
+			</address>
+		</div>
+	</footer>
+</body>
+
+</html>

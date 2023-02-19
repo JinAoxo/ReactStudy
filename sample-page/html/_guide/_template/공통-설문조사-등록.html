@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">식품제조업소 자율점검</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<h3 class="title1">점검표</h3>
+						<div class="table table-scroll food-chk">
+							<div class="scroll-container">
+								<table style="min-width:800px;">
+									<caption class="sr-only">
+										식품제조업소 자율점검의 구분, 자율점검사항, 적, 부, 해당무, 부적합사항 및 조치내역에 대한 정보표 입니다.</caption>
+									<colgroup>
+										<col style="width:120px">
+										<col>
+										<col style="width:60px">
+										<col style="width:60px">
+										<col style="width:100px">
+										<col style="width:250px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">구분</th>
+											<th scope="col">자율점검사항</th>
+											<th scope="col">적</th>
+											<th scope="col">부</th>
+											<th scope="col">해당무</th>
+											<th scope="col">부적합사항 및 조치내역</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td rowspan="4">1. 취급기준</td>
+											<td class="text-left">1-1 원료보관실, 제조가공실, 포장실 등의 내부 청결 여부</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk1_" id="chk1_1">
+													<label for="chk1_1"><span class="sr-only">적</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk1_" id="chk1_2">
+													<label for="chk1_2"><span class="sr-only">부</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk1_" id="chk1_3">
+													<label for="chk1_3"><span class="sr-only">해당무</span></label>
+												</span>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="부적합사항 및 조치내역 입력">
+											</td>
+										</tr>
+										<tr>
+											<td class="text-left">1-2 원료 및 제품 중 부패, 변질이 되기 쉬운 것은 냉동, 냉장시설에 보관, 관리하는지 여부</td>
+											<td>
+
+												<span class="ckeck-item">
+													<input type="radio" name="chk2_" id="chk2_1">
+													<label for="chk2_1"><span class="sr-only">적</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk2_" id="chk2_2">
+													<label for="chk2_2"><span class="sr-only">부</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk2_" id="chk2_3">
+													<label for="chk2_3"><span class="sr-only">해당무</span></label>
+												</span>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="부적합사항 및 조치내역 입력">
+											</td>
+										</tr>
+										<tr>
+											<td class="text-left">1-3 보관, 운반 진열 시에는 식품 등의 기준 및 규격이 정하고 있는 보존 및 보관기준에 적합하도록 관리하여야 하고, 이 경우 냉동,
+												냉장시설 및 운반시설은 항상
+												정상적으로 작동하는지 여부</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk3_" id="chk3_1">
+													<label for="chk3_1"><span class="sr-only">적</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk3_" id="chk3_2">
+													<label for="chk3_2"><span class="sr-only">부</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk3_" id="chk3_3">
+													<label for="chk3_3"><span class="sr-only">해당무</span></label>
+												</span>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="부적합사항 및 조치내역 입력">
+											</td>
+										</tr>
+										<tr>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+										</tr>
+
+										<tr>
+											<td rowspan="2">기타</td>
+											<td colspan="5" class="text-left">
+												<p>*부적한 여부에 대한 조치(해당 란 부족 시) 및 기타 건의사항과 업소 기획 자율점검 결과 등 기재</p>
+												<strong>[예시]</strong>
+												<ul class="list list2">
+													<li>부적합 사항 4-1(구분번호) 품목보고 변경 미보고에 대하여 00월 00일 보고할 것 임.(예정)</li>
+													<li>조치사항 : 00월 00일 부적합 사항 4-1(구분번호) 품목보고 변경 미보고는 00월 00일 조치 완료</li>
+												</ul>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="5" class="text-left">
+												<textarea class="form-control full" cols="30" rows="5"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="btn-group btn-group-form text-right">
+							<a href="#;" class="btn btn-lg btn-default">목록</a>
+							<button type="button" class="btn btn-lg btn-primary">등록</button>
+						</div>
+
+						<h3 class="title1">객석/객실(5항목)</h3>
+						<div class="table table-scroll">
+							<div class="scroll-container">
+								<table style="min-width:800px;">
+									<caption class="sr-only">
+										객석/객실(5항목)의 평가영역, 평가지표, 기준(유무구분, 평가기준), 평가자 의견에 대한 정보표 입니다.</caption>
+									<colgroup>
+										<col style="width:130px">
+										<col>
+										<col style="width:120px">
+										<col style="width:120px">
+										<col style="width:250px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col" rowspan="2">평가영역</th>
+											<th scope="col" rowspan="2">평가지표</th>
+											<th scope="col" colspan="2">기준</th>
+											<th scope="col" rowspan="2">평가자 의견</th>
+										</tr>
+										<tr>
+											<th scope="col">유무구분</th>
+											<th scope="col">평가기준</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td rowspan="3">1. 취급기준</td>
+											<td class="text-left">1-1-1 천장, 벽, 바닥의 청결상태
+											</td>
+											<td></td>
+											<td>
+												<ul class="list">
+													<li>
+														<span class="ckeck-item">
+															<input type="radio" name="chk4_" id="chk4_1">
+															<label for="chk4_1">우수</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk4_" id="chk4_2">
+															<label for="chk4_2">보통</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk4_" id="chk4_3">
+															<label for="chk4_3">미흡</label>
+														</span>
+													</li>
+												</ul>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="부적합사항 및 조치내역 입력">
+											</td>
+										</tr>
+										<tr>
+											<td class="text-left">1-1-2 식탁 청결상태</td>
+											<td>
+												<ul class="list">
+													<li>
+														<span class="ckeck-item">
+															<input type="radio" name="chk5_" id="chk5_1">
+															<label for="chk5_1">유</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk5_" id="chk5_2">
+															<label for="chk5_2">무</label>
+														</span>
+													</li>
+												</ul>
+											</td>
+											<td>
+												<ul class="list">
+													<li>
+														<span class="ckeck-item">
+															<input type="radio" name="chk6_" id="chk6_1">
+															<label for="chk6_1">우수</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk6_" id="chk6_2">
+															<label for="chk6_2">미흡</label>
+														</span>
+													</li>
+												</ul>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="부적합사항 및 조치내역 입력">
+											</td>
+										</tr>
+										<tr>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<h3 class="title1 mt-8">좋은식당 이행여부 점검기준표</h3>
+						<div class="table table-scroll food-chk">
+							<div class="scroll-container">
+								<table style="min-width:800px;">
+									<caption class="sr-only">
+										좋은식당 이행여부 점검기준표의 유형별, 세부점검항목, 적, 부 비고에 대한 정보표 입니다.</caption>
+									<colgroup>
+										<col style="width:130px">
+										<col>
+										<col style="width:60px">
+										<col style="width:60px">
+										<col style="width:250px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">유형별</th>
+											<th scope="col">세부점검항목</th>
+											<th scope="col">적</th>
+											<th scope="col">부</th>
+											<th scope="col">비고</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td rowspan="3">공통사항</td>
+											<td class="text-left">｢좋은식단｣ 모형에 의한 권장반찬 가짓수 준수</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk7_" id="chk7_1">
+													<label for="chk7_1"><span class="sr-only">적</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk7_" id="chk7_2">
+													<label for="chk7_2"><span class="sr-only">부</span></label>
+												</span>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="비고">
+											</td>
+										</tr>
+										<tr>
+											<td class="text-left">탈수기, 음식쓰레기처리기기 설치 등 쓰레기처리의 적정성
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk8_" id="chk8_1">
+													<label for="chk8_1"><span class="sr-only">적</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk8_" id="chk8_2">
+													<label for="chk8_2"><span class="sr-only">부</span></label>
+												</span>
+											</td>
+											<td>
+												<input type="text" class="form-control full" title="비고">
+											</td>
+										</tr>
+										<tr>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+											<td>:</td>
+										</tr>
+										<tr>
+											<td>음식물쓰레기<br>처리방법</td>
+											<td class="text-left">
+												<ul class="list">
+													<li>
+														<span class="ckeck-item">
+															<input type="radio" name="chk9_" id="chk9_1">
+															<label for="chk9_1">처리업체 위탁</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk9_" id="chk9_2">
+															<label for="chk9_2">쓰레기봉투사용</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk9_" id="chk9_3">
+															<label for="chk9_3">가축사료사용</label>
+														</span>
+													</li>
+												</ul>
+											</td>
+											<td colspan="3" class="text-left">
+												<strong>· 음식물쓰레기 발생량 : </strong>
+												<input type="text" class="form-control" title="입력" style="width:100px;"> kg
+											</td>
+										</tr>
+										<tr>
+											<td>영업주 건의사<br>할 및 영업주<br>개선사항</td>
+											<td colspan="4" class="text-left">
+												<textarea class="form-control full" cols="30" rows="5" title="개선사항 입력"></textarea>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<div class="btn-group btn-group-form text-right">
+							<a href="#;" class="btn btn-lg btn-default">목록</a>
+							<button type="button" class="btn btn-lg btn-primary">등록</button>
+						</div>
+
+						<h3 class="title1">개인위생</h3>
+						<div class="table table-scroll">
+							<div class="scroll-container">
+								<table style="min-width:800px;">
+									<caption class="sr-only">
+										개인위생의 점검내용, 근거, 적 부에 대한 정보표 입니다.</caption>
+									<colgroup>
+										<col>
+										<col style="width:120px">
+										<col style="width:120px">
+										<col style="width:120px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">점검내용</th>
+											<th scope="col">근거</th>
+											<th scope="col">적</th>
+											<th scope="col">부</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="text-left">
+												<strong>질병이 있는 종업원에 의한 오염 가능성 유무
+												</strong>
+												<ul class="list list2">
+													<li>영업자 및 집단급식소 설치·운영자의 건강진단 실시(위탁급식소의 경우 제외</li>
+													<li>종업원의 건강진단 실시여부( / 명)</li>
+													<li>건강진단을 받지 아니한 자를 영업에 종사시키는 지 여부( / 명)</li>
+													<li>건강진단결과 타인에게 위해를 끼칠 우려가 있는 질병이 있다고 인정된 자를
+														영업에 종사시키는지 여부
+													</li>
+												</ul>
+											</td>
+											<td>법제40조</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk10_" id="chk10_1">
+													<label for="chk10_1"><span class="sr-only">적</span></label>
+												</span>
+											</td>
+											<td>
+												<span class="ckeck-item">
+													<input type="radio" name="chk10_" id="chk10_2">
+													<label for="chk10_2"><span class="sr-only">부</span></label>
+												</span>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<h3 class="title1 mt-8">보존식 식품보관</h3>
+						<div class="table table-scroll food-chk">
+							<div class="scroll-container">
+								<table style="min-width:900px;">
+									<caption class="sr-only">
+										보존식 식품보관의 조리식품여부, 2주간 음식물쓰레기, 음식물쓰레기 처리방법에 대한 정보표 입니다.</caption>
+									<colgroup>
+										<col style="width:170px">
+										<col style="width:25%;">
+										<col>
+									</colgroup>
+									<tbody>
+										<tr>
+											<th scope="row">조리식품여부</th>
+											<td colspan="2">
+												<span class="ckeck-item">
+													<input type="checkbox" checked name="chk11_" id="chk11_1">
+													<label for="chk11_1">조리식품</label>
+												</span>
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">2주간음식물쓰레기</th>
+											<td></td>
+											<td>
+												<strong>· 봉투 </strong>
+												<input type="text" class="form-control" title="입력" style="width:100px;"> kg
+												<input type="text" class="form-control ml-4" title="입력" style="width:100px;"> 매
+											</td>
+										</tr>
+										<tr>
+											<th scope="row">음식물쓰레기 처리방법</th>
+											<td>
+												<ul class="list">
+													<li>
+														<span class="ckeck-item">
+															<input type="radio" name="chk12_" id="chk12_1">
+															<label for="chk12_1">위탁처리</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk12_" id="chk12_2">
+															<label for="chk12_2">가축사료</label>
+														</span>
+													</li>
+													<li class="mt-1">
+														<span class="ckeck-item">
+															<input type="radio" name="chk12_" id="chk12_3">
+															<label for="chk12_3">쓰레기봉투사용</label>
+														</span>
+													</li>
+												</ul>
+											</td>
+											<td>
+												<strong>· 위탁업체명 </strong>
+												<input type="text" class="form-control" title="입력" style="width:250px;">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+
+						<h3 class="title1 mt-8">점검자 의견</h3>
+						<textarea class="form-control full" title="점검자 의견 입력" rows="5"></textarea>
+
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

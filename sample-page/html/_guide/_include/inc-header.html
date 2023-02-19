@@ -1,0 +1,1992 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+</head>
+
+<body class="site-www">
+	<!-- 
+		[개발] 사이트별 헤더 클래스 옵션
+		1. 대표홈 사이트 헤더에는 클래스 추가 : <header id="header" class="header-www">
+		2. 메뉴명이 긴 사이트 class="header-type2" 추가 : <header id="header" class="header-type2">
+		   적용 대상 사이트 : 평생교육포털, 보건소 (GNB 영역이 확장됨)
+	-->
+	<header id="header">
+		<nav id="top-nav">
+			<div class="container">
+				<ul class="top-nav-list">
+					<!-- [개발] 활성화 탭 li class="on" -->
+					<li class="www on"><a href="../../www/home/메인.html">파주시청</a></li>
+					<li class="news"><a href="../../news/pages/메인.html">파주뉴스</a></li>
+					<li class="tour"><a href="../../tour/pages/메인.html">문화관광</a></li>
+					<li class="mayor"><a href="../../mayor/pages/메인.html">On 시장실</a></li>
+					<li class="council"><a href="http://www.pajucouncil.go.kr" target="_blank" title="새창">파주시의회</a></li>
+				</ul>
+				<ul class="member-menu">
+					<!-- [개발] 로그인 전 -->
+					<li>
+						<a href="#;" class="btn">
+							<i class="ico ico-login-white"></i>
+							<span class="text">로그인</span>
+						</a>
+					</li>
+					<li>
+						<a href="#;" class="btn">
+							<i class="ico ico-join-white"></i>
+							<span class="text">회원가입</span>
+						</a>
+					</li>
+					<!-- [개발] 로그인 후 -->
+					<!-- 
+					<li>
+						<a href="#;" class="btn">
+							<i class="ico ico-logout-white"></i>
+							<span class="text">로그아웃</span>
+						</a>
+					</li>
+					-->
+				</ul>
+			</div>
+		</nav>
+		<div class="container util-container">
+			<h1 id="logo">
+				<a href="#;">
+					<img src="../../../resources/user/www/images/layout/logo@2x.png" alt="사이트명">
+					<!-- 
+						[개발] 각 사이트별로 디렉토리 'www' 부분 및 alt 값 변경 지정
+						파주시청 : www
+						파주뉴스 : news
+						문화관광 : tour
+						On 시장실 : mayor
+						평생교육포털 : lll
+						보건소 : clinic
+						재난안전 : safe
+						농업기술센터 : agri
+						읍면동 행정복지센터 : dong
+					-->
+				</a>
+			</h1>
+			<a href="#global-search" class="btn btn-search-open">
+				<i class="ico ico-search-primary"></i>
+				<span class="sr-only">통합검색 열기</span>
+			</a>
+			<div id="global-search">
+				<form action="/html/_guide/_template/global-search.html">
+					<fieldset>
+						<legend class="sr-only">통합검색</legend>
+						<div class="form-group">
+							<select class="form-control form-control-option" title="구분">
+								<option value="">통합검색</option>
+								<option value="">옵션1</option>
+							</select>
+							<input type="text" class="form-control form-control-keyword" title="검색어" placeholder="검색어를 입력하세요">
+							<button type="submit" class="btn btn-global-search">
+								<i class="ico ico-search-primary"></i>
+								<span class="sr-only">검색</span>
+							</button>
+						</div>
+					</fieldset>
+				</form>
+				<button type="button" class="btn btn-search-close">
+					<i class="ico ico-close-primary"></i>
+					<span class="sr-only">통합검색 닫기</span>
+				</button>
+			</div>
+			<div class="util-menu">
+				<div class="screen-scale">
+					<button type="button" class="btn btn-icon btn-scale-up">
+						<i class="ico ico-plus"></i>
+						<span class="sr-only">확대</span>
+					</button>
+					<button type="button" class="btn btn-icon btn-scale-default">가</button>
+					<button type="button" class="btn btn-icon btn-scale-down">
+						<i class="ico ico-minus"></i>
+						<span class="sr-only">축소</span>
+					</button>
+				</div>
+				<dl class="dropdown-list">
+					<dt><a href="#;">SNS</a></dt>
+					<dd>
+						<ul>
+							<li><a href="#;">SNS1</a></li>
+							<li><a href="#;">SNS2 SNS2</a></li>
+							<li><a href="#;">SNS3</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<dl class="dropdown-list">
+					<dt><a href="#;">언어선택</a></dt>
+					<dd>
+						<ul>
+							<li><a href="#;">Korean</a></li>
+							<li><a href="#;">English</a></li>
+							<li><a href="#;">Chinese</a></li>
+							<li><a href="#;">Japanese</a></li>
+						</ul>
+					</dd>
+				</dl>
+				<div class="wheather">
+					<span class="desc">3.7˚C 맑음 미세먼지(보통)·초미세먼지(보통)</span>
+					<strong class="title">건조주의보</strong>
+				</div>
+			</div>
+		</div>
+		<div class="container nav-container">
+			<nav id="gnb">
+				<ul class="gnb-list">
+					<!-- 대메뉴 개수에 따라 자동 균등분할, 메뉴명 최대 두줄까지 노출 -->
+					<!-- [개발] 활성화 메뉴 li class="on" -->
+					<li>
+						<a href="#;"><span>메뉴1</span></a>
+						<div class="lnb">
+							<div class="container">
+								<div class="lnb-title">
+									<h3>소통ㆍ참여</h3>
+									<p>시민과 함께하는<br> 열린 소통공간</p>
+									<div class="artwork">
+										<img src="../../../resources/user/_common/images/artwork-gnb1.png" alt="">
+									</div>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1001">시민의 공간</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1001">자유토크</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1002">칭찬합시다</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+											<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+													title="새창">공모제안신청하기</a></li>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1013">정책참여</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1013">주민참여예산</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1016">예산편성건의</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_01.jsp">정책토론</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_02.jsp">전자공청회</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_03.jsp">설문조사</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+										<ul>
+											<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+											<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+											<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+											<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+										<ul>
+											<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+											<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+											<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+											<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+													title="새창">예쁜간판·공공디자인공모</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+										<ul>
+											<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+											<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+											<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+											<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+													title="새창">현수막걸이대위치조회</a></li>
+											<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+													title="새창">게시현황달력</a>
+											</li>
+											<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+											<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#;"><span>메뉴2</span></a>
+						<div class="lnb">
+							<div class="container">
+								<div class="lnb-title">
+									<h3>민원</h3>
+									<p>생활민원 등<br> 종합행정서비스</p>
+									<div class="artwork">
+										<img src="../../../resources/user/_common/images/artwork-gnb2.png" alt="">
+									</div>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1001">시민의 공간</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1001">자유토크</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1002">칭찬합시다</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+											<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+													title="새창">공모제안신청하기</a></li>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+										<ul>
+											<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+											<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+											<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+											<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+										<ul>
+											<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+											<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+											<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+											<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+													title="새창">예쁜간판·공공디자인공모</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+										<ul>
+											<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+											<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+											<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+											<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+													title="새창">현수막걸이대위치조회</a></li>
+											<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+													title="새창">게시현황달력</a>
+											</li>
+											<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+											<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#;"><span>메뉴3</span></a>
+						<div class="lnb">
+							<div class="container">
+								<div class="lnb-title">
+									<h3>정보공개</h3>
+									<p>시민의 알 권리,<br> 정보의 투명성 보장</p>
+									<div class="artwork">
+										<img src="../../../resources/user/_common/images/artwork-gnb3.png" alt="">
+									</div>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1001">시민의 공간</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1001">자유토크</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1002">칭찬합시다</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+											<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+													title="새창">공모제안신청하기</a></li>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1013">정책참여</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1013">주민참여예산</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1016">예산편성건의</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_01.jsp">정책토론</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_02.jsp">전자공청회</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_03.jsp">설문조사</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+										<ul>
+											<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+											<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+											<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+											<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+										<ul>
+											<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+											<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+											<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+											<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+													title="새창">예쁜간판·공공디자인공모</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+										<ul>
+											<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+											<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+											<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+											<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+													title="새창">현수막걸이대위치조회</a></li>
+											<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+													title="새창">게시현황달력</a>
+											</li>
+											<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+											<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#;"><span>메뉴4</span></a>
+						<div class="lnb">
+							<div class="container">
+								<div class="lnb-title">
+									<h3>공고ㆍ홍보</h3>
+									<p>다양한 시정소식과<br> 홍보자료 공간</p>
+									<div class="artwork">
+										<img src="../../../resources/user/_common/images/artwork-gnb4.png" alt="">
+									</div>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1001">시민의 공간</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1001">자유토크</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1002">칭찬합시다</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+											<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+													title="새창">공모제안신청하기</a></li>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1013">정책참여</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1013">주민참여예산</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1016">예산편성건의</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_01.jsp">정책토론</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_02.jsp">전자공청회</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_03.jsp">설문조사</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+										<ul>
+											<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+											<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+											<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+											<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+										<ul>
+											<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+											<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+											<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+											<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+													title="새창">현수막걸이대위치조회</a></li>
+											<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+													title="새창">게시현황달력</a>
+											</li>
+											<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+											<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="#;">메뉴명이 매우 긴 메뉴 메뉴명이 매우 긴 메뉴</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#;"><span>메뉴5</span></a>
+						<div class="lnb">
+							<div class="container">
+								<div class="lnb-title">
+									<h3>파주소개</h3>
+									<p>살고 싶은 도시,<br> 기업이 편한 파주</p>
+									<div class="artwork">
+										<img src="../../../resources/user/_common/images/artwork-gnb5.png" alt="">
+									</div>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1001">시민의 공간</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1001">자유토크</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1002">칭찬합시다</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+											<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+													title="새창">공모제안신청하기</a></li>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+										<ul>
+											<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+											<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+											<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+											<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+										<ul>
+											<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+											<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+											<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+											<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+													title="새창">예쁜간판·공공디자인공모</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+										<ul>
+											<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+											<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+											<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+											<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+													title="새창">현수막걸이대위치조회</a></li>
+											<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+													title="새창">게시현황달력</a>
+											</li>
+											<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+											<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</li>
+					<li><a href="#;"><span>메뉴6</span></a>
+						<div class="lnb">
+							<div class="container">
+								<div class="lnb-title">
+									<h3>분야별 정보</h3>
+									<p>시민과 함께하는<br> 열린 소통공간</p>
+									<div class="artwork">
+										<img src="../../../resources/user/_common/images/artwork-gnb6.png" alt="">
+									</div>
+								</div>
+								<div class="part-menu-wrap">
+									<ul class="part-list">
+										<li class="on"><a href="#part-content1">복지포털</a></li>
+										<li><a href="#part-content2">기업/경제/일자리</a></li>
+										<li><a href="#part-content3">도시개발</a></li>
+										<li><a href="#part-content4">부동산/주택</a></li>
+										<li><a href="#part-content5">재정/지방세</a></li>
+										<li><a href="#part-content6">환경/교통</a></li>
+										<li><a href="#part-content7">건강/보건/위생</a></li>
+										<li><a href="#part-content8">행정/감사/기획</a></li>
+									</ul>
+
+									<!-- 탭 링크와 아이디 매칭 -->
+									<div class="part-content" id="part-content1">
+										<h4 class="sr-only">복지포털</h4>
+										<ul class="lnb-list">
+											<li>
+												<a href="#;">희망복지</a>
+												<ul>
+													<li><a href="#;">기초생활보장</a>
+														<ul>
+															<li><a href="#;">생계급여</a></li>
+															<li><a href="#;">의료급여</a></li>
+															<li><a href="#;">주거급여</a></li>
+															<li><a href="#;">교육급여</a></li>
+															<li><a href="#;">해산·장제급여</a></li>
+														</ul>
+													</li>
+													<li><a href="#;">긴급지원제도</a></li>
+													<li><a href="#;">나눔문화</a></li>
+													<li><a href="#;">시설</a></li>
+													<li><a href="#;">자활사업</a></li>
+													<li><a href="#;">나눔문화</a>
+														<ul>
+															<li><a href="#;">프로그램 안내</a></li>
+															<li><a href="#;">프로그램 신청·확인</a></li>
+															<li><a href="#;">재능기부 신청·확인</a></li>
+														</ul>
+													</li>
+													<li><a href="#;">보훈</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="#;">노인</a>
+												<ul>
+													<li><a href="#;">정책</a></li>
+													<li><a href="#;">사업</a>
+														<ul>
+															<li><a href="#;">저소득(독거)노인지원사업</a></li>
+															<li><a href="#;">사회활동참여사업</a></li>
+															<li><a href="#;">경로당지원사업</a></li>
+															<li><a href="#;">경로식당</a></li>
+															<li><a href="#;">노인장기요양제도</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+												<ul>
+													<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+													<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+															title="새창">공모제안신청하기</a></li>
+													<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/user/board/BD_board.list.do?bbsCd=1013">정책참여</a>
+												<ul>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1013">주민참여예산</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1016">예산편성건의</a></li>
+													<li><a href="/www/paticipation/paticipation_03/paticipation_03_01.jsp">정책토론</a></li>
+													<li><a href="/www/paticipation/paticipation_03/paticipation_03_02.jsp">전자공청회</a></li>
+													<li><a href="/www/paticipation/paticipation_03/paticipation_03_03.jsp">설문조사</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+												<ul>
+													<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+													<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+													<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+													<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+													<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+													<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+												<ul>
+													<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+													<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a>
+													</li>
+													<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+													<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+													<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+															title="새창">예쁜간판·공공디자인공모</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+												<ul>
+													<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+													<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+													<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+													<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+													<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+													<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+															title="새창">현수막걸이대위치조회</a></li>
+													<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+															title="새창">게시현황달력</a>
+													</li>
+													<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+													<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+													<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+													<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+											</li>
+											<li>
+												<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+												<ul>
+													<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+													<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+													<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+													<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+													<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+													<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+											</li>
+											<li>
+												<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+												<ul>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<!-- 탭 링크와 아이디 매칭 -->
+									<div class="part-content" id="part-content2">
+										<h4 class="sr-only">기업/경제/일자리</h4>
+										<ul class="lnb-list">
+											<li>
+												<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+												<ul>
+													<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+													<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+													<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a>
+													</li>
+													<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+													<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+													<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+															title="새창">예쁜간판·공공디자인공모</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+												<ul>
+													<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+													<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+													<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+													<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+													<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+													<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+															title="새창">현수막걸이대위치조회</a></li>
+													<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+															title="새창">게시현황달력</a>
+													</li>
+													<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+													<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+													<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+													<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+											</li>
+											<li>
+												<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+												<ul>
+													<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+													<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+													<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+													<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+													<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+													<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+												</ul>
+											</li>
+											<li>
+												<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+											</li>
+											<li>
+												<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+												<ul>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+													<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<div class="part-content" id="part-content3">
+										<h4 class="sr-only">도시개발</h4>
+										<ul class="lnb-list">
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a>
+														<ul>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<div class="part-content" id="part-content4">
+										<h4 class="sr-only">부동산/주택</h4>
+										<ul class="lnb-list">
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a>
+														<ul>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<div class="part-content" id="part-content5">
+										<h4 class="sr-only">재정/지방세</h4>
+										<ul class="lnb-list">
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a>
+														<ul>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<div class="part-content" id="part-content6">
+										<h4 class="sr-only">환경/교통</h4>
+										<ul class="lnb-list">
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a>
+														<ul>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<div class="part-content" id="part-content7">
+										<h4 class="sr-only">건강/보건/위생</h4>
+										<ul class="lnb-list">
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a>
+														<ul>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+									<div class="part-content" id="part-content8">
+										<h4 class="sr-only">행정/감사/기획</h4>
+										<ul class="lnb-list">
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a>
+														<ul>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+															<li><a href="#;">메뉴</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+											<li><a href="#;">메뉴</a>
+												<ul>
+													<li><a href="#;">메뉴</a></li>
+													<li><a href="#;">메뉴</a></li>
+												</ul>
+											</li>
+										</ul>
+									</div>
+
+
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- 
+				[개발] 뉴스 사이트는 Desktop 모드 전체메뉴 버튼 미사용, 멀티클래스 .d-down-md 추가 필요 
+				<a href="#;" class="btn btn-allmenu-open d-down-md"> 
+			-->
+			<a href="#;" class="btn btn-allmenu-open">
+				<span class="text">전체메뉴</span>
+				<i class="ico ico-allmenu"></i>
+			</a>
+		</div>
+		<nav id="allmenu">
+			<!-- PC용 모달 팝업 -->
+			<div class="modal-popup modal-xl hide" id="desktop-allmenu">
+				<div class="dimed"></div>
+				<div class="popup-inner">
+					<div class="popup-header">
+						<h2 class="popup-title">전체메뉴</h2>
+					</div>
+					<div class="popup-body">
+						<ul class="allmenu-list">
+							<!-- 메뉴 균등분할 처리되며 .lnb 항목과 아이디 1:1 매칭 처리 -->
+							<li class="on"><a href="#lnb1">소통·참여</a></li>
+							<li><a href="#lnb2">메뉴2</a></li>
+							<li><a href="#lnb3">메뉴3</a></li>
+							<li><a href="#lnb4">메뉴4</a></li>
+							<li><a href="#lnb5">메뉴5</a></li>
+							<li><a href="#lnb6">분야별정보</a></li>
+						</ul>
+						<div class="allmenu-body">
+							<div class="lnb-wrap" id="lnb1">
+								<div class="lnb-title">
+									<h3>소통·참여</h3>
+									<p>대메뉴 설명 문구 노출 영역</p>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1001">시민의 공간</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1001">자유토크</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1002">칭찬합시다</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">시민제안</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_02.jsp">일반제안신청하기</a></li>
+											<li><a href="http://www.epeople.go.kr/jsp/user/pp/assign/UPpAssignList.jsp" target="_blank"
+													title="새창">공모제안신청하기</a></li>
+											<li><a href="/www/paticipation/paticipation_02/paticipation_02_04.jsp">나의제안보기</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1013">정책참여</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1013">주민참여예산</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1016">예산편성건의</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_01.jsp">정책토론</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_02.jsp">전자공청회</a></li>
+											<li><a href="/www/paticipation/paticipation_03/paticipation_03_03.jsp">설문조사</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/facilityReserve/BD_selectSportsFacilityList.do">체육시설대관신청</a>
+										<ul>
+											<li><a href="/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_04.jsp">대관이용안내</a></li>
+											<li><a href="/user/facilityReserve/BD_selectfacilityReserveList.do">대관신청</a></li>
+											<li><a href="/user/facilityReserve/BD_selectFacilityReserveLotResultList.do">대관추첨결과</a></li>
+											<li><a href="/user/facilityReserve/BD_selectMyFacilityReserveList.do">나의 신청현황</a></li>
+											<li><a href="/www/paticipation/paticipation_04/paticipation_04_08.jsp">체육시설사용료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물 사전협의</a>
+										<ul>
+											<li><a href="/www/paticipation/advertise/advertise_1.jsp">옥외광고물이란</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9006">옥외광고물 알림방</a></li>
+											<li><a href="/user/outdoorAbvrt/BD_outdoorAbvrtList.do">옥외광고물사전협의신청</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2002&amp;q_parentCtgCd=2033">업종별간판디자인</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_05.jsp">거리가 아파요</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_06.jsp">옥외광고물 디자인지침</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_07.jsp">파주시 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_08/advertise_08_01.jsp">타 시군 간판시범거리</a></li>
+											<li><a href="/www/paticipation/advertise/advertise_09.jsp">관련 조례</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9015">관련서식</a></li>
+											<li><a href="/user/freeAdvert/BD_freeAdvertList.do">인터넷무료광고 신청</a></li>
+											<li><a href="/www/www_06/contest_02/contest_intro/contestIntroduce.jsp" target="_blank"
+													title="새창">예쁜간판·공공디자인공모</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/placard/placard_info.jsp">현수막걸이대 신청</a>
+										<ul>
+											<li><a href="/www/paticipation/placard/placard_info.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1004">현수막걸이대 알림방</a></li>
+											<li><a href="/user/placard/user/reserve/BD_step01.do">현수막걸이대 예약신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_thisMonthStep01.do">금월신청</a></li>
+											<li><a href="/user/placard/user/reserve/BD_myReserveList.do">예약내역관리</a></li>
+											<li><a href="/user/placard/user/BD_placardMountsList.do">현수막걸이대현황</a></li>
+											<li><a href="/user/placard/user/PD_placardMountsLocation.do" target="_blank"
+													title="새창">현수막걸이대위치조회</a></li>
+											<li><a href="/user/placard/user/PD_placardReserveCalendar.do" target="_blank"
+													title="새창">게시현황달력</a>
+											</li>
+											<li><a href="/user/placard/user/BD_placardTobePostMountsList.do">게시예정목록</a></li>
+											<li><a href="/www/paticipation/placard/placard_10.jsp">위탁업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_11.jsp">옥외광고사업체</a></li>
+											<li><a href="/www/paticipation/placard/placard_12.jsp">관련 법규</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_08.jsp">대형폐기물신고</a>
+									</li>
+									<li>
+										<a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검</a>
+										<ul>
+											<li><a href="/www/paticipation/paticipation_09/paticipation_09_01.jsp">식품업소 자율점검 안내</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpForm.do">식품업소등록</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodCorpChkList.do">식품제조업소 자율점검</a></li>
+											<li><a href="/user/communication/foodCorp/BD_foodHospChkList.do">식품접객업소 자율점검</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealForm.do">집단급식소등록</a></li>
+											<li><a href="/user/communication/grpMealSvcCorp/BD_grpMealChkList.do">집단급식소 자율점검</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1006">저렴해서 가볼만한 곳</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1036">나눔장터</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1036">삽니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1037">팝니다</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1038">무료</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1039">교환</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="lnb-wrap" id="lnb2">
+								<div class="lnb-title">
+									<h3>민원</h3>
+									<p>생활민원 등 종합 행정서비스</p>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/www/petition/petition_01/petition_01_01.jsp">종합민원안내</a>
+										<ul>
+											<li><a href="/www/petition/petition_01/petition_01_01.jsp">민원봉사실안내</a></li>
+											<li><a href="/www/petition/petition_01/petition_01_02.jsp">지방세민원실안내</a></li>
+											<li><a href="/www/petition/petition_01/petition_01_03.jsp">민원수수료</a></li>
+											<li><a href="/www/petition/petition_01/petition_01_04.jsp">무인민원발급</a></li>
+											<li><a href="/www/petition/petition_01/petition_01_06/petition_01_06_02.jsp">편리한 민원시책</a></li>
+											<li><a href="/www/petition/petition_01/petition_01_07.jsp">행정정보공동이용</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/complaintsForm/BD_index.do">민원편람·서식</a>
+									</li>
+									<li>
+										<a href="/www/petition/petition_03/petition_03_01.jsp">온라인 민원</a>
+										<ul>
+											<li><a href="/www/petition/petition_03/petition_03_01.jsp">민원24(인터넷민원발급)</a></li>
+											<li><a href="/www/petition/petition_03/petition_03_02.jsp" target="_blank" title="새창">민원상담신청</a>
+											</li>
+											<li><a href="/www/petition/petition_03/petition_03_03.jsp" target="_blank" title="새창">접수민원조회</a>
+											</li>
+											<li><a
+													href="https://eminwon.paju.go.kr/emwp/gov/mogaha/ntis/web/emwp/cns/action/EmwpCnslWebAction.do?method=selectCnslWebPage&amp;menu_id=EMWPCnslWebInqL&amp;jndinm=EmwpCnslWebEJB&amp;methodnm=selectCnslWebPage&amp;context=NTIS"
+													target="_blank" title="새창">(구)민원조회</a></li>
+											<li><a
+													href="https://eminwon.paju.go.kr/emwp/gov/mogaha/ntis/web/caf/mwwd/action/CafMwWdOpenAction.do?method=selectListMwOpn&amp;menu_id=CAFOPNWebMwOpenL&amp;jndinm=CafMwWdOpenEJB&amp;methodnm=selectListMwOpn&amp;context=NTIS"
+													target="_blank" title="새창">민원처리공개</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/petition/petition_04/petition_04_01.jsp">여권민원</a>
+										<ul>
+											<li><a href="/www/petition/petition_04/petition_04_01.jsp">여권민원접수</a></li>
+											<li><a href="http://www.passport.go.kr" target="_blank" title="새창">여권민원안내</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/petition/petition_05/petition_05_01/petition_05_01_01.jsp">차량종합민원</a>
+										<ul>
+											<li><a href="/www/petition/petition_05/petition_05_01/petition_05_01_01.jsp">자동차등록</a></li>
+											<li><a href="/www/petition/petition_05/petition_05_02.jsp">이륜차등록</a></li>
+											<li><a href="/www/petition/petition_05/petition_05_03.jsp">건설기계등록</a></li>
+											<li><a href="/www/petition/petition_05/petition_05_04.jsp">차량세금과태료</a></li>
+											<li><a href="/www/petition/petition_05/petition_05_05.jsp">차량등록사업소 위치</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1008">차량등록문의</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="https://car.paju.go.kr " target="_blank" title="새창">주정차민원</a>
+									</li>
+									<li>
+										<a href="/www/petition/petition_07.jsp">행정서비스헌장</a>
+									</li>
+									<li>
+										<a href="/www/petition/petition_08/petition_08_01.jsp">민원신고센터</a>
+										<ul>
+											<li><a href="https://www.better.go.kr/fz.prpsl.RegulPrpslIsF.laf" target="_blank"
+													title="새창">규제개혁신고</a></li>
+											<li><a href="/www/petition/petition_08/petition_08_01.jsp" target="_blank"
+													title="새창">공직자부조리신고센터</a>
+											</li>
+											<li><a href="/www/petition/petition_08/petition_08_02.jsp" target="_blank"
+													title="새창">부정/불량식품신고</a>
+											</li>
+											<li><a href="/www/petition/petition_08/petition_08_04.jsp">예산낭비신고</a></li>
+											<li><a href="/www/petition/petition_08/petition_08_05.jsp" target="_blank" title="새창">부동산 불법거래
+													신고센터</a></li>
+											<li><a href="/www/petition/petition_08/petition_08_06.jsp" target="_blank" title="새창">주정차위반신고</a>
+											</li>
+											<li><a href="/www/petition/petition_08/petition_08_07.jsp" target="_blank" title="새창">무단쓰레기신고</a>
+											</li>
+											<li><a href="/www/petition/petition_08/petition_08_08.jsp" target="_blank"
+													title="새창">불법유동광고물신고</a>
+											</li>
+											<li><a href="/www/petition/petition_08/petition_08_10.jsp" target="_blank" title="새창">관급공사체불신고</a>
+											</li>
+											<li><a href="/www/petition/petition_08/petition_08_12.jsp">공익신고 안내</a></li>
+											<li><a href="/www/petition/petition_08/petition_08_13/petition_08_13_01.jsp">청탁금지법 안내</a></li>
+											<li><a href="/www/petition/petition_08/petition_08_14.jsp" target="_blank" title="새창">장애인전용 주차구역
+													신고</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="lnb-wrap" id="lnb3">
+								<div class="lnb-title">
+									<h3>정보공개</h3>
+									<p>시민의 알 권리, 정보의 투명성 보장</p>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=9025&amp;q_ctgCd=5197">주요시책</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9025&amp;q_ctgCd=5197">주요사업 추진현황</a></li>
+											<li><a href="/www/open_info/open_info_02/open_info_02_01/open_info_02_01_01.jsp">정책실명제</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1010">시정현안 문답풀이</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4005">시정백서</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="http://www.elis.go.kr/newlaib/laibLaws/h1126/laws_new.jsp?regionId=41510" target="_blank"
+											title="새창">자치법규</a>
+									</li>
+									<li>
+										<a href="/www/open_info/open_info_03/open_info_03_01/open_info_03_01_01.jsp">입찰계약공개</a>
+										<ul>
+											<li><a href="/www/open_info/open_info_03/open_info_03_01/open_info_03_01_01.jsp">발주계획</a></li>
+											<li><a href="/www/open_info/open_info_03/open_info_03_02/open_info_03_02_01.jsp">입찰정보</a></li>
+											<li><a href="/user/gopen/BD_situationList.do?section=1001">계약정보</a></li>
+											<li><a href="/user/gopen/BD_paymentList.do">대금지급</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9010">계약공지사항</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4006">예산/재정정보</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4006">예산서</a></li>
+											<li><a href="/www/open_info/open_info_04/open_info_04_understanding.jsp">예산이해</a></li>
+											<li><a href="/www/open_info/open_info_04/open_info_04_scale.jsp">예산규모</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1014">재정공시</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1015">재정공시의견</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1017">지방채관리계획</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1018">업무추진비</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4008">연도별결산서</a></li>
+											<li><a href="/www/open_info/open_info_04/open_info_04_11/open_info_04_11_01.jsp">공유재산관리</a></li>
+											<li><a href="/user/fios/BD_taxRevenueIndex.do" target="_blank" title="새창">세입·세출집행</a></li>
+											<li><a href="http://www.cleaneye.go.kr/user/empGongsi.do?inputEntName=%ED%8C%8C%EC%A3%BC"
+													target="_blank" title="새창">지방공기업</a></li>
+											<li><a href="/www/open_info/open_info_04/open_info_04_13.jsp">학술용역 결과공개</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/open_info/open_info_05/open_info_05_open.jsp">공공데이터개방</a>
+										<ul>
+											<li><a href="/www/open_info/open_info_05/open_info_05_open.jsp">공공데이터개방</a></li>
+											<li><a href="/www/open_info/open_info_05/open_info_05_02.jsp">공공데이터개방목록</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/open_info/open_info_06/open_info_06_using.jsp">정보공개청구</a>
+										<ul>
+											<li><a href="/www/open_info/open_info_06/open_info_06_using.jsp">이용안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1020">사전정보공표</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2003&amp;q_ctgCd=3003">정보공개자료실</a></li>
+											<li><a href="/www/open_info/open_info_06/open_info_06_04.jsp">비공개목록</a></li>
+											<li><a href="/www/open_info/open_info_06/open_info_06_05.jsp">결재문서공개</a></li>
+											<li><a href="/user/violation/BD_violationList.do">위반업소공개</a></li>
+											<li><a href="/www/open_info/open_info_06/open_info_06_07.jsp">행정정보소재안내</a></li>
+											<li><a href="/www/open_info/open_info_06/open_info_06_08.jsp">행정정보목록검색</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=9026">감사정보공개</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9026">감사사전예고</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9027">감사결과</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9028">감사처분 이행결과</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9029">감사관련정보</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=2003&amp;q_ctgCd=3002">공개자료실</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2003&amp;q_ctgCd=3002">부서별 공개자료실</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=9036">석면해체제거작업 공개</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/statistics/population/BD_populationInfo.do?q_menuCd=1001&amp;ctgry=S">통계정보</a>
+										<ul>
+											<li><a
+													href="/user/statistics/population/BD_populationInfo.do?q_menuCd=1001&amp;ctgry=S">인구/가구통계</a>
+											</li>
+											<li><a href="/user/statistics/vehicle/BD_vehicleInfo.do?q_menuCd=1001&amp;ctgry=C">차량등록통계</a></li>
+											<li><a href="http://stat.paju.go.kr/ " target="_blank" title="새창">통계연보</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="lnb-wrap" id="lnb4">
+								<div class="lnb-title">
+									<h3>공고·홍보</h3>
+									<p>다양한 시정소식과 홍보자료 공간</p>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=2001">시정소식</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2001">새소식</a></li>
+											<li><a href="http://news.paju.go.kr/newshome/mtnmain.php" target="_blank" title="새창">싱싱뉴스</a></li>
+											<li><a href="http://tour.paju.go.kr/user/link/cultural/BD_index.do" target="_blank"
+													title="새창">행사안내</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4010">파주소식</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1022&amp;q_ctgCd=4062">공고·입법예고</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1022&amp;q_ctgCd=4062">입법예고</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1022&amp;q_ctgCd=4063">고시공고</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1022&amp;q_ctgCd=4064">채용공고</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1022&amp;q_ctgCd=4065">도시계획열람공고</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1022&amp;q_ctgCd=4066">무연분묘개장공고</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1023&amp;q_ctgCds=5226,5227">보도·해명자료</a>
+										<ul>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1023&amp;q_ctgCds=5226,5227">보도자료</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=1024">언론 해명자료</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="http://www.paju.go.kr/user/mediaPaju/BD_themaInPajuList.do?q_themaCode=1001"
+											target="_blank" title="새창">파주투데이</a>
+									</li>
+									<li>
+										<a href="/user/board/BD_board.list.do?bbsCd=1025">파주시보</a>
+									</li>
+									<li>
+										<a href="/www/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCds=4003,4010">홍보자료실</a>
+										<ul>
+											<li><a href="/www/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCds=4003,4010">전체홍보자료</a></li>
+											<li><a href="/www/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4010">파주소식</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4003">관광홍보</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/user/miniPrograms/BD_GgReport.do">도정소식</a>
+									</li>
+									<li>
+										<a href="/user/news/pumatsi/BD_pumatsiList.do">품앗이홍보</a>
+									</li>
+								</ul>
+							</div>
+							<div class="lnb-wrap" id="lnb5">
+								<div class="lnb-title">
+									<h3>파주소개</h3>
+									<p>살고 싶은 도시, 기업이 편한 파주</p>
+								</div>
+								<ul class="lnb-list">
+									<li>
+										<a href="/user/organization/BD_pajuList.do">시청안내</a>
+										<ul>
+											<li><a href="/user/organization/BD_pajuList.do">조직도</a></li>
+											<li><a href="/www/intropaju/intro_cityhall/intro_cityhall_05/intro_cityhall_05_01.jsp">조직정보</a>
+											</li>
+											<li><a href="/www/intropaju/intro_cityhall/intro_cityhall_03/intro_cityhall_03_01.jsp">찾아오시는 길</a>
+											</li>
+											<li><a href="/www/intropaju/intro_cityhall/intro_cityhall_04/intro_cityhall_04_01.jsp">주차장안내</a>
+											</li>
+											<li><a href="/www/intropaju/intropaju_06/intropaju_06_01.jsp">파주시연혁</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/intropaju/intropaju_02/intropaju_02_01.jsp">파주의 상징</a>
+										<ul>
+											<li><a href="/www/intropaju/intropaju_02/intropaju_02_01.jsp">CI</a></li>
+											<li><a href="/www/intropaju/intropaju_02/intropaju_02_02.jsp">시의 상징</a></li>
+											<li><a href="/www/intropaju/intropaju_02/intropaju_02_03.jsp">평화도시</a></li>
+											<li><a href="/www/intropaju/intropaju_02/intropaju_02_04.jsp">파주의 노래</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/intropaju/intropaju_03/intropaju_03_01.jsp">일반현황</a>
+										<ul>
+											<li><a href="/www/intropaju/intropaju_03/intropaju_03_01.jsp">파주비전</a></li>
+											<li><a href="/www/intropaju/intropaju_03/intropaju_03_02.jsp">행정구역현황</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/intropaju/intropaju_04/intropaju_04_01/intropaju_04_01_01.jsp">자매우호도시</a>
+										<ul>
+											<li><a href="/www/intropaju/intropaju_04/intropaju_04_01/intropaju_04_01_01.jsp">국내자매도시</a></li>
+											<li><a href="/www/intropaju/intropaju_04/intropaju_04_02/intropaju_04_02_01.jsp">국외자매도시</a></li>
+											<li><a href="/www/intropaju/intropaju_04/intropaju_04_03/intropaju_04_03_02.jsp">국외교류도시</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/intropaju/intropaju_05/intropaju_05_01.jsp">시민이용시설</a>
+										<ul>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_01.jsp">읍면동 주민자치센터</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_02.jsp">재난재해대피시설</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_03.jsp">파주시노인복지관</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_04.jsp">파주시장애인종합복지관</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_05.jsp">건강가정지원센터</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_06.jsp">청소년수련시설현황</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_07.jsp">문산행복센터</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_09.jsp">청소년상담복지센터</a></li>
+											<li><a href="https://lib.paju.go.kr" target="_blank" title="새창">도서관</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_11/intropaju_05_11_01.jsp">교육문화회관</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_12/intropaju_05_12_01.jsp">시민회관</a></li>
+											<li><a
+													href="https://www.paju.go.kr/user/facilityReserve/BD_selectSportsFacilityList.do">공공체육시설</a>
+											</li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_14/intropaju_05_14_09.jsp">공영주차장</a></li>
+											<li><a href="/www/intropaju/intropaju_05/intropaju_05_15.jsp">공중화장실설치현황</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="/www/intropaju/intropaju_06/intropaju_06_01.jsp">파주의 역사</a>
+										<ul>
+											<li><a href="/user/mayorHistory/BD_mayorHistoryList.do?q_ofcpsCode=1001">역대시장/군수</a></li>
+											<li><a href="/www/intropaju/intropaju_06/intropaju_06_04/intropaju_06_05_01.jsp">파주역사사료관</a></li>
+											<li><a href="/www/intropaju/intropaju_06/intropaju_06_06/intropaju_06_06_01.jsp">파주유래</a></li>
+											<li><a href="/user/board/BD_board.list.do?bbsCd=2004&amp;q_ctgCd=4004">파주시지</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="http://map.paju.go.kr/pjweb/nexgeo/PajuNuri.jsp" target="_blank" title="새창">파주편한생활지도</a>
+									</li>
+								</ul>
+							</div>
+							<div class="lnb-wrap" id="lnb6">
+								<div class="lnb-title">
+									<h3>분야별 정보</h3>
+									<p>대메뉴 설명 문구 노출 영역</p>
+								</div>
+								<div class="site-link-area">
+									<ul class="site-link">
+										<li>
+											<a href="#;" target="_blank" title="새창">
+												<img src="../../../resources/user/_common/images/ico-allmenu-field1.png" alt="">
+												<span class="text">문화관광포털</span>
+											</a>
+										</li>
+										<li>
+											<a href="#;" target="_blank" title="새창">
+												<img src="../../../resources/user/_common/images/ico-allmenu-field2.png" alt="">
+												<span class="text">평생교육포털</span>
+											</a>
+										</li>
+										<li>
+											<a href="#;" target="_blank" title="새창">
+												<img src="../../../resources/user/_common/images/ico-allmenu-field3.png" alt="">
+												<span class="text">재난안전</span>
+											</a>
+										</li>
+										<li>
+											<a href="#;" target="_blank" title="새창">
+												<img src="../../../resources/user/_common/images/ico-allmenu-field4.png" alt="">
+												<span class="text">읍·면·동</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<ul class="lnb-list lnb-list-dropdown">
+									<li><a href="#">복지</a>
+										<ul>
+											<li><a href="#">희망복지</a></li>
+											<li><a href="#">노인</a>
+												<ul>
+													<li><a href="#">메뉴3</a></li>
+													<li><a href="#">예산편성건의 예산편성건의 예산편성건의 예산편성건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">장애인</a></li>
+											<li><a href="#">가족</a></li>
+											<li><a href="#">여성</a>
+												<ul>
+													<li><a href="#">메뉴3</a></li>
+													<li><a href="#">예산편성건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">아동ㆍ청소년</a></li>
+											<li><a href="#">보육</a></li>
+											<li><a href="#">장사</a>
+												<ul>
+													<li><a href="#">메뉴3</a></li>
+													<li><a href="#">예산편성건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">뉴스ㆍ자료실</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴1</a>
+										<ul>
+											<li><a href="#">메뉴2</a></li>
+											<li><a href="#">전자공청회 전자공청회전자공청회 전자공청회 전자공청회</a>
+												<ul>
+													<li><a href="#">메뉴3</a></li>
+													<li><a href="#">예산편성 건의 예산편성 건의 예산편성 건의 예산편성 건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">설문조사</a></li>
+											<li><a href="#">메뉴2</a></li>
+											<li><a href="#">전자공청회</a>
+												<ul>
+													<li><a href="#">메뉴3</a></li>
+													<li><a href="#">예산편성건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">설문조사</a></li>
+											<li><a href="#">메뉴2</a></li>
+											<li><a href="#">전자공청회</a>
+												<ul>
+													<li><a href="#">메뉴3</a></li>
+													<li><a href="#">예산편성건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-close-popup">닫기</button>
+				</div>
+			</div>
+
+			<!-- 모바일모드 전체메뉴 -->
+			<div id="mobile-allmenu">
+				<div class="allmenu-inner">
+
+					<div class="top-bar">
+
+						<!-- [개발] 다국어 없을 때 -->
+						<!-- <h2 class="allmenu-title">전체메뉴</h2> -->
+
+						<!-- [개발] 다국어 있을 때 -->
+						<h2 class="sr-only">전체메뉴</h2>
+						<ul class="language-list">
+							<li class="on"><a href="#;">KOR</a></li>
+							<li><a href="#;">ENG</a></li>
+							<li><a href="#;">CHN</a></li>
+							<li><a href="#;">JPN</a></li>
+						</ul>
+
+					</div>
+
+					<!-- [개발] 로그인 기능 사용시 노출 (불필요시 영역 통째로 제거) -->
+					<ul class="user-menu">
+
+						<!-- [개발] 로그인 전 -->
+						<li>
+							<a href="#" class="btn">
+								<i class="ico ico-login-gray"></i>
+								<span class="text">로그인</span>
+							</a>
+						</li>
+						<li>
+							<a href="#" class="btn">
+								<i class="ico ico-join-gray"></i>
+								<span class="text">회원가입</span>
+							</a>
+						</li>
+
+						<!-- [개발] 로그인 후 -->
+						<!-- <li>
+						<a href="#" class="btn">
+							<i class="ico ico-logout-gray"></i>
+							<span class="text">로그아웃</span>
+						</a>
+					</li> -->
+					</ul>
+
+					<div class="menu-area">
+						<ul class="allmenu-list">
+							<li class="on"><a href="#allmenu-lnb1">소통·참여</a></li>
+							<li><a href="#allmenu-lnb2">민원</a></li>
+							<li><a href="#allmenu-lnb3">정보공개</a></li>
+							<li><a href="#allmenu-lnb4">메뉴4</a></li>
+							<li><a href="#allmenu-lnb5">메뉴5</a></li>
+							<li><a href="#allmenu-lnb6">메뉴6</a></li>
+							<li><a href="#allmenu-lnb7">메뉴7</a></li>
+						</ul>
+						<div class="allmenu-lnb">
+							<div id="allmenu-lnb1" class="lnb-item">
+								<h3><a href="#">소통참여</a></h3>
+								<ul>
+									<!-- [개발] 활성화 메뉴 li class="on" -->
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a>
+												<ul>
+													<li><a href="#">주민참여예산</a></li>
+													<li><a href="#">예산편성건의</a></li>
+													<li><a href="#">정책토론</a></li>
+													<li><a href="#">전자공청회</a></li>
+													<li><a href="#">설문조사</a></li>
+												</ul>
+											</li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+							<div id="allmenu-lnb2" class="lnb-item">
+								<h3><a href="#">민원</a></h3>
+								<ul>
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li class="collapse"><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+							<div id="allmenu-lnb3" class="lnb-item">
+								<h3><a href="#">정보공개</a></h3>
+								<ul>
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li class="collapse"><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+							<div id="allmenu-lnb4" class="lnb-item">
+								<h3><a href="#">메뉴4</a></h3>
+								<ul>
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li class="collapse"><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+							<div id="allmenu-lnb5" class="lnb-item">
+								<h3><a href="#">메뉴5</a></h3>
+								<ul>
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li class="collapse"><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+							<div id="allmenu-lnb6" class="lnb-item">
+								<h3><a href="#">메뉴6</a></h3>
+								<ul>
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li class="collapse"><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+							<div id="allmenu-lnb7" class="lnb-item">
+								<h3><a href="#">메뉴7</a></h3>
+								<ul>
+									<li><a href="#">시민의 공간</a></li>
+									<li><a href="#">시민제안</a>
+										<ul>
+											<li><a href="#">메뉴</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li class="collapse"><a href="#">정책참여</a>
+										<ul>
+											<li><a href="#">주민참여예산</a></li>
+											<li><a href="#">예산편성건의</a></li>
+											<li><a href="#">정책토론</a></li>
+											<li><a href="#">전자공청회</a></li>
+											<li><a href="#">설문조사</a></li>
+										</ul>
+									</li>
+									<li><a href="#">메뉴4</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<button type="button" class="btn btn-allmenu-close">
+						<i class="ico ico-times-white"></i>
+						<span class="sr-only">전체메뉴 닫기</span>
+					</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+</body>
+
+</html>

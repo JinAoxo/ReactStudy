@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 카드 뉴스 슬라이더
+			$('.default-image-slider').not('.slick-initialized').slick({
+				speed: 1000,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				arrows: true,
+				dots: true,
+				accessibility: false,
+				adaptiveHeight: true,
+				responsive: [{
+					breakpoint: 1025,
+					settings: {
+						arrows: false,
+					}
+				}, {
+					breakpoint: 768,
+					settings: {
+						slidesToShow: 1,
+						arrows: false,
+					}
+				}],
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">게시판 상세 : 카드뉴스형</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="content-share">
+							<button type="button" class="btn btn-like">
+								<i class="ico ico-like-white"></i>
+								<span class="sr-only">추천</span>
+								<span class="count">15</span>
+							</button>
+							<ul class="sns-list">
+								<li>
+									<a href="#;" class="btn btn-share">
+										<i class="ico ico-sns-sm-facebook"></i>
+										<span class="sr-only">페이스북 공유</span>
+										<span class="count">5</span>
+									</a>
+								</li>
+								<li>
+									<a href="#;" class="btn btn-share">
+										<i class="ico ico-sns-sm-twitter"></i>
+										<span class="sr-only">트위터 공유</span>
+										<span class="count">5</span>
+									</a>
+								</li>
+							</ul>
+							<button type="button" class="btn btn-print">
+								<i class="ico ico-print-gray"></i>
+								<span class="sr-only">인쇄하기</span>
+							</button>
+						</div>
+
+						<div class="article-view">
+							<div class="article-header">
+								<div class="info-area">
+									<h1 class="article-subject">기도 공공기관 파주시 유치 경제인 결의대회(2021. 03. 15)</h1>
+									<ul class="article-info">
+										<li>관리자</li>
+										<li>0000-00-00</li>
+									</ul>
+								</div>
+								<ul class="file-list">
+									<li>
+										<i class="ico ico-file-jpg"></i>
+										<span class="sr-only">JPG</span>
+										<a href="#;">경의대회 사진1.jpg</a>
+									</li>
+									<li>
+										<i class="ico ico-file-jpg"></i>
+										<span class="sr-only">JPG</span>
+										<a href="#;">경의대회 사진2.jpg</a>
+									</li>
+									<li>
+										<i class="ico ico-file-gif"></i>
+										<span class="sr-only">GIF</span>
+										<a href="#;">경의대회 사진3.gif</a>
+									</li>
+									<li>
+										<i class="ico ico-file-gif"></i>
+										<span class="sr-only">GIF</span>
+										<a href="#;">경의대회 사진4.gif</a>
+									</li>
+								</ul>
+							</div>
+							<div class="article-body">
+								<div class="default-image-slider card-news-slider">
+									<div class="item">
+										<a href="#;">
+											<span class="thumb">
+												<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+											</span>
+										</a>
+									</div>
+									<div class="item">
+										<a href="#;">
+											<span class="thumb">
+												<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+											</span>
+										</a>
+									</div>
+									<div class="item">
+										<a href="#;">
+											<span class="thumb">
+												<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+											</span>
+										</a>
+									</div>
+									<div class="item">
+										<a href="#;">
+											<span class="thumb">
+												<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+											</span>
+										</a>
+									</div>
+									<div class="item">
+										<a href="#;">
+											<span class="thumb">
+												<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+											</span>
+										</a>
+									</div>
+									<div class="item">
+										<a href="#;">
+											<span class="thumb">
+												<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+											</span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="btn-group btn-group-form">
+							<a href="#;" class="btn btn-lg btn-primary">목록</a>
+						</div>
+
+						<ul class="article-nav">
+							<li>
+								<span>다음글 <i class="ico ico-chevron-up-gray"></i></span>
+								<p>다음글이 없습니다.</p>
+							</li>
+							<li>
+								<span>이전글 <i class="ico ico-chevron-down-gray"></i></span>
+								<a href="#">교남어유지동산 근로장애인 모집</a>
+							</li>
+						</ul>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

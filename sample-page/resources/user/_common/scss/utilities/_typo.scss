@@ -1,0 +1,66 @@
+// 크기
+
+.text-sm {
+	font-size: $font-size-sm !important;
+}
+
+.text-md {
+	font-size: $font-size-base !important;
+}
+
+.text-lg {
+	font-size: $font-size-lg !important;
+}
+
+.text-xl {
+	font-family: $font-family-title;
+	font-size: $font-size-xl !important;
+	font-weight: 500;
+}
+
+.text-xxl {
+	font-family: $font-family-title;
+	font-size: $font-size-xxl !important;
+	font-weight: bold;
+}
+
+// // 글꼴
+// .text-title {
+// 	font-family: $font-family-title;
+// 	font-weight: 500;
+// }
+
+// 두께
+.text-normal {
+	font-weight: normal !important;
+}
+
+.text-medium {
+	font-weight: 500 !important;
+}
+
+.text-bold {
+	font-weight: bold !important;
+}
+
+// 링크 텍스트
+.link {
+	text-decoration: underline;
+
+	&:focus,
+	&:hover {
+		color: $primary;
+	}
+}
+
+.text-unit {
+	color: $gray;
+	text-align: right;
+	margin-bottom: 5px;
+	font-size: $font-size-sm;
+}
+
+mark {
+	background-color: transparent;
+	box-shadow: inset 0px -10px #b7f5f3;
+}

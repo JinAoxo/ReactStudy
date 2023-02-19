@@ -1,0 +1,14 @@
+.container {
+	@include clearfix;
+	@include container;
+
+	@include media-breakpoint-down(md) {
+		padding: 0 $mobile-spacing;
+	}
+}
+
+.container-md {
+	@include clearfix;
+	@include container;
+	max-width: 780px;
+}

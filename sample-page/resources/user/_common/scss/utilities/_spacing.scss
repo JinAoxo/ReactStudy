@@ -1,0 +1,280 @@
+/* 간격 */
+
+/* 주요 마진셋 */
+.mt-lg {
+	margin-top: $spacing-lg !important;
+}
+
+.mb-lg {
+	margin-bottom: $spacing-lg !important;
+}
+
+.mt-md {
+	margin-top: $spacing-md !important;
+}
+
+.mb-md {
+	margin-bottom: $spacing-md !important;
+}
+
+.ml-md {
+	margin-left: $spacing-md !important;
+}
+
+.mr-md {
+	margin-right: $spacing-md !important;
+}
+
+.mt-sm {
+	margin-top: $spacing-sm !important;
+}
+
+.mb-sm {
+	margin-bottom: $spacing-sm !important;
+}
+
+.ml-sm {
+	margin-left: $spacing-sm !important;
+}
+
+.mr-sm {
+	margin-right: $spacing-sm !important;
+}
+
+/* 간격 Preset */
+$dirs: (top: t, left: l, right: r, bottom: b);
+$total: 11;
+$gap: 5px;
+
+@for $i from 0 to $total {
+	.m-#{$i} {
+		margin: $i * $gap !important;
+	}
+}
+
+@for $i from 0 to $total {
+	.p-#{$i} {
+		padding: $i * $gap !important;
+	}
+}
+
+@each $dir,
+$value in $dirs {
+	@for $i from 0 to $total {
+		.m#{$value}-#{$i} {
+			margin-#{$dir}: $i * $gap !important;
+		}
+	}
+}
+
+@each $dir,
+$value in $dirs {
+	@for $i from 0 to $total {
+		.p#{$value}-#{$i} {
+			padding-#{$dir}: $i * $gap !important;
+		}
+	}
+}
+
+// PC 전용 마진
+@include media-breakpoint-up(lg) {
+	@for $i from 0 to $total {
+		.m-lg-#{$i} {
+			margin: $i * $gap !important;
+		}
+	}
+
+	@for $i from 0 to $total {
+		.p-lg-#{$i} {
+			padding: $i * $gap !important;
+		}
+	}
+
+	@each $dir,
+	$value in $dirs {
+		@for $i from 0 to $total {
+			.m#{$value}-lg-#{$i} {
+				margin-#{$dir}: $i * $gap !important;
+			}
+		}
+	}
+
+	@each $dir,
+	$value in $dirs {
+		@for $i from 0 to $total {
+			.p#{$value}-lg-#{$i} {
+				padding-#{$dir}: $i * $gap !important;
+			}
+		}
+	}
+}
+
+// 모바일 전용 마진
+@include media-breakpoint-down(md) {
+	@for $i from 0 to $total {
+		.m-md-#{$i} {
+			margin: $i * $gap !important;
+		}
+	}
+
+	@for $i from 0 to $total {
+		.p-md-#{$i} {
+			padding: $i * $gap !important;
+		}
+	}
+
+	@each $dir,
+	$value in $dirs {
+		@for $i from 0 to $total {
+			.m#{$value}-md-#{$i} {
+				margin-#{$dir}: $i * $gap !important;
+			}
+		}
+	}
+
+	@each $dir,
+	$value in $dirs {
+		@for $i from 0 to $total {
+			.p#{$value}-md-#{$i} {
+				padding-#{$dir}: $i * $gap !important;
+			}
+		}
+	}
+}
+
+/* 불릿시스템 간격 */
+.title1 {
+	margin-bottom: 23px;
+
+	+.title2 {
+		margin-top: 23px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		+.indent {
+			margin-left: 10px;
+
+			.indent-none {
+				margin-left: -10px;
+			}
+
+			.list1 {
+				.indent-none {
+					margin-left: -20px;
+				}
+			}
+
+			.list2 {
+				.indent-none {
+					margin-left: -29px;
+				}
+			}
+		}
+	}
+}
+
+.title2 {
+	margin: 34px 0 14px;
+
+	@include media-breakpoint-up(lg) {
+		margin-left: 10px;
+
+		+.indent {
+			margin-left: 20px;
+
+			.indent-none {
+				margin-left: -20px;
+			}
+
+			.list1 {
+				.indent-none {
+					margin-left: -30px;
+				}
+			}
+
+			.list2 {
+				.indent-none {
+					margin-left: -39px;
+				}
+			}
+		}
+	}
+}
+
+.indent-none {
+	margin-top: $spacing-sm;
+	margin-bottom: $spacing-sm;
+}
+
+.indent {
+	@include media-breakpoint-down(md) {
+		.list {
+			.indent-none {
+				margin-left: -10px;
+			}
+
+			.list {
+				.indent-none {
+					margin-left: -20px;
+				}
+			}
+		}
+	}
+}
+
+.list1 {
+	.list2 {
+		margin-top: 5px;
+	}
+
+	.list3 {
+		margin-top: 5px;
+	}
+}
+
+/* 탭메뉴 하단 간격 */
+.tab-menu1 {
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 50px;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 40px;
+	}
+}
+
+.tab-menu2 {
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 40px;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 30px;
+	}
+}
+
+.tab-menu-box {
+	@include media-breakpoint-up(lg) {
+		margin-bottom: 0;
+	}
+
+	@include media-breakpoint-down(md) {
+		margin-bottom: 0;
+	}
+}
+
+/* 체크박스 간격 */
+.ckeck-item,
+.ckeck-item-custom {
+	vertical-align: middle;
+	line-height: 20px;
+
+	+.ckeck-item,
+	+.ckeck-item-custom {
+		margin-left: 26px;
+
+		@include media-breakpoint-down(md) {
+			margin-left: 11px;
+		}
+	}
+}

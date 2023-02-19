@@ -1,0 +1,251 @@
+/* 조직도 */
+
+.org-chart {
+	$item-width: 176px;
+	$item-gap: 10px;
+	$item-gap-half: $item-gap * 0.5;
+	@include clearfix;
+
+	// 공통
+	.item {
+		flex: 0 0 auto;
+		display: inline-flex;
+		align-items: center;
+		width: $item-width;
+		height: 60px;
+		border: 1px solid transparent;
+		border-radius: 6px;
+		padding: 0 15px;
+		margin: $item-gap-half;
+		font-size: 15px;
+		line-height: 1.3;
+		font-weight: normal;
+		word-wrap: break-word;
+		word-break: break-all;
+	}
+
+	// 기본형 조직도
+	&.type1 {
+		margin: 0 -1 * $item-gap-half;
+
+		.item {
+			height: 55px;
+
+			&:not(span) {
+				position: relative;
+				padding-right: 30px;
+
+				&:after {
+					content: '';
+					position: absolute;
+					right: 9px;
+					top: 50%;
+
+					width: 19px;
+					height: 19px;
+					margin-top: -10px;
+					background-color: red;
+					background: url(#{$url-img-common}/ico-arrow-right-white.png) no-repeat center center;
+					background-size: 17px 6px;
+				}
+			}
+		}
+
+		>li {
+
+			// 1D
+			>.item {
+				font-size: 16px !important;
+				color: #fff;
+				background-color: #004a85;
+				color: #fff;
+			}
+
+			>ul {
+				>li {
+					margin-top: 10px;
+					@include clearfix;
+
+					// 2D
+					>.item {
+						background-color: #428cf0;
+						color: #fff;
+					}
+
+					>ul {
+
+						// 3D
+						>li {
+							float: left;
+						}
+
+						.item {
+							border-color: #e3e3e3;
+
+							&:not(span) {
+								position: relative;
+								padding-right: 30px;
+
+								&:after {
+									right: 9px;
+									top: 50%;
+
+									margin-top: -10px;
+									background-color: red;
+									background: url(#{$url-img-common}/ico-arrow-right-circle-gray@2x.png) no-repeat center center;
+									background-size: 19px auto;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			.item {
+				&:not(span) {
+
+					&:hover,
+					&:focus {
+						box-shadow: $shadow;
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			>li {
+				>ul {
+					>li {
+						>.item {
+							float: left;
+						}
+
+						>ul {
+							float: left;
+							max-width: calc(100% - #{$item-width + $item-gap});
+						}
+					}
+				}
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			.item {
+				width: calc(50% - #{$item-gap});
+			}
+
+			>li {
+				>ul {
+					>li {
+						>ul {
+							>li {
+								width: calc(50% - #{$item-gap});
+								margin: $item-gap-half;
+
+								.item {
+									width: 100%;
+									margin: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// 재난안전 조직도
+	&.type2 {
+		.row {
+			display: block;
+			// display: flex;
+			// flex-wrap: wrap;
+			margin: 0 -1 * $item-gap-half;
+			@include clearfix;
+
+			+.row {
+				margin-top: $item-gap;
+			}
+
+			.item {
+				float: left;
+			}
+
+			h1 {
+				font-size: 16px !important;
+				color: #fff;
+				background-color: #004a85;
+				color: #fff;
+			}
+
+			h2 {
+				background-color: #428cf0;
+				color: #fff;
+			}
+
+			h3 {
+				background-color: #dfedff;
+
+				&.item-point {
+					background-color: #259edc;
+					color: #fff;
+				}
+			}
+
+			h4 {
+				background-color: #23a2ae;
+				color: #fff;
+			}
+
+			dt,
+			li {
+				background-color: #f6f6f6;
+			}
+		}
+
+		dl,
+		ul {
+			+.row {
+				margin-top: 0 !important;
+			}
+
+			.item {
+				border-color: #e3e3e3;
+			}
+		}
+
+		@include media-breakpoint-up(md) {
+			dl {
+				position: relative;
+				padding-left: $item-width + $item-gap;
+
+				dt {
+					position: absolute;
+					left: 0;
+				}
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			.row {
+				+.row {
+					margin-top: $item-gap-half;
+				}
+
+				.row {
+					clear: both;
+				}
+			}
+
+			.item {
+				width: calc(50% - #{$item-gap});
+			}
+
+			dt+dd {
+				clear: both;
+			}
+		}
+	}
+}

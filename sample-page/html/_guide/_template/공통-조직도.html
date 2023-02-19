@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">조직도 템플릿</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<h1 class="title1">기본 공통 조직도 .type1</h1>
+						<p class="mb-md">링크 존재시 앵커 태그, 미존재시 span 태그로 마크업</p>
+						<ul class="org-chart type1">
+							<li>
+								<a href="#;" class="item">1레벨</a>
+								<ul>
+									<li>
+										<a href="#;" class="item">2레벨</a>
+										<ul>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<span class="item">3레벨 링크아님</span>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<span class="item">2레벨 링크아님</span>
+										<ul>
+											<li>
+												<span class="item">3레벨 링크아님</span>
+											</li>
+											<li>
+												<a href="#;" class="item">3레벨</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+
+						<h1 class="title1 mt-lg">재난안전 내 조직도 .type2</h1>
+						<div class="org-chart type2">
+							<div class="row">
+								<h1 class="item">1레벨</h1>
+							</div>
+							<div class="row">
+								<h2 class="item">2레벨</h2>
+							</div>
+							<div class="row">
+								<h3 class="item">3레벨</h3>
+								<h3 class="item">3레벨</h3>
+								<h3 class="item">3레벨</h3>
+								<h3 class="item">3레벨</h3>
+								<h3 class="item item-point">
+									예방수습담당관 - 보건행정과장
+								</h3>
+							</div>
+							<div class="row">
+								<h4 class="item">4레벨</h4>
+							</div>
+							<dl class="row">
+								<dt class="item">부서장</dt>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+							</dl>
+							<dl class="row">
+								<dt class="item">부서장</dt>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+								<dd class="item">부서</dd>
+							</dl>
+							<ul class="row">
+								<li class="item">부서</li>
+								<li class="item">부서</li>
+								<li class="item">부서</li>
+								<li class="item">부서</li>
+								<li class="item">부서</li>
+							</ul>
+						</div>
+					</div>
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

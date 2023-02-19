@@ -1,0 +1,587 @@
+// 
+// Forms
+// 
+
+.form-control {
+	max-width: 100%;
+	height: $form-height;
+	border: 1px solid #dadada;
+	border-radius: 0;
+	padding: 5px 15px;
+	line-height: $form-height - 12px;
+	appearance: none;
+	text-align: left;
+	background: #fff;
+	font-size: $font-size-base;
+	vertical-align: middle;
+
+	transition-duration: .2s;
+	transition-property: color, border-color, box-shadow;
+	will-change: color, border-color, box-shadow;
+
+	&::-ms-clear {
+		display: none;
+	}
+
+	&.full {
+		width: 100%;
+	}
+
+	&.inline {
+		width: auto !important;
+	}
+
+	&:hover,
+	&:focus {
+		box-shadow: $shadow;
+	}
+
+	&:focus {
+		outline: 0;
+		position: relative;
+		border-color: $border-active;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $placeholder-color;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $placeholder-color !important;
+		opacity: 1;
+	}
+
+	&:disabled,
+	&[readonly=readonly],
+	&.readonly {
+		background-color: $bg-lightgray;
+		opacity: 1;
+
+		&::-ms-value {
+			color: $disabled-color !important;
+		}
+	}
+
+	&:disabled {
+		color: $disabled-color;
+
+		&:hover,
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	&:read-only:not(select):not(button) {
+		// color: $disabled-color;
+		background-color: $bg-lightgray;
+		opacity: 1;
+	}
+
+	// iOS 핀치줌 방지
+	@include media-breakpoint-down(md) {
+		font-size: 16px;
+	}
+}
+
+select.form-control {
+	max-width: 100%;
+	line-height: normal;
+	padding-right: 30px;
+	background: #fff url(#{$url-img-common}/ico-chevron-down@2x.png) no-repeat right 10px center;
+	background-size: 13px auto;
+
+	&::-ms-expand {
+		display: none;
+	}
+}
+
+textarea.form-control {
+	height: auto;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	overflow: auto;
+	line-height: inherit;
+	resize: none;
+}
+
+.ckeck-item,
+.ckeck-item-custom {
+	input {
+		$size: 20px;
+
+		&[type=checkbox],
+		&[type=radio] {
+			position: absolute;
+			width: 1px;
+			height: 1px;
+			opacity: 0;
+
+			+label {
+				position: relative;
+				height: $size;
+
+				.sr-only {
+					position: static;
+					margin-right: -6px !important;
+				}
+
+				&:before {
+					box-sizing: border-box;
+					display: inline-block;
+					width: $size;
+					height: $size;
+					border: 1px solid #aaa;
+					vertical-align: middle;
+					border-radius: 0;
+					margin: -2px 5px 0 0;
+
+					background-color: #fff;
+					content: '';
+
+					transition-duration: .2s;
+					transition-property: border-color, box-shadow, background-color;
+					will-change: border-color, box-shadow, background-color;
+				}
+			}
+
+			&:hover,
+			&:focus {
+				+label {
+					&:before {
+						box-shadow: $shadow;
+					}
+				}
+			}
+
+			&:focus {
+				+label {
+					&:before {
+						border-color: $border-active;
+					}
+				}
+			}
+
+			&:disabled {
+				+label {
+					color: #959595;
+
+					&:before {
+						opacity: .3;
+						border-color: #959595;
+						box-shadow: none;
+					}
+				}
+			}
+		}
+
+		&[type=radio] {
+			+label {
+				&:before {
+					border-radius: 50%;
+				}
+			}
+
+			&:checked {
+				+label {
+					&:before {
+						background: #fff url(#{$url-img-common}/ico-radio-checked-gray@2x.png) no-repeat center center;
+						background-size: 10px 10px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.ckeck-item {
+	input {
+		&[type=checkbox] {
+			&:checked {
+				+label {
+					&:before {
+						background: #fff url(#{$url-img-common}/ico-checkbox-checked-gray@2x.png) no-repeat 45% center;
+						background-size: 12px 10px;
+					}
+				}
+			}
+
+			&:disabled {
+				+label {
+					&:before {
+						background-color: #ccc;
+					}
+				}
+
+				&:checked {
+					+label {
+						&:before {
+							background-image: url(#{$url-img-common}/ico-checkbox-checked-white@2x.png);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ckeck-item-custom {
+	input {
+		&[type=checkbox] {
+			+label {
+				&:before {
+					border-color: $primary;
+					border-radius: 3px;
+				}
+			}
+
+			&:checked {
+				+label {
+					&:before {
+						background: $primary url(#{$url-img-common}/ico-checkbox-checked-white@2x.png) no-repeat 45% center;
+						background-size: 12px 10px;
+					}
+				}
+			}
+
+			&:disabled {
+				+label {
+					&:before {
+						border-color: transparent;
+						background-color: #ccc;
+					}
+				}
+			}
+		}
+
+		&[type=radio] {
+			+label {
+				&:before {
+					border-color: $primary;
+				}
+			}
+
+			&:checked {
+				+label {
+					&:before {
+						background-image: url(#{$url-img-common}/ico-radio-checked-primary@2x.png);
+					}
+				}
+
+				&:disabled {
+					+label {
+						&:before {
+							background-image: url(#{$url-img-common}/ico-radio-checked-gray@2x.png);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.input-group {
+	// position: relative;
+	display: table;
+	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	.datepicker,
+	.form-control {
+		display: table-cell;
+		width: 100% !important;
+	}
+
+	.input-addon {
+		display: table-cell;
+		width: 1%;
+		padding-left: 10px;
+		vertical-align: middle;
+
+		.unit {
+			white-space: nowrap;
+		}
+
+		&+.form-control {
+			margin-left: 9px;
+			border-right: 1px solid $border-base;
+		}
+	}
+
+	@include media-breakpoint-down (md) {
+		max-width: none !important;
+	}
+}
+
+.form-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	.text-item {
+		flex: 0 0 auto;
+		padding: 0 10px;
+	}
+
+	.input-item {
+
+		+.input-item {
+			margin-left: 10px;
+		}
+
+		.form-control {
+			width: 100%;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		.input-item {
+			display: block;
+			flex: 0 0 auto;
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		max-width: none !important;
+
+		.text-item {
+			padding: 0 5px;
+		}
+
+		.input-item {
+			flex: 1 1 10%;
+
+			&.md-full {
+				flex: 1 1 100%;
+				margin: 15px 0 0 !important;
+				flex-basis: 100%;
+				width: 100%;
+			}
+		}
+
+		&.form-row-number {
+			margin-top: -3px;
+
+			.input-item {
+				flex: 0 0 auto;
+				padding: 3px 0;
+			}
+		}
+	}
+}
+
+.input-group-file {
+	display: block;
+	max-width: 500px;
+
+	label {
+		display: inline-block;
+	}
+
+	.form-file {
+		display: none;
+	}
+
+	.form-control {
+		display: inline-block;
+		margin: 0 .05rem;
+		max-width: calc(100% - 1.64rem);
+	}
+}
+
+.list-form {
+	>li {
+		display: flex;
+		align-items: center;
+		padding-left: 10px;
+		font-size: $font-size-base;
+
+		&:before {
+			top: 19px;
+		}
+	}
+
+	.title {
+		margin-right: 15px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+
+	.letter-number2 {
+		letter-spacing: 54px;
+	}
+
+	.letter-number3 {
+		letter-spacing: 20px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		.title {
+			width: 95px;
+		}
+
+		&.list-form-col2 {
+			display: flex;
+			align-items: center;
+
+			>li {
+				+li {
+					margin-top: 0;
+					margin-left: 20px;
+				}
+			}
+
+			.title {
+				width: auto;
+			}
+		}
+	}
+
+	@include media-breakpoint-down (md) {
+		.title {
+			flex: 0 0 auto;
+			width: 83px;
+		}
+
+		.form-row {
+			flex: 1 1 50%;
+
+			.input-item {
+				width: 100% !important;
+			}
+		}
+
+		.input-group {
+			.input-addon {
+				white-space: nowrap;
+			}
+		}
+
+		&.list-form-col2 {
+			.title {
+				width: auto;
+			}
+		}
+	}
+}
+
+.flex-container-address {
+	align-items: center;
+
+	@include media-breakpoint-down(md) {
+		flex-direction: column;
+		align-items: flex-start;
+
+		.flex-item {
+			display: block;
+			margin-top: 5px;
+		}
+	}
+}
+
+// 입력폼 관련 컴포넌트
+.text-guide,
+p.text-guide {
+	// position: relative;
+	// padding-left: 1em;
+	color: $orange;
+	font-size: 14px;
+	margin: 10px 0 0;
+
+	@include media-breakpoint-down(md) {
+		font-size: 15px;
+	}
+}
+
+.req {
+	color: $orange;
+	vertical-align: middle;
+
+	// @include media-breakpoint-up(lg) {
+	// 	position: absolute;
+	// 	margin-left: -11px;
+	// }
+}
+
+.form-move {
+	overflow: hidden;
+	transition-duration: .3s;
+	transition-property: color, border-color, box-shadow;
+	will-change: color, border-color, box-shadow;
+
+	display: block;
+	position: relative;
+	border: 1px solid $border-base;
+	border-radius: 5px;
+
+	&:hover {
+		color: $default;
+		// border-color: $default;
+		box-shadow: $shadow;
+	}
+
+	.placeholder {
+		position: absolute;
+		z-index: 10;
+	}
+
+	&.focus {
+		border-color: $border-active;
+		box-shadow: $shadow;
+
+		.placeholder {
+			color: $primary;
+		}
+	}
+
+	&.active {
+		.placeholder {
+			font-size: 14px;
+			transform: translateY(-14px);
+		}
+
+		.form-control {
+			padding-top: 30px;
+			padding-bottom: 10px;
+		}
+	}
+
+	&.invalid {
+		border-color: $invalid;
+		box-shadow: $shadow;
+
+		+.invalid-message {
+			display: block;
+			color: $invalid;
+		}
+	}
+
+	.placeholder,
+	.form-control {
+		font-size: 18px;
+		outline: 0;
+	}
+
+	.placeholder {
+		padding: 20px;
+		line-height: 22px;
+		color: $placeholder-color;
+		transition-duration: .2s;
+		transition-property: color, transform, font-size;
+		will-change: color, transform, font-size;
+	}
+
+	.form-control {
+		border: 0;
+		width: 100%;
+		height: 62px;
+		padding: 0 20px;
+		line-height: 20px;
+		appearance: none;
+
+		&::-ms-clear {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">점프 투 탭메뉴 템플릿</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="box-point mb-md">
+							<p class="text-bold text-center">파주시 차량등록 민원서비스에 대한 안내와 절차, 관련 서류 등을 확인하실 수 있습니다.</p>
+						</div>
+						<nav class="tab-menu tab-menu1 tab-menu-jumpto">
+							<ul class="tab-list">
+								<li class="on"><a href="#tab-content1"><span>신규등록</span></a></li>
+								<li><a href="#tab-content2"><span>변경 및 이전시고</span></a></li>
+								<li><a href="#tab-content3"><span>말소등록</span></a></li>
+								<li><a href="#tab-content4"><span>등록증재교부등록</span></a></li>
+								<li><a href="#tab-content5"><span>등록원부 발급 및 열람</span></a></li>
+								<li><a href="#tab-content6"><span>저당권 설정등록</span></a></li>
+								<li><a href="#tab-content7"><span>저당권 말소등록</span></a></li>
+								<li><a href="#tab-content8"><span>압류등록 및 말소</span></a></li>
+								<li><a href="#tab-content9"><span>등록번호판 반납</span></a></li>
+								<li><a href="#tab-content10"><span>정기검사 안내</span></a></li>
+								<li><a href="#tab-content11"><span>건설기계 조종사 안전교육</span></a></li>
+								<li><a href="#tab-content12"><span>서식보관함</span></a></li>
+							</ul>
+						</nav>
+						<div id="tab-content1" class="tab-content-jumpto">
+							<h3 class="title1">신규등록</h3>
+							<h4 class="title2">민원종류 : 기한민원(10일)</h4>
+							<h4 class="title2">관련법령</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계관리법 제3조(등록 등)</li>
+									<li>건설기계관리법시행령 제3조(등록의 신청)</li>
+									<li>건설기계관리법시행규칙 제2조(건설기계의 등록 등)</li>
+								</ul>
+							</div>
+							<h4 class="title2">구비서류</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>가. 건설기계의 출처를 증명하는 다음 각목의 서류
+										<ul class="list list2">
+											<li>건설기계제작증(국내에서 제작한 건설기계의 경우에 한한다)</li>
+											<li>수입면장 기타 수입사실을 증명하는 서류(수입한 건설기계의 경우에 한한다)</li>
+											<li>건설기계등록원부등본(등본이 말소된 경우에 한한다)</li>
+											<li>매수증서(관청으로부터 매수한 건설기계의 경우에 한한다)</li>
+										</ul>
+									</li>
+									<li>나. 건설기계의 소유자임을 증명하는 서류</li>
+									<li>다. 건설기계 제원표</li>
+									<li>라. 보험가입을 증명하는 서류 : 보험필수 기종에 한함(자동차손해배상보험법 제5조의 규정) (타이어식굴삭기, 덤프트럭, 타이어식기중기, 콘크리트믹서트럭, 트럭식콘크리트덤프,
+										트럭식아스팔트살포기)</li>
+									<li>마. 영업용으로 등록시 대여업신고필증 또는 관리계약서 바. 신분증(대리시 인감증명서, 위임장)</li>
+								</ul>
+							</div>
+							<h4 class="title2">업무처리 흐름도</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>① 등록신청서 작성 → ② 세금부과 → ③ 세금납부, 공채소화 ④ 등록접수 → ⑤ 서류검토 → ⑥ 번호표봉인등 통지명령서 교부</li>
+								</ul>
+							</div>
+							<h4 class="title2">신청기한 : 취득한 날로부터 2개월이내</h4>
+						</div>
+						<div id="tab-content2" class="tab-content-jumpto">
+							<h3 class="title1">변경 및 이전신고</h3>
+							<h4 class="title2">민원종류 : 즉시</h4>
+							<h4 class="title2">관련법령</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계관리법 제5조(등록사항의 변경신고)</li>
+									<li>건설기계관리법시행령 제5조, 제6조(등록이전)</li>
+									<li>건설기계관리법시행규칙 제7조(등록사항의 변경신고 등)</li>
+								</ul>
+							</div>
+							<h4 class="title2">구비서류</h4>
+							<div class="indent">
+								<p class="mt-sm mb-sm text-bold">가. 등록이전신고</p>
+								<ul class="list list1">
+									<li>
+										양도인
+										<ul class="list list2">
+											<li>인감증명서</li>
+											<li>건설기계 등록·검사증</li>
+											<li>건설기계 양도증명서(인감날인)</li>
+										</ul>
+									</li>
+									<li>양수인
+										<ul class="list list2">
+											<li>신분증</li>
+											<li>보험영수증(굴삭기(타이어식), 덤프트럭, 기중기(타이어식), 콘크리트믹서트럭, 콘크리트펌프(트럭적재식), 아스팔트살포기(트럭적재식)</li>
+											<li>시도를 달리하는 경우(등록번호판)</li>
+										</ul>
+									</li>
+									<li>대리인 등록시
+										<ul class="list list2">
+											<li>위임장</li>
+											<li>인감증명서</li>
+										</ul>
+									</li>
+								</ul>
+								<p class="mt-sm mb-sm text-bold">나. 등록사항 변경신고</p>
+								<ul class="list list1">
+									<li>건설기계 등록ㆍ검사증</li>
+									<li>시도를 달리하는 경우(등록번호판)</li>
+								</ul>
+							</div>
+						</div>
+						<div id="tab-content3" class="tab-content-jumpto">
+							<h3 class="title1">말소등록</h3>
+							<h4 class="title2">민원종류 : 즉시</h4>
+							<h4 class="title2">관련법령</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계관리법 제6조(등록의 말소)</li>
+									<li>건설기계관리법시행규칙 제9조(건설기계등록의 말소 등)</li>
+								</ul>
+							</div>
+							<h4 class="title2">구비서류</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>가. 건설기계 등록.검사증</li>
+									<li>나. 멸실, 도난.수출, 폐기등 등록말소 사유를 확인할 수 있는 서류</li>
+									<li>다. 등록번호판</li>
+								</ul>
+							</div>
+							<h4 class="title2">업무처리 흐름도</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>① 말소신청서 작성 → ② 세금부과 → ③ 접수 및 검토 → ④ 말소확인서 교부</li>
+								</ul>
+							</div>
+							<h4 class="title2">위법시 과태료</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>등록의 말소를 신청하지 아니한 때 : 200,000원</li>
+								</ul>
+							</div>
+							<h4 class="title2">건설기계직권말소</h4>
+							<div class="indent">
+								<div class="indent-none">
+									<div class="table table-scroll">
+										<div class="scroll-container">
+											<table style="min-width:800px;">
+												<caption class="sr-only">건설기계직권말소 / 말소사유, 적출방법 및 행정권한에 대한 정보를 제공합니다</caption>
+												<thead>
+													<tr>
+														<th>말소사유</th>
+														<th>적출방법 및 행정권한</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>기타 부정한 방법으로등록을 한 때</th>
+														<td>기타 부정한 방법으로 등록한 것을 발견 하였을 때 직권말소</td>
+													</tr>
+													<tr>
+														<th>건설기계의 차대가 등록시의 차대와 다른 때</th>
+														<td>말소사유를 발견하였을 때 소유자 및 이해 관계인에게 통지한 후 이의가 없을 시 1개월이 경과한 후 직권말소</td>
+													</tr>
+													<tr>
+														<th>건설기계가 안전기준,규격 등의 기준에 적합하지 아니하게 된 때</th>
+														<td>상동</td>
+													</tr>
+													<tr>
+														<th>정기검사를 미필하여 최고를 받고 지정된 기한까지 정기검사를 받지 아니한 때</th>
+														<td>건설기계검사소에서 검사 미필 건설 기계의 통보시 시.도 지사가 소유자 및 이해 관계인에게 통지후 이의가 없을 시 1개월 경과후 직권말소(저당권은 3개월)
+														</td>
+													</tr>
+													<tr>
+														<th>강제처리에 의한 건설기계를 폐기한 때</th>
+														<td>건설기계의 소유자 또는 점유자에게 통지후 1개월이 경과한 때 통보가 없을 시 해당 시.도지사는 7일간의 공고를 한 후 폐기처리와 함께 직권말소</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="tab-content4" class="tab-content-jumpto">
+							<h3 class="title1">등록증재교부등록</h3>
+							<h4 class="title2">민원종류 : 즉시</h4>
+							<h4 class="title2">관련법령</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계관리법 제3조(등록 등)</li>
+									<li>건설기계관리법시행규칙 제5조(건설기계등록증의 재교부)</li>
+								</ul>
+							</div>
+							<h4 class="title2">구비서류</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계등록(검사)증 재교부 신청서</li>
+									<li>대리시(인감증명서, 위임장)</li>
+									<li>신분증</li>
+								</ul>
+							</div>
+							<h4 class="title2">업무처리 흐름도</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>① 등록증 신청서 작성 → ② 접수 및 검토 → ③ 등록증 교부</li>
+								</ul>
+							</div>
+						</div>
+						<div id="tab-content5" class="tab-content-jumpto">
+							<h3 class="title1">등록원부 발급 및 열람</h3>
+							<h4 class="title2">민원종류 : 즉시</h4>
+							<h4 class="title2">관련법령</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계관리법 제7조</li>
+								</ul>
+							</div>
+							<h4 class="title2">구비서류</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계에 대하여 이해관계가 있음을 증명하는 서류
+										<p>※이해관계가 있는자의 범위(건설기계관리업무처리지침 2001. 9. 1 시행)</p>
+										<ul class="list list2">
+											<li>1. 건설기계등록원부상 소유권,저당권 압류등 당해건설기계에 대한 권리가 기재되어 있는자</li>
+											<li>2. 건설기계등록원부에 기재되어 있는자로부터 당해 건설기계의 소유권을 양수 받은자</li>
+											<li>3. 조세부과 기타 처분을 하는 행정관청</li>
+											<li>4. 법제21조에 의한 건설기계매매업의 신고를 한 자</li>
+											<li>5. 당해 건설기계가 소속된 영 제13조에 의한 일반 건설기계대여업을 신고한 대표자</li>
+											<li>6. 은행법 제8조제1항의 규정에 의하여 인가를 받은 금융기관 및 동법 제5조 특례규정에 의한 농업협동조합중앙회 및 수산업협동조합중앙회의 신용사업부문</li>
+											<li>7. 한국산업은행, 중소기업은행, 장기신용은행, 한국수출입은행 및 기타 법률에 의하여 금융 업무를 행하는 기관 등</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<h4 class="title2">업무처리 흐름도</h4>
+							<div class="indent">
+								<p>① 등록증 신청서 작성 → ② 접수 및 검토 → ③ 등록증 교부</p>
+							</div>
+							<h4 class="title2">신청기한 : 없음</h4>
+							<h4 class="title2">위법시 과태료 : 없음</h4>
+						</div>
+						<div id="tab-content8" class="tab-content-jumpto">
+							<h3 class="title1">압류등록 및 말소</h3>
+							<h4 class="title2">압류등록 구비서류</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>시.군.구청.세무서 등의 압류 촉탁시
+										<ul class="list list2">
+											<li>압류촉탁서</li>
+											<li>압류조서</li>
+										</ul>
+									</li>
+									<li>법원의 압류 촉탁시
+										<ul class="list list2">
+											<li>압류촉탁서</li>
+											<li>압류결정문</li>
+										</ul>
+									</li>
+									<li>건설기계저당법시행령 제2조</li>
+								</ul>
+							</div>
+							<h4 class="title2">말소등록 구비서류</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>시.군.구청.세무서 등의 압류 촉탁시
+										<ul class="list list2">
+											<li>압류해제 촉탁서</li>
+											<li>압류해제 결정문</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div id="tab-content9" class="tab-content-jumpto">
+							<h3 class="title1">등록번호판반납</h3>
+							<h4 class="title2">반납사유</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>등록말소 시</li>
+									<li>등록된 건설기계의 소유자의 주소지 또는 사용본거지의 변경 (특별시, 광역시 및 도간의 변경이 있는 경우에 한한다.)</li>
+								</ul>
+							</div>
+							<h4 class="title2">유의사항</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>반납기한 : 사유 발생일로부터 10일 이내(단, 등록 말소시는 제외)</li>
+									<li>벌 칙 : 등록번호판을 반납하지 않는 자는 과태료 부과 : 최고 400,000원<br>
+										※ 반납기간 만료일부터 10일 이내일 때 : 30,000원/10일을 초과한 경우에는 매1일 초과시마다 10,000원</li>
+								</ul>
+							</div>
+						</div>
+						<div id="tab-content10" class="tab-content-jumpto">
+							<h3 class="title1">정기검사안내</h3>
+							<h4 class="title2">정기검사대상 건설기계 와 검사 유효기간</h4>
+							<div class="indent">
+								<div class="indent-none">
+									<div class="table table-scroll">
+										<div class="scroll-container">
+											<table style="min-width:800px;">
+												<caption class="sr-only">정기검사대상 건설기계 와 검사 유효기간 / 건설기계명, 구분, 정기검사 유효기간을 제공합니다</caption>
+												<colgroup>
+													<col>
+													<col>
+													<col>
+												</colgroup>
+												<thead>
+													<tr>
+														<th>건설기계명</th>
+														<th>구 분</th>
+														<th>정기검사 유효기간</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>굴삭기</td>
+														<td>타이어식</td>
+														<td>1년</td>
+													</tr>
+													<tr>
+														<td>로우더</td>
+														<td>타이어식</td>
+														<td>2년</td>
+													</tr>
+													<tr>
+														<td>지게차</td>
+														<td>1톤이상</td>
+														<td>2년</td>
+													</tr>
+													<tr>
+														<td>덤프트럭</td>
+														<td>-</td>
+														<td>1년</td>
+													</tr>
+													<tr>
+														<td>기중기</td>
+														<td>타이어식<br>
+															트럭적재식</td>
+														<td>1년</td>
+													</tr>
+													<tr>
+														<td>모우터그레이더</td>
+														<td>-</td>
+														<td>2년</td>
+													</tr>
+													<tr>
+														<td>콘크리트믹서트럭</td>
+														<td>-</td>
+														<td>1년</td>
+													</tr>
+													<tr>
+														<td>콘크리트 펌프</td>
+														<td>트럭적재식</td>
+														<td>1년</td>
+													</tr>
+													<tr>
+														<td>아스팔트 살포기</td>
+														<td>-</td>
+														<td>1년</td>
+													</tr>
+													<tr>
+														<td>천공기</td>
+														<td>트럭적재식</td>
+														<td>2년</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 class="title2">정기검사 신청기간</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>정기검사 유효기간 만료일 전·후 15일이내</li>
+								</ul>
+							</div>
+							<h4 class="title2">정기검사 연기신청</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계소유자는 건설기계의 도난,사고발생,압류,1개월이상 걸친 정비,사업의 휴지, 기타부득이한 사유로 정기검사를 받지 못할 때 정기검사 신청기간 만료일까지 정기검사연기신청을
+										건설기계검사소로 하시기 바랍니다.</li>
+									<li>구비서류
+										<ul class="list list2">
+											<li>정기검사연기신청서</li>
+											<li>연기사유를 증명할수 있는 서류 1부<br>
+												건설기계 검사를 받기 위하여 건설기계검사소에 검사신청을 하셔야 합니다.<br>
+												서울남부건설기계검사소 ☎ 02-2661-4279</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<h4 class="title2">신청기한</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>멸실의 경우 - 30일이내 / 도난의 경우 - 2월이내</li>
+								</ul>
+							</div>
+							<h4 class="title2">위법시 과태료</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>등록의 말소를 신청하지 아니한 때 : 200,000원</li>
+								</ul>
+							</div>
+							<h4 class="title2">건설기계직권말소</h4>
+							<div class="indent">
+								<div class="indent-none">
+									<div class="table table-scroll">
+										<table style="min-width:800px;">
+											<caption class="sr-only">건설기계직권말소 / 말소사유, 적출방법 및 행정권한을 제공합니다</caption>
+											<thead>
+												<tr>
+													<th>말소사유</th>
+													<th>적출방법 및 행정권한</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>기타 부정한 방법으로등록을 한 때</td>
+													<td>기타 부정한 방법으로 등록한 것을 발견 하였을 때 직권말소</td>
+												</tr>
+												<tr>
+													<td>건설기계의 차대가 등록시의 차대와 다른 때</td>
+													<td rowspan="2">말소사유를 발견하였을 때 소유자 및 이해 관계인에게 통지한 후 이의가 없을 시 1개월이 경과한 후 직권말소</td>
+												</tr>
+												<tr>
+													<td>건설기계가 안전기준,규격 등의 기준에 적합하지 아니하게 된 때</td>
+												</tr>
+												<tr>
+													<td>정기검사를 미필하여 최고를 받고 지정된 기한까지 정기검사를 받지 아니한 때</td>
+													<td>건설기계검사소에서 검사 미필 건설 기계의 통보시 시.도 지사가 소유자 및 이해 관계인에게 통지후 이의가 없을 시 1개월 경과후 직권말소</td>
+												</tr>
+												<tr>
+													<td>강제처리에 의한 건설기계를 폐기한 때</td>
+													<td>건설기계의 소유자 또는 점유자에게 통지후 1개월이 경과한 때 통보가 없을 시 해당 시.도지사는 7일간의 공고를 한 후 폐기처리와 함께 직권말소</td>
+												</tr>
+											</tbody>
+										</table>
+										<div class="scroll-container">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="tab-content11" class="tab-content-jumpto">
+							<h3 class="title1">건설기계 조종사 안전교육</h3>
+							<h4 class="title2">관련법령</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li><a href="#;">건설기계관리법 제31조</a></li>
+									<li><a href="#;">건설기계관리법 시행규칙 제83조</a></li>
+								</ul>
+							</div>
+							<h4 class="title2">안전교육 대상 : 건설기계 조종사면허를 발급 받은 자</h4>
+							<h4 class="title2">안전교육 이수기한</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>개정법률 시행(2019.10.18.) 전 조종사 면허를 발급 받은 자</li>
+								</ul>
+								<div class="indent-none">
+									<div class="table table-scroll">
+										<div class="scroll-container">
+											<table style="min-width:800px;">
+												<caption class="sr-only">법률 시행 전 면허 발급자 대상 건설기계 조종사 안전교육 정보 제공</caption>
+												<colgroup>
+													<col style="width: 50%;">
+													<col style="width: 50%;">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>건설기계 조종사면허 최초 발급일</th>
+														<th>안전교육 기간</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>2009.12.31. 이전</td>
+														<td>2021.1.1.~2021.12.31.</td>
+													</tr>
+													<tr>
+														<td>2010.1.1. ~ 2014.12.31.</td>
+														<td>2022.1.1.~2022.12.31.</td>
+													</tr>
+													<tr>
+														<td>2015.1.1. ~ 2019.10.17.</td>
+														<td>2023.1.1.~2023.12.31.</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+									<p class="mt-sm">※ "코로나19" 확산으로 인하여 건설기계관리법 시행규칙 제83조 제4항에 따라 이수기한 연장</p>
+								</div>
+								<ul class="list list1">
+									<li>개정법률 시행(2019.10.18.) 후 조종사 면허를 발급 받은 자</li>
+								</ul>
+								<div class="indent-none">
+									<div class="table table-scroll">
+										<div class="scroll-container">
+											<table style="min-width:800px;">
+												<caption class="sr-only">법률 시행 후 면허 발급자 대상 건설기계 조종사 안전교육 정보 제공</caption>
+												<colgroup>
+													<col style="width: 30%;">
+													<col style="width: 70%;">
+												</colgroup>
+												<thead>
+													<tr>
+														<th>구분</th>
+														<th>안전교육을 받아야 하는 기간</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>안전교육 등을 최초로 받는 사람</td>
+														<td>건설기계조종사면허를 최초로 받은 날부터 3년이되는 날이 속하는 해의<br>
+															1월 1일부터 12월 31일</td>
+													</tr>
+													<tr>
+														<td>안전교육 등을 받은 적이 있는 사람</td>
+														<td>마지막으로 안전교육 등을 받은 날부터 3년이되는 날이 속하는 해의<br>
+															1월 1일부터 12월 31일</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h4 class="title2">신청방법</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>국토교통부에서 지정한 11개 전문교육기관에서 전화, 인터넷 홈페이지 등으로 사전신청 후 교육이수 <a class="btn btn-xs btn-primary" href="#;"
+											target="_blank" title="새창">교육기관 리스트</a>
+										<p class="mt-sm">※ 관할지역 상관없이 전국에 있는 어느 지역교육장에서도 이수 가능</p>
+									</li>
+								</ul>
+							</div>
+							<h4 class="title2">유의사항</h4>
+							<div class="indent">
+								<ul class="list list1">
+									<li>건설기계 조종사가 안전교육을 받지 않고 건설기계를 조종한 경우 <a class="link" href="#;" target="_blank" title="새창">건설기계관리법
+											제44조</a> 제2항제8호에 따라 100만원 이하의 과태료 부과
+										<p class="mt-sm">※ 건설기계 조종사면허를 소지하고 있으나 건설기계 조종을 하지 않는 자는 과태료 부과대상이 아니며 추후에 건설기계를 조종할 상황이 생길 경우 조종
+											전에
+											안전교육을 이수하면 됨</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div id="tab-content12" class="tab-content-jumpto">
+							<h3 class="title1">서식보관함</h3>
+							<h4 class="title2">건설기계 등록관련 종합서식</h4>
+							<div class="indent">
+								<a href="#" class="btn btn-sm btn-primary">건설기계종합서식.hwp</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

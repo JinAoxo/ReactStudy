@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			rankSliderOn();
+		});
+
+		// 인기검색어 펼치기, 접기
+		$(document).on('click', '.popular-keyword .btn-toggle-keyword', function () {
+			$(this).closest('.box-keyword').toggleClass('on');
+			if ($(this).closest('.box-keyword').hasClass('on')) {
+				$(this).text('접기');
+				rankSliderOff();
+			} else {
+				$(this).text('펼치기');
+				rankSliderOn()
+			}
+			return false;
+		});
+
+		// 최근검색어 펼치기, 접기
+		$(document).on('click', '.recent-keyword .btn-toggle-keyword', function () {
+			$(this).closest('.box-keyword').toggleClass('on');
+			if ($(this).closest('.box-keyword').hasClass('on')) {
+				$(this).text('접기');
+			} else {
+				$(this).text('펼치기');
+			}
+			return false;
+		});
+
+		// 인기검색어 롤링
+		function rankSliderOn() {
+			$('#rank-slider').not('.slick-initialized').slick({
+				arrows: false,
+				draggable: false,
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				speed: 700,
+				autoplay: true,
+				autoplaySpeed: 3000,
+				vertical: true
+			});
+		}
+
+		function rankSliderOff() {
+			$('#rank-slider').slick('unslick');
+		}
+
+		// 구글 검색 결과
+		$(window).on('scroll', function () {
+			if ($(window).width() > 1024 && $(this).scrollTop() > 174) {
+				$('.google-search-area').addClass('fixed');
+			} else {
+				$('.google-search-area').removeClass('fixed');
+			}
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header" class="header-global-search">
+			<nav id="top-nav">
+				<div class="container">
+					<ul class="top-nav-list">
+						<!-- [개발] 활성화 탭 li class="on" -->
+						<li class="www"><a href="../../www/home/_template.html">파주시청</a></li>
+						<li class="news"><a href="../../news/pages/_template.html">파주뉴스</a></li>
+						<li class="tour"><a href="../../tour/pages/_template.html">문화관광</a></li>
+						<li class="mayor"><a href="../../mayor/pages/_template.html">On 시장실</a></li>
+						<li class="council"><a href="http://www.pajucouncil.go.kr" target="_blank" title="새창">파주시의회</a></li>
+					</ul>
+					<ul class="member-menu">
+						<!-- [개발] 로그인 전 -->
+						<li>
+							<a href="#;" class="btn">
+								<i class="ico ico-login-white"></i>
+								<span class="text">로그인</span>
+							</a>
+						</li>
+						<li>
+							<a href="#;" class="btn">
+								<i class="ico ico-join-white"></i>
+								<span class="text">회원가입</span>
+							</a>
+						</li>
+						<!-- [개발] 로그인 후 -->
+						<!-- 
+						<li>
+							<a href="#;" class="btn">
+								<i class="ico ico-logout-white"></i>
+								<span class="text">로그아웃</span>
+							</a>
+						</li>
+						-->
+					</ul>
+				</div>
+			</nav>
+			<div class="container util-container">
+				<h1 id="logo">
+					<a href="#;">
+						<img src="../../../resources/user/www/images/layout/logo@2x.png" alt="사이트명">
+						<!-- 
+							[개발] 각 사이트별로 디렉토리 'www' 부분 및 alt 값 변경 지정
+							파주시청 : www
+							파주뉴스 : news
+							문화관광 : tour
+							On 시장실 : mayor
+							평생교육포털 : lll
+							보건소 : clinic
+							재난안전 : safe
+							농업기술센터 : agri
+							읍면동 행정복지센터 : dong
+						-->
+					</a>
+				</h1>
+				<a href="#global-search" class="btn btn-search-open">
+					<i class="ico ico-search-primary"></i>
+					<span class="sr-only">통합검색 열기</span>
+				</a>
+				<div id="global-search">
+					<form action="#;">
+						<fieldset>
+							<legend class="sr-only">통합검색</legend>
+							<div class="form-group">
+								<select class="form-control form-control-option" title="구분">
+									<option value="">통합검색</option>
+									<option value="">옵션1</option>
+								</select>
+								<input type="text" class="form-control form-control-keyword" title="검색어" placeholder="검색어를 입력하세요">
+								<div class="option">
+									<span class="ckeck-item">
+										<input type="checkbox" id="input-search-result">
+										<label for="input-search-result">결과 내 재검색</label>
+									</span>
+								</div>
+								<button type="submit" class="btn btn-global-search">
+									<i class="ico ico-search-primary"></i>
+									<span class="sr-only">검색</span>
+								</button>
+							</div>
+						</fieldset>
+					</form>
+					<button type="button" class="btn btn-search-close">
+						<i class="ico ico-close-primary"></i>
+						<span class="sr-only">통합검색 닫기</span>
+					</button>
+				</div>
+			</div>
+		</header>
+		<div id="container">
+			<article id="content">
+				<h2 class="sr-only">통합검색 결과</h2>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="global-search-content">
+							<nav class="tab-menu tab-menu-search">
+								<ul class="tab-list">
+									<li class="on"><a href="#"><span>통합검색</span></a></li>
+									<li><a href="#"><span>메뉴검색</span></a></li>
+									<li><a href="#"><span>웹게시물</span></a></li>
+									<li><a href="#"><span>웹페이지</span></a></li>
+									<li><a href="#"><span>직원/업무</span></a></li>
+									<li><a href="#"><span>민원서식</span></a></li>
+									<li><a href="#"><span>이미지</span></a></li>
+									<li><a href="#"><span>교육강좌</span></a></li>
+									<li><a href="#"><span>관광명소</span></a></li>
+									<li><a href="#"><span>주요뉴스</span></a></li>
+								</ul>
+							</nav>
+
+							<div class="global-search-wrap">
+								<div class="paju-search-area">
+									<div class="search-condition">
+										<div class="search-keyword">
+											<div class="popular-keyword">
+												<h3 class="search-title">인기검색어</h3>
+												<div class="box-keyword">
+													<div id="rank-slider" class="rank-area">
+														<div class="item top-rank">
+															<span class="number">1</span>
+															<a href="#;" class="keyword">재난지원금</a>
+															<span class="ico ico-rank-up">상승</span>
+														</div>
+														<div class="item top-rank">
+															<span class="number">2</span>
+															<a href="#;" class="keyword">소상공인</a>
+															<span class="ico ico-rank-up">상승</span>
+														</div>
+														<div class="item top-rank">
+															<span class="number">3</span>
+															<a href="#;" class="keyword">긴급생활안전지원금</a>
+															<span class="ico ico-rank-down">하락</span>
+														</div>
+														<div class="item">
+															<span class="number">4</span>
+															<a href="#;" class="keyword">도로대장</a>
+															<span class="ico ico-rank-up">상승</span>
+														</div>
+														<div class="item">
+															<span class="number">5</span>
+															<a href="#;" class="keyword">주말농장</a>
+															<span class="ico ico-rank-down">하락</span>
+														</div>
+														<div class="item">
+															<span class="number">6</span>
+															<a href="#;" class="keyword">채용공고</a>
+															<span class="ico ico-rank-stay">변동없음</span>
+														</div>
+														<div class="item">
+															<span class="number">7</span>
+															<a href="#;" class="keyword">공공근로</a>
+															<span class="ico ico-rank-up">상승</span>
+														</div>
+														<div class="item">
+															<span class="number">8</span>
+															<a href="#;" class="keyword">개인택시</a>
+															<span class="ico ico-rank-down">하락</span>
+														</div>
+														<div class="item">
+															<span class="number">9</span>
+															<a href="#;" class="keyword">캠프하우즈</a>
+															<span class="ico ico-rank-stay">변동없음</span>
+														</div>
+														<div class="item">
+															<span class="number">10</span>
+															<a href="#;" class="keyword">조직도</a>
+															<span class="ico ico-rank-up">상승</span>
+														</div>
+													</div>
+													<button type="button" class="btn-toggle-keyword">펼치기</button>
+												</div>
+											</div>
+											<div class="recent-keyword">
+												<h3 class="search-title">최근검색어</h3>
+												<div class="box-keyword">
+													<ul class="keyword-list">
+														<li>
+															<a href="#;" class="keyword">보건소</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">복지센터</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">코로나19</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">재난지원금</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">도시안전과</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">캠프하우즈</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">주말농장</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+														<li>
+															<a href="#;" class="keyword">생활안전지원금</a>
+															<button type="button" class="btn btn-delete">삭제</button>
+														</li>
+													</ul>
+													<button type="button" class="btn-toggle-keyword">펼치기</button>
+												</div>
+											</div>
+										</div>
+										<div class="box box-search">
+											<form class="search-form" action="#;">
+												<fieldset>
+													<legend class="sr-only">검색조건 입력</legend>
+													<table>
+														<colgroup>
+															<col style="width: 50px;">
+															<col>
+															<col style="width: 50px;">
+															<col>
+															<col style="width: 50px;">
+															<col>
+														</colgroup>
+														<tbody>
+															<tr>
+																<th scope="row">정렬</th>
+																<td>
+																	<ul class="check-list">
+																		<li>
+																			<span class="check-item">
+																				<input type="radio" name="inputRadio1" id="inputRadio1_1" checked>
+																				<label for="inputRadio1_1"><span>정확도</span></label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="check-item">
+																				<input type="radio" name="inputRadio1" id="inputRadio1_2">
+																				<label for="inputRadio1_2"><span>최신순</span></label>
+																			</span>
+																		</li>
+																	</ul>
+																</td>
+																<th scope="row">영역</th>
+																<td>
+																	<ul class="check-list">
+																		<li>
+																			<span class="check-item">
+																				<input type="radio" name="inputRadio2" id="inputRadio2_1" checked>
+																				<label for="inputRadio2_1"><span>전체</span></label>
+																			</span>
+																		</li>
+																		<li>
+																			<span class="check-item">
+																				<input type="radio" name="inputRadio2" id="inputRadio2_2">
+																				<label for="inputRadio2_2"><span>제목</span></label>
+																			</span>
+																		</li>
+																	</ul>
+																</td>
+																<th scope="row">기간</th>
+																<td>
+																	<div class="period-wrap">
+																		<ul class="check-list">
+																			<li>
+																				<span class="check-item">
+																					<input type="radio" name="inputRadio3" id="inputRadio3_1" checked>
+																					<label for="inputRadio3_1"><span>전체</span></label>
+																				</span>
+																			</li>
+																			<li>
+																				<span class="check-item">
+																					<input type="radio" name="inputRadio3" id="inputRadio3_2">
+																					<label for="inputRadio3_2"><span>1주</span></label>
+																				</span>
+																			</li>
+																			<li>
+																				<span class="check-item">
+																					<input type="radio" name="inputRadio3" id="inputRadio3_3">
+																					<label for="inputRadio3_3"><span>2주</span></label>
+																				</span>
+																			</li>
+																		</ul>
+																		<a href="#;" class="btn btn-period-search"
+																			onclick="openModal('#layer-period-search', this);">
+																			<i class="ico ico-datepicker-primary"></i>
+																			<span class="sr-only">기간 검색</span>
+																		</a>
+																	</div>
+																</td>
+															</tr>
+														</tbody>
+													</table>
+												</fieldset>
+											</form>
+										</div>
+									</div>
+
+									<div class="related-search">
+										<h3 class="search-title">연관검색어<span class="count">(<span class="text-primary">2</span>건)</span></h3>
+										<ul class="summary-list thumbnail-type">
+											<li>
+												<a href="#;">
+													<div href="#" class="thumb">
+														<img src="../../../resources/user/_common/images/_sample.jpg" alt="파주시 2차 긴급생활안정지원금 신청">
+													</div>
+													<div class="content-area">
+														<strong class="subject"><span class="text-primary">파주</span>시 2차 긴급생활안정지원금 신청</strong>
+														<div class="content">
+															<span class="text-primary">파주</span>시 제2차 긴급생활안정지원금 (재난지원금)은 코로나19로 어려움을 겪고 있는 시민 모두에게
+															1인 당 10만원을 지급하는 <span class="text-primary">파주</span>시의 지원정책입니다.
+														</div>
+														<span class="location">파주시 제2차 긴급생활안정지원금 신청 홈페이지</span>
+													</div>
+												</a>
+											</li>
+											<li>
+												<a href="#;">
+													<div href="#" class="thumb">
+														<img src="../../../resources/user/_common/images/_sample.jpg"
+															alt="파주시 소상공인 등 긴급 생활안정지원금 확대 지원 기간 연장">
+													</div>
+													<div class="content-area">
+														<strong class="subject"><span class="text-primary">파주</span>시 소상공인 등 긴급 생활안정지원금 확대 지원 기간
+															연장</strong>
+														<div class="content">
+															상공인 등 긴급 생활안정지원금 확대 지원 기간 연장 2021년도 창업한 소상공인 지원 제외 파주시 긴급생활안정지원금 21년도 기수급자는 중복지원 불가
+														</div>
+														<span class="location">파주시 제2차 긴급생활안정지원금 신청 홈페이지</span>
+													</div>
+												</a>
+											</li>
+										</ul>
+										<a href="#;" class="btn-search-more">더보기</a>
+									</div>
+
+									<div class="search-result">
+										<div class="result-count">
+											<p class="text">검색어 <span class="text-primary">‘파주’</span>에 대하여 총 [<span
+													class="text-primary">15,350</span>건]이 검색되었습니다.</p>
+										</div>
+
+										<div class="result-section mt-0">
+											<h3 class="search-title">메뉴검색<span class="count">(<span class="text-primary">126</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="menu-list">
+													<li>
+														<a href="#;">대표 홈페이지 &gt; <span class="text-primary">파주</span>소개 &gt; <span
+																class="text-primary">파주</span>의 역사 &gt; <span class="text-primary">파주</span>유래</a>
+													</li>
+													<li>
+														<a href="#;">대표 홈페이지 &gt; <span class="text-primary">파주</span>소개 &gt; <span
+																class="text-primary">파주</span>의 상징 &gt; <span class="text-primary">파주</span>의 노래</a>
+													</li>
+													<li>
+														<a href="#;">대표 홈페이지 &gt; <span class="text-primary">파주</span>소개 &gt; <span
+																class="text-primary">파주</span>의 상징 &gt; <span class="text-primary">파주</span>시지</a>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">웹게시물<span class="count">(<span class="text-primary">41124</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="search-list">
+													<li>
+														<a href="#;" class="content-area">
+															<div class="info">
+																<strong class="subject"><span class="text-primary">파주</span>1인가구 및 취약계층의 고독사 예방을 위한 IOT
+																	장비활용</strong>
+																<span class="date">0000-00-00</span>
+															</div>
+															<div class="content">
+																<span class="text-primary">파주</span> 1인가구 및 취약세대의 증가, 코로나로 인해 고립되어 생활하는 사람들을 위해 이들의
+																안전관리가 필요하다고 생각합니다. 뉴스나 인터넷 기사를 보다가 IoT기술을 이용한 고독사 예방 서비스 들이 있는것 같은데,우리 <span
+																	class="text-primary">파주</span>
+															</div>
+															<span class="location">Home &gt; 소통·참여 &gt; 정책참여 &gt; 주민참여예산 신청</span>
+														</a>
+														<ul class="file-list">
+															<li>
+																<i class="ico ico-file-pdf"></i>
+																<span class="sr-only">PDF</span>
+																<a href="#;">주민참여예산제 사업제안서.pdf</a>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<a href="#;" class="content-area">
+															<div class="info">
+																<strong class="subject">친수공간 조성사업 건설사업관리용역」 사업수행능력 평가 참여기술인 업무중첩도 공개</strong>
+																<span class="date">0000-00-00</span>
+															</div>
+															<div class="content">
+																<span class="text-primary">파주</span>시에서 시행하는 ｢친수공간 조성사업 건설사업관리용역｣의 용역사업자 사업수행능력 평가를 위하여
+																｢건설기술용역사업자 사업수행능력 세부평가기준(국토교통부고시 제2020-437호, 2020. 6. 4.)｣ 제5조 규정에 따라 아래와 같이 참여기술인의 업무
+															</div>
+															<span class="location">Home &gt; 소통·참여 &gt; 정책참여 &gt; 주민참여예산 신청</span>
+														</a>
+														<ul class="file-list">
+															<li>
+																<i class="ico ico-file-word"></i>
+																<span class="sr-only">WORD</span>
+																<a href="#;">주민참여예산제 사업제안서.doc</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">웹페이지<span class="count">(<span class="text-primary">800</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="search-list">
+													<li>
+														<a href="#;" class="content-area">
+															<strong class="subject">우리고장 <span class="text-primary">파주</span></strong>
+															<div class="content">
+																우리 고장 <span class="text-primary">파주</span>에 대한 가장 오래된 기록은 『증보문헌비고』라는 책에 나옵니다. <span
+																	class="text-primary">파주</span>는 본래 고조선의 땅이었다가 삼한시대에 마한에 속했습니다. 삼국시대에 최초로 <span
+																	class="text-primary">파주</span>에 자리 잡은 나라
+															</div>
+															<span class="location">Home &gt; 파주소개 &gt; 파주의 역사 &gt; 파주유래 &gt; 우리고장 파주</span>
+														</a>
+													</li>
+													<li>
+														<a href="#;" class="content-area">
+															<strong class="subject"><span class="text-primary">파주</span>특산물</strong>
+															<div class="content">
+																<span class="text-primary">파주</span>시에서 시행하는 ｢친수공간 조성사업 건설사업관리용역｣의 용역사업자 사업수행능력 평가를 위하여
+																｢건설기술용역사업자 사업수행능력 세부평가기준(국토교통부고시 제2020-437호, 2020. 6. 4.)｣ 제5조 규정에 따라 아래와 같이 참여기술인의 업무
+															</div>
+															<span class="location">Home &gt; 정보마당 &gt; 파주농업현황 &gt; 파주특산물</span>
+														</a>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">직원/업무<span class="count">(<span class="text-primary">90</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<div class="table table-scroll">
+													<div class="scroll-container">
+														<table style="min-width: 800px;">
+															<caption class="sr-only">직원/업무 목록이며 성명, 직위, 부서명, 전화번호, 담당업무 정보 제공</caption>
+															<colgroup>
+																<col style="width: 14%;">
+																<col style="width: 15%;">
+																<col style="width: 15%;">
+																<col style="width: 17%;">
+																<col>
+															</colgroup>
+															<thead>
+																<tr>
+																	<th scope="col">성명</th>
+																	<th scope="col">직위</th>
+																	<th scope="col">부서명</th>
+																	<th scope="col">전화번호</th>
+																	<th scope="col">담당업무</th>
+																</tr>
+															</thead>
+															<tbody>
+																<tr>
+																	<td>홍길동</td>
+																	<td>주무관</td>
+																	<td>
+																		농업진흥과<br>
+																		체험농업팀
+																	</td>
+																	<td>031-940-5281</td>
+																	<td class="text-left"><span class="text-primary">파주</span>장단콩축제, 농어촌민박, 관관농원, 농촌
+																		체험휴양마을</td>
+																</tr>
+																<tr>
+																	<td>홍길동</td>
+																	<td>주무관</td>
+																	<td>
+																		도시재생과<br>
+																		도시정비팀
+																	</td>
+																	<td>031-940-4775</td>
+																	<td class="text-left">율목지구, 새말지구, <span class="text-primary">파주</span>1-3구역, 협신주택</td>
+																</tr>
+																<tr>
+																	<td>홍길동</td>
+																	<td>주무관</td>
+																	<td>
+																		환경보전과<br>
+																		생활환경팀
+																	</td>
+																	<td>031-940-5870</td>
+																	<td class="text-left">비산먼지 특정공사 신고 및 지도점검(탄현,교하,월롱,<span
+																			class="text-primary">파주</span>,광탄)/생활소음/빛공해/자동차 공회전 제한구역 관리/매연과다발생차량 민원관리</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</div>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">민원서식<span class="count">(<span class="text-primary">137</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="search-list">
+													<li>
+														<a href="#;" class="content-area">
+															<strong class="subject">공인중개사 명찰 패용 및 QR코드 스티커 부착 동의서</strong>
+															<div class="content">
+																QR코드 스티커 부착 동의서」를 작성하시어 <span class="text-primary">파주</span>시청 토지정보과 부동산팀으로 우편 또는
+																팩스(031-940-4879)로 제출하여 주시기 바랍니다
+															</div>
+														</a>
+														<ul class="file-list">
+															<li>
+																<i class="ico ico-file-hwp"></i>
+																<span class="sr-only">HWP</span>
+																<a href="#;">공인중개사 명찰 패용 및 QR코드 부착 관련 안내.hwp</a>
+															</li>
+														</ul>
+													</li>
+													<li>
+														<a href="#;" class="content-area">
+															<strong class="subject">노래연습장 방역관리대장 서식</strong>
+															<div class="content">
+																안녕하십니까. <span class="text-primary">파주</span>시 문화예술과 문화산업팀입니다. 사회적 거리두기에 따른 노래연습장업 관련
+																방역대장을 첨부해드리오니 방역수칙에 맞춰
+															</div>
+														</a>
+														<ul class="file-list">
+															<li>
+																<i class="ico ico-file-hwp"></i>
+																<span class="sr-only">HWP</span>
+																<a href="#;">방역 관리 대장 서식(안).hwp</a>
+															</li>
+															<li>
+																<i class="ico ico-file-pdf"></i>
+																<span class="sr-only">PDF</span>
+																<a href="#;">노래연습장 방역수칙.pdf</a>
+															</li>
+														</ul>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">이미지<span class="count">(<span class="text-primary">137</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="thumbnail-list">
+													<li>
+														<a href="#">
+															<div class="thumb thumb-gallery">
+																<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+															</div>
+															<strong class="subject"><span class="text-primary">파주</span>시, 2021. 1. 1.기준 개별주택 가격 결정,
+																공시 및 이의신청</strong>
+														</a>
+														<div class="info-area">
+															<span class="date">0000-00-00</span>
+														</div>
+													</li>
+													<li>
+														<a href="#">
+															<div class="thumb thumb-gallery">
+																<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+															</div>
+															<strong class="subject"><span class="text-primary">파주</span>시, 6월 1일부터 '주택 임대차 신고제'
+																시행</strong>
+														</a>
+														<div class="info-area">
+															<span class="date">0000-00-00</span>
+														</div>
+													</li>
+													<li>
+														<a href="#">
+															<div class="thumb thumb-gallery">
+																<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+															</div>
+															<strong class="subject"><span class="text-primary">파주</span>시 배달특급, 가정의 달
+																기념이벤트!!</strong>
+														</a>
+														<div class="info-area">
+															<span class="date">0000-00-00</span>
+														</div>
+													</li>
+													<li>
+														<a href="#">
+															<div class="thumb thumb-gallery">
+																<img src="../../../resources/user/_common/images/_sample.jpg" alt="">
+															</div>
+															<strong class="subject"><span class="text-primary">파주</span>시, 2021년 북한이탈주민 전수조사</strong>
+														</a>
+														<div class="info-area">
+															<span class="date">0000-00-00</span>
+														</div>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">교육강좌<span class="count">(<span class="text-primary">477</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="search-list">
+													<li>
+														<a href="#;" class="content-area">
+															<div class="info">
+																<strong class="subject">2021 <span class="text-primary">파주</span>농산물 소비촉진교육 ‘현대식
+																	전통장’</strong>
+																<span class="date">0000-00-00</span>
+															</div>
+															<div class="content">
+																교육일시 : 5. 4 ~ 6. 22/ 매주 화요일, 14:00 ~ 17:00, 총 8회 - 장소 : 농업기술센터 농업과학교육관 2층
+																농산물조리가공체험실(<span class="text-primary">파주</span>시 통일로 600)
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#;" class="content-area">
+															<div class="info">
+																<strong class="subject">2021 <span class="text-primary">파주</span>농산물 소비촉진교육 ‘현대식
+																	전통장’</strong>
+																<span class="date">0000-00-00</span>
+															</div>
+															<div class="content">
+																교육일시 : 5. 4 ~ 6. 22/ 매주 화요일, 14:00 ~ 17:00, 총 8회 - 장소 : 농업기술센터 농업과학교육관 2층
+																농산물조리가공체험실(<span class="text-primary">파주</span>시 통일로 600)
+															</div>
+														</a>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">관광명소<span class="count">(<span class="text-primary">184</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="summary-list thumbnail-type">
+													<li>
+														<a href="#;">
+															<div href="#" class="thumb">
+																<img src="../../../resources/user/_common/images/_sample.jpg"
+																	alt="[월요일] 경기유망관광 10선 따라잡기 “파주의 숨은 매력”">
+															</div>
+															<div class="content-area">
+																<strong class="subject">[월요일] 경기유망관광 10선 따라잡기 “<span class="text-primary">파주</span>의 숨은
+																	매력”</strong>
+																<div class="content">
+																	시티투어 당일 월요일 코스입니다.
+																</div>
+																<span class="date">0000-00-00</span>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#;">
+															<div href="#" class="thumb">
+																<img src="../../../resources/user/_common/images/_sample.jpg"
+																	alt="[목요일] 매력뿜뿜 청정 힐링 투어!! “파주의 향기 속으로”">
+															</div>
+															<div class="content-area">
+																<strong class="subject">[목요일] 매력뿜뿜 청정 힐링 투어!! “<span class="text-primary">파주</span>의 향기
+																	속으로”</strong>
+																<div class="content">
+																	시티투어 당일 목요일 코스입니다.
+																</div>
+																<span class="date">0000-00-00</span>
+															</div>
+														</a>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+
+										<div class="result-section">
+											<h3 class="search-title">주요뉴스<span class="count">(<span class="text-primary">577</span>건)</span>
+											</h3>
+											<div class="search-content">
+												<ul class="summary-list thumbnail-type">
+													<li>
+														<a href="#;">
+															<div href="#" class="thumb">
+																<img src="../../../resources/user/_common/images/_sample.jpg"
+																	alt="파주시, 6월 1일부터 ‘주택 임대차 신고제’ 시행">
+															</div>
+															<div class="content-area">
+																<strong class="subject"><span class="text-primary">파주</span>시, 6월 1일부터 ‘주택 임대차 신고제’
+																	시행</strong>
+																<div class="content">
+																	<span class="text-primary">파주</span>시는 오는 6월 1일부터 주택 임대차 계약 체결 시 계약 당사자가 임대료·임대기간 등
+																	계약의 주요 내용을 신고하는 ‘주택 임대차 신고제’를 시행한
+																</div>
+																<span class="date">0000-00-00</span>
+															</div>
+														</a>
+													</li>
+													<li>
+														<a href="#;">
+															<div href="#" class="thumb">
+																<img src="../../../resources/user/_common/images/_sample.jpg"
+																	alt="파주시, 2021년 북한이탈주민 전수조사">
+															</div>
+															<div class="content-area">
+																<strong class="subject"><span class="text-primary">파주</span>시, 2021년 북한이탈주민
+																	전수조사</strong>
+																<div class="content">
+																	<span class="text-primary">파주</span>시에서는 관내 북한이탈주민에 대한 실태를 조사하여 각종 지원정책을 제공 하려합니다.
+																	북한이탈주민이시거나, 북한이탈주민을 아신다면 031
+																</div>
+																<span class="date">0000-00-00</span>
+															</div>
+														</a>
+													</li>
+												</ul>
+												<a href="#;" class="btn-search-more">더보기</a>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="google-search-area">
+									<h3 class="search-title">구글 검색 결과</h3>
+									<div class="search-content">
+										<ul class="google-search-list">
+											<li>
+												<a href="#;">
+													<span class="location">www.paju.go.kr</span>
+													<span class="subject">파주시청: 모바일</span>
+												</a>
+												<div class="content">
+													한반도 평화수도 파주시입니다. 모바일파주를 통해 다양한 시정정보를 제공합니다. 이 페이지를 여러
+												</div>
+											</li>
+											<li>
+												<a href="#;">
+													<span class="location">www.paju.go.kr &gt; user &gt; organization &gt; BD</span>
+													<span class="subject">파주시 제2차 긴급생활안정지원금 신청</span>
+												</a>
+												<div class="content">
+													한반도 평화수도 파주시입니다. 모바일파주를 통해 다양한 시정정보를 제공합니다. 이 페이지를 여러
+												</div>
+											</li>
+											<li>
+												<a href="#;">
+													<span class="location">namu.wiki</span>
+													<span class="subject">파주시 - 나무위키</span>
+												</a>
+												<div class="content">
+													2021. 5. 9. — 교하-운정 및 탄현면에서는 자유로에 의존하는 경향이 강하며, 파주의 양대 중심지인 문
+												</div>
+											</li>
+											<li>
+												<a href="#;">
+													<span class="location">https://www.paju.go.kr › intropaju › intropaju</span>
+													<span class="subject">우리고장 파주 : HOME &gt; 파주소개 &gt; 파주</span>
+												</a>
+												<div class="content">
+													한반도 평화수도 파주시입니다. 우리 고장 파주에 대한 가장 오래된 기록은 『증보문헌비고』라는 책에
+												</div>
+											</li>
+										</ul>
+										<div class="mt-md text-center">
+											<button type="button" class="btn btn-default btn-md">더보기
+												+</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Modal Popup : 기간 검색 -->
+					<div class="modal-popup modal-sm hide" id="layer-period-search">
+						<div class="dimed"></div>
+						<div class="popup-inner">
+							<div class="popup-body">
+								<div class="form-row form-row-datepicker">
+									<div class="input-item">
+										<span class="datepicker"><input type="text" class="form-control form-datepicker" title="시작일"
+												style="width: 150px;"><button type="button" class="btn btn-datepicker"><i
+													class="ico ico-datepicker-primary"></i><span class="sr-only">달력</span></button></span>
+									</div>
+									<div class="text-item">~</div>
+									<div class="input-item">
+										<span class="datepicker"><input type="text" class="form-control form-datepicker" title="종료일"
+												style="width: 150px;"><button type="button" class="btn btn-datepicker"><i
+													class="ico ico-datepicker-primary"></i><span class="sr-only">달력</span></button></span>
+									</div>
+								</div>
+							</div>
+							<div class="popup-footer">
+								<div class="btn-group">
+									<button type="button" class="btn btn-md btn-default"
+										onclick="closeModal('#layer-period-search');">닫기</button>
+									<button type="button" class="btn btn-md btn-primary"
+										onclick="closeModal('#layer-period-search');">검색</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

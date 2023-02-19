@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+
+	<!-- TODO : 사이트별 디렉토리 지정 : www 교체 사용 -->
+	<link rel="stylesheet" href="../../../resources/user/www/css/style.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// 이곳에 정의
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<aside id="sidebar"></aside>
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">게시판 목록 : 일반형</h2>
+					<ol class="breadcrumb-list">
+						<li>대메뉴명</li>
+						<li>중메뉴명</li>
+						<li>소메뉴명</li>
+						<li>현재화면명</li>
+					</ol>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="ad-banner">
+							<a href="#;" class="ad-banner-link">
+								<img src="../../../resources/user/_common/images/_ad-banner.png"
+									alt="긴급 생활안정 지원금 확대지원 신청기간 기간 : 3.24(수) ~ 5.28(금)">
+								<img src="../../../resources/user/_common/images/_ad-banner-btn.png" alt="바로가기" class="d-up-lg">
+							</a>
+						</div>
+
+						<dl class="box box-notice">
+							<dt>
+								<i class="ico ico-notice-primary mr-1"></i>
+								<span>공지사항</span>
+							</dt>
+							<dd>
+								홈페이지 자유토크 게시판은 시민들 간의 유용한 정보의 공유와 건전한 토론의 場으로 운영 되는 바「파주시 인터넷 홈페이지 설치 및 운영에 관한 조례」에 의거하여 해당 게시판의 운영 목적에
+								맞지 않는 게시글은 예고없이 삭제됨을 알려드립니다.
+							</dd>
+						</dl>
+
+						<div class="box box-search">
+							<form class="search-form" action="#;">
+								<fieldset>
+									<legend class="sr-only">검색조건 입력</legend>
+									<div class="search-form-group">
+										<div class="form-row form-row-datepicker">
+											<div class="input-item">
+												<input type="text" class="form-control form-datepicker" title="시작일" style="width: 159px;">
+											</div>
+											<div class="text-item">~</div>
+											<div class="input-item">
+												<input type="text" class="form-control form-datepicker" title="종료일" style="width: 159px;">
+											</div>
+										</div>
+										<div class="form-row form-row-keyword">
+											<div class="input-item md-full">
+												<select class="form-control" title="구분" style="width: 116px;">
+													<option>선택</option>
+													<option>...</option>
+												</select>
+											</div>
+											<div class="input-item md-full">
+												<input type="text" class="form-control" title="검색어" style="width: 240px;">
+											</div>
+											<div class="input-item md-full">
+												<div class="btn-area">
+													<button type="submit" class="btn btn-md btn-primary">
+														<i class="ico ico-search-white"></i>
+														<span>검색</span>
+													</button>
+													<button type="submit" class="btn btn-md btn-default ml-md-2">초기화</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+
+						<div class="box box-search mt-4">
+							<form class="search-form" action="#;">
+								<fieldset>
+									<legend class="sr-only">검색조건 입력</legend>
+									<div class="search-form-group">
+										<div class="form-row form-row-keyword">
+											<div class="input-item md-full">
+												<select class="form-control" title="구분" style="width: 116px;">
+													<option>선택</option>
+													<option>...</option>
+												</select>
+											</div>
+											<div class="input-item md-full">
+												<input type="text" class="form-control" title="검색어" style="width: 400px;">
+											</div>
+											<div class="input-item md-full">
+												<div class="btn-area">
+													<button type="submit" class="btn btn-md btn-primary">
+														<i class="ico ico-search-white"></i>
+														<span>검색</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+
+						<div class="box box-search mt-4">
+							<form class="search-form" action="#;">
+								<fieldset>
+									<legend class="sr-only">검색조건 입력</legend>
+									<table>
+										<colgroup>
+											<col style="width: 85px;">
+											<col>
+											<col style="width: 85px;">
+											<col>
+											<col style="width: 85px;">
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row"><label for="inputAgency">기관분류</label></th>
+												<td>
+													<select id="inputAgency" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+												<th scope="row"><label for="inputEdu">교육분류</label></th>
+												<td>
+													<select id="inputEdu" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+												<th scope="row"><label for="inputEdu2">교육상태</label></th>
+												<td>
+													<select id="inputEdu2" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="inputRegister">접수방법</label></th>
+												<td>
+													<select id="inputRegister" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+												<th scope="row"><label for="inputFee">수강료</label></th>
+												<td>
+													<select id="inputFee" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+												<th scope="row"><label for="inputArea">지역</label></th>
+												<td>
+													<select id="inputArea" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<th scope="row"><label for="inputTime">주/야간</label></th>
+												<td>
+													<select id="inputTime" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+												<th scope="row"><label for="inputDay">요일</label></th>
+												<td>
+													<select id="inputDay" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+												<th scope="row"><label for="inputAgency2">기관분류</label></th>
+												<td>
+													<select id="inputAgency2" class="form-control" style="width: 196px;">
+														<option>전체</option>
+														<option>...</option>
+													</select>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+									<div class="search-form-group mt-lg-3">
+										<div class="form-row form-row-keyword">
+											<div class="input-item md-full">
+												<input type="text" class="form-control" title="검색어" style="width: 400px;">
+											</div>
+											<div class="input-item md-full">
+												<div class="btn-area">
+													<button type="submit" class="btn btn-md btn-primary">
+														<i class="ico ico-search-white"></i>
+														<span>검색</span>
+													</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>
+						</div>
+
+						<div class="list-info">
+							<div class="left">
+								<div class="total">총 <strong>3598</strong>건, 페이지 <strong>1</strong> / 240</div>
+							</div>
+						</div>
+
+						<div class="table table-list">
+							<table>
+								<caption class="sr-only">${게시판명} 목록이며 번호, 제목, 담당부서, 등록일, 파일, 조회 정보 제공</caption>
+								<colgroup>
+									<col style="width: 60px;">
+									<col>
+									<col style="width: 110px;">
+									<col style="width: 140px;">
+									<col style="width: 70px;">
+									<col style="width: 80px;">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">번호</th>
+										<th scope="col">제목</th>
+										<th scope="col">등록자명</th>
+										<th scope="col">등록일</th>
+										<th scope="col">첨부</th>
+										<th scope="col">조회수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- 게시물이 없을 경우 -->
+									<tr>
+										<td colspan="6" class="no-data">
+											<i class="ico ico-nodata-gray d-down-md"></i>
+											게시물이 없습니다.
+										</td>
+									</tr>
+									<!-- // 게시물이 없을 경우 -->
+									<tr>
+										<td class="cell-no"><span class="label-notice">공지</span></td>
+										<td class="cell-subject">
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대<i class="ico-new">N</i></a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-pdf"></i>
+												<span class="sr-only">PDF 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9998</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-reply-gray"></i>
+												<span class="sr-only">답글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대<span class="comment-number">[99]</span></a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-word"></i>
+												<span class="sr-only">WORD 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9997</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-lock-gray"></i>
+												<span class="sr-only">비밀글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대<span class="comment-number">[99]</span><i
+													class="ico-new">N</i></a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-hwp"></i>
+												<span class="sr-only">HWP 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9996</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-lock-gray"></i>
+												<span class="sr-only">비밀글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대</a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-xls"></i>
+												<span class="sr-only">XLS 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9995</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-lock-gray"></i>
+												<span class="sr-only">비밀글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대</a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-gif"></i>
+												<span class="sr-only">GIF 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9994</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-lock-gray"></i>
+												<span class="sr-only">비밀글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대</a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-jpg"></i>
+												<span class="sr-only">JPG 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9993</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-lock-gray"></i>
+												<span class="sr-only">비밀글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대</a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file-png"></i>
+												<span class="sr-only">PNG 첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+									<tr>
+										<td class="cell-no">9993</td>
+										<td class="cell-subject">
+											<span class="icon-addon">
+												<i class="ico ico-lock-gray"></i>
+												<span class="sr-only">비밀글</span>
+											</span>
+											<a href="#">경기광주 초월읍 쌍동리 한라비발디 앞 개인병원, 약국, 학원(분양, 임대</a>
+										</td>
+										<td class="cell-name">홍길동</td>
+										<td class="cell-date">0000-00-00</td>
+										<td class="cell-file">
+											<a href="#" target="_blank" title="새창">
+												<i class="ico ico-file"></i>
+												<span class="sr-only">첨부파일 다운로드</span>
+											</a>
+										</td>
+										<td class="cell-hit">9999</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+
+						<div class="pagination mt-md-4">
+							<a href="#" class="direction first"><span class="sr-only">처음</span></a>
+							<a href="#" class="direction prev"><span class="sr-only">이전</span></a>
+							<strong>1</strong>
+							<a href="#">2</a>
+							<a href="#">3</a>
+							<a href="#" class="direction next"><span class="sr-only">다음</span></a>
+							<a href="#" class="direction last"><span class="sr-only">끝</span></a>
+						</div>
+
+						<div class="btn-group btn-group-view mt-lg-3">
+							<a href="#;" class="btn btn-lg btn-primary">글쓰기</a>
+						</div>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+				<div id="content-info"></div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>
