@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+
+	<!-- JavaScript -->
+	<!-- <script src="/resources/user/js/jquery-1.12.4.min.js"></script> -->
+
+	<!-- <link href="https://vjs.zencdn.net/8.0.3/video-js.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/8.0.3/video.js"></script> -->
+
+	<!-- 기본 셋팅이 좀 다름 -->
+	<!-- <link href="https://vjs.zencdn.net/7.12.6/video-js.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/7.12.6/video.js"></script>
+	<script src="https://vjs.zencdn.net/7.12.6/videojs-controls.js"></script> -->
+
+	<!-- <script src="//players.brightcove.net/921483702001/Uj7Yz80yM_default/index.min.js"></script> -->
+	<!-- <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="/resources/user/css/content.css"> -->
+	<link href="https://players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+
+	<!-- 페이지 개별 스크립트 -->
+
+	<style>
+		/* .vjs-controls-disabled .vjs-big-play-button, */
+		.bc-player-default_default:hover .vjs-big-play-button {
+			display: block;
+			border-color: red;
+		}
+
+		/* .video-js.vjs-liveui .vjs-live-control,
+		.video-js.vjs-liveui .vjs-live-control.vjs-hidden,
+		.video-js:not(.vjs-live) .vjs-live-control {
+			display: block;
+		} */
+
+		/* 라이브 버튼 확인 필요 */
+		.video-js.vjs-live:not(.vjs-liveui) .vjs-seek-to-live-control,
+		.video-js:not(.vjs-live) .vjs-seek-to-live-control {
+			display: block;
+			/* top: 0; */
+			bottom: 64vh;
+			left: 0;
+			position: absolute;
+		}
+
+		#backButton img {
+			margin-top: -7px;
+			height: 45px;
+			width: 45px;
+			cursor: pointer;
+		}
+
+		#forwardButton img {
+			margin-top: -7px;
+			height: 45px;
+			width: 45px;
+			cursor: pointer;
+		}
+
+		.video-js {
+			width: 100%;
+			height: 80vh;
+			border-style: double;
+			/* border-width: thick; */
+			border-color: red;
+		}
+
+		.video-js .vjs-big-play-button,
+		.video-js .vjs-mouse .vjs-big-play-button {
+			border: 1px solid red;
+			background-color: #fff;
+			opacity: .3;
+		}
+
+		.video-js .vjs-overlay {
+			display: none;
+		}
+
+		.video-js .vjs-dock-text {
+			color: #fff;
+			font-size: 20px !important;
+			background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+		}
+
+		.video-js.vjs-playing .vjs-play-control {
+			display: none;
+		}
+
+		.video-js.vjs-paused .vjs-play-control {
+			display: block;
+		}
+
+		.video-js .vjs-control-bar {
+			padding: 0 40px;
+			background-color: transparent;
+		}
+
+		.video-js .vjs-progress-control {
+			padding: 0 40px;
+			border-radius: 4px;
+		}
+
+		.video-js .vjs-slider {
+			border-radius: 4px;
+			overflow: hidden;
+			background-color: #B3B3B3;
+		}
+
+		.video-js .vjs-load-progress,
+		.video-js .vjs-load-progress * {
+			border-radius: 4px;
+		}
+
+		.video-js .vjs-play-progress {
+			background-color: #27C0A1;
+			border-radius: 4px;
+		}
+
+		.video-js .vjs-volume-level {
+			background-color: #fff;
+			border-radius: 2px;
+		}
+
+		.vjs-menu-button-popup .vjs-menu {
+			bottom: 30px;
+		}
+
+		.bc-player-default_default .vjs-menu-button-popup .vjs-menu .vjs-menu-content {
+			background: rgba(0, 0, 0, 0.8);
+		}
+
+		.bc-player-default_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item {
+			background: transparent;
+		}
+
+		.vjs-subs-caps-button .vjs-menu .vjs-menu-content .vjs-menu-item {
+			background: transparent;
+		}
+
+		.bc-player-default_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
+			background: #27C0A1;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="container">
+			<!-- 본문 영역 -->
+			<div class="container">
+				<video-js id="myPlayerID" data-video-id="6310117018112" data-account="6271190163001" data-player="default"
+					data-embed="default" data-application-id class="video-js vjs-16-9" controls>
+					<track kind="captions" src="https://solutions.brightcove.com/bcls/assets/captions/intro-vcs.vtt" srclang="en"
+						label="English">
+					<track kind="captions" src="https://solutions.brightcove.com/bcls/assets/captions/intro-vcs-jp.vtt"
+						srclang="ja" label="Japanese">
+					<track kind="captions" src="https://solutions.brightcove.com/bcls/assets/captions/intro-vcs-fr.vtt"
+						srclang="fr" label="French">
+				</video-js>
+
+				<!-- <p><button onclick="hideBtn()">hide controls</button></p>
+				<p><button onclick="showBtn()">show controls</button></p> -->
+
+				<!-- <div class="player-controls">
+					<button id="live-button">Live</button>
+					<h2 id="video-title"></h2>
+					<button id="close-button">Close</button>
+					<button id="back-button">&lt;</button>
+					<button id="play-button">Play</button>
+					<button id="forward-button">&gt;</button>
+					<div class="language-selector">
+						<select id="language-select">
+							<option value="en">English</option>
+							<option value="es">Español</option>
+							<option value="fr">Français</option>
+						</select>
+					</div>
+					<button id="chat-button">Chat</button>
+					<div class="quality-selector">
+						<select id="quality-select">
+							<option value="auto">Auto</option>
+							<option value="low">Low</option>
+							<option value="medium">Medium</option>
+							<option value="high">High</option>
+						</select>
+					</div>
+				</div> -->
+
+				<h2 class="content-title">video js</h2>
+
+			</div>
+			<!-- // 본문 영역 -->
+
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+	<script src="/resources/user/js/jquery-1.12.4.min.js"></script>
+	<script src="https://players.brightcove.net/6271190163001/default_default/index.min.js"></script>
+	<!-- <script src="https://players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script> -->
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		// videojs.getPlayer('myPlayerID').on('loadedmetadata', function () {
+		// 	var myPlayer = this;
+		// 	myPlayer.muted(true);
+		// 	myPlayer.play();
+		// 	myPlayer.overlay({});
+		// 	// myPlayer.getChild('bigPlayButton').controlText('Play Audio');
+		// });
+
+		var myPlayer;
+		videojs.getPlayer('myPlayerID').ready(function () {
+			myPlayer = this;
+			myPlayer.muted(true);
+			// myPlayer.overlay({});
+			var myPlayer = this;
+			myPlayer.one("play", function () {
+				//If you want to start English as the caption automatically
+				myPlayer.textTracks()[1].mode = "showing";
+			});
+
+			// myPlayer.autoplay(false);
+
+			// controlBar: {
+			// 	qualityMenuButton: {
+			// 		inline: false,
+			// 		title: "Quality"
+			// 	},
+
+			// 	qualitySelector: true,
+			// 	playToggle: {
+			// 		order: 0,
+			// 		align: 'center'
+			// 	}
+			// }
+
+			// myPlayer.on('loadedmetadata', function () {
+			// 	// +++ Retrieve the menu options +++
+			// 	var menuOptions = myPlayer.controlBar.subsCapsButton.menu.children();
+			// 	// +++ Add flag to each menu option +++
+			// 	menuOptions.forEach(function (item) {
+			// 		if (item.track.language === 'de') {
+			// 			item.$('.vjs-menu-item-text').innerHTML = '🇩🇪 ' + item.track.label;
+			// 		}
+			// 	});
+
+			// 	menuOptions.forEach(function (item) {
+			// 		if (item.track.language === 'en') {
+			// 			item.$('.vjs-menu-item-text').innerHTML = '🇺🇸 ' + item.track.label;
+			// 		}
+			// 	});
+			// });
+
+			// jumpAmount = 5,
+			// 	controlBar,
+			// 	insertBeforeNode,
+			// 	newElementBB = document.createElement("div"),
+			// 	newElementFB = document.createElement("div"),
+			// 	newImageBB = document.createElement("img"),
+			// 	newImageFB = document.createElement("img");
+
+			// // +++ Assign IDs for later element manipulation +++
+			// newElementBB.id = "backButton";
+			// newElementFB.id = "forwardButton";
+
+			// // +++ Assign properties to elements and assign to parents +++
+			// newImageBB.setAttribute(
+			// 	"src",
+			// 	"https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-back-forward-buttons/back-button.png"
+			// );
+			// newElementBB.appendChild(newImageBB);
+			// newImageFB.setAttribute(
+			// 	"src",
+			// 	"https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-back-forward-buttons/forward-button.png"
+			// );
+			// newElementFB.appendChild(newImageFB);
+
+			// // +++ Get controlbar and insert elements +++
+			// controlBar = myPlayer.$(".vjs-control-bar");
+			// // Get the element to insert buttons in front of in conrolbar
+			// insertBeforeNode = myPlayer.$(".vjs-volume-panel");
+
+			// // Insert the button div in proper location
+			// controlBar.insertBefore(newElementBB, insertBeforeNode);
+			// controlBar.insertBefore(newElementFB, insertBeforeNode);
+
+			// // +++ Add event handlers to jump back or forward +++
+			// // Back button logic, don't jump to negative times
+			// newElementBB.addEventListener("click", function () {
+			// 	var newTime,
+			// 		rewindAmt = jumpAmount,
+			// 		videoTime = myPlayer.currentTime();
+			// 	if (videoTime >= rewindAmt) {
+			// 		newTime = videoTime - rewindAmt;
+			// 	} else {
+			// 		newTime = 0;
+			// 	}
+			// 	myPlayer.currentTime(newTime);
+			// });
+
+			// // Forward button logic, don't jump past the duration
+			// newElementFB.addEventListener("click", function () {
+			// 	var newTime,
+			// 		forwardAmt = jumpAmount,
+			// 		videoTime = myPlayer.currentTime(),
+			// 		videoDuration = myPlayer.duration();
+			// 	if (videoTime + forwardAmt <= videoDuration) {
+			// 		newTime = videoTime + forwardAmt;
+			// 	} else {
+			// 		newTime = videoDuration;
+			// 	}
+			// 	myPlayer.currentTime(newTime);
+			// });
+
+
+			// // +++ Retrieve info from mediainfo object +++
+			// linkURL = myPlayer.mediainfo.link.url,
+			// 	linkText = myPlayer.mediainfo.link.text;
+
+			// // +++ Build link string for the endscreen content +++
+			// hrefString =
+			// 	'<a href = "' +
+			// 	linkURL +
+			// 	'" target="_blank" rel="noopener noreferrer">' +
+			// 	linkText +
+			// 	"</a>";
+
+			// // +++ Call endscreen method +++
+			// myPlayer.customEndscreen({
+			// 	content: hrefString
+			// });
+
+		});
+
+		// var player = videojs('myPlayerID', {
+		// 	var backButton = $('<button class="vjs-back-button vjs-control vjs-button">Back</button>');
+		// 	var forwardButton = $('<button class="vjs-forward-button vjs-control vjs-button">Forward</button>');
+
+		// 	backButton.on("click", function () {
+		// 		player.currentTime(player.currentTime() - 5);
+		// 	});
+		// 	forwardButton.on("click", function () {
+		// 		player.currentTime(player.currentTime() + 5);
+		// 	});
+
+		// 	player.on('play', function () {
+		// 		$(".vjs-control-bar").append(backButton).append(forwardButton);
+		// 	});
+
+		// 	player.on('play', function () {
+		// 		$(backButton).css('display', 'block');
+		// 		$(forwardButton).css('display', 'block');
+		// 	});
+
+		// 	player.on('ended', function () {
+		// 		$(backButton).hide();
+		// 		$(forwardButton).hide();
+		// 	});
+		// });
+
+
+		var playButton = document.getElementsByClassName("vjs-big-play-button")[0];
+		playButton.setAttribute("id", "myPlayButton");
+
+		function hideBtn() {
+			myPlayer.controlBar.hide();
+		}
+
+		function showBtn() {
+			myPlayer.controlBar.show();
+		}
+	</script>
+</body>
+
+
+</html>
