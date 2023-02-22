@@ -1,0 +1,316 @@
+/* 주요일정 */
+.mayor-schedule {
+	.top-info {
+		text-align: center;
+
+		.text {
+			color: $gray;
+
+			span {
+				color: $default;
+			}
+		}
+	}
+
+	.schedule-calendar {
+		border-top: 2px solid $default;
+	}
+
+	.calendar-header {
+		position: relative;
+		padding: 14px 0;
+		text-align: center;
+
+		.form-control {
+			padding: 5px 60px 5px 15px;
+			border-radius: 20px;
+
+			+.form-control {
+				margin-left: 5px;
+			}
+		}
+	}
+
+	.calendar-title {
+		display: inline-block;
+	}
+
+	.btn-ctrl {
+		.btn {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+
+			.ico {
+				&:first-child {
+					margin-right: 10px;
+				}
+			}
+
+			&:hover,
+			&:focus {
+				color: $darkprimary;
+
+				.ico-arr-left {
+					background-position: 0 -20px;
+				}
+
+				.ico-arr-right {
+					background-position: -25px -20px;
+				}
+			}
+		}
+
+		.ico {
+			width: 21px;
+			height: 14px;
+			margin-top: 2px;
+			line-height: 14px;
+			background-image: url(#{$url-img}/content/sp-arr.png);
+			background-size: auto 40px;
+		}
+
+		.text {
+			font-size: $font-size-lg;
+		}
+	}
+
+	.ico-arr-left {
+		margin-right: 10px;
+		background-position: 0 0;
+	}
+
+	.ico-arr-right {
+		margin-left: 10px;
+		background-position: -25px 0;
+	}
+
+	.calendar-body {
+		table {
+
+			th,
+			td {
+				border-bottom: 1px solid $border-base;
+			}
+
+			thead {
+				th {
+					height: 40px;
+					font-weight: 400;
+					font-size: $font-size-lg;
+					background-color: $bg-whiteblue;
+
+					&:first-child {
+						color: $red;
+					}
+				}
+			}
+
+			tbody {
+				td {
+					vertical-align: top;
+
+					&:first-child {
+						.date {
+							color: $red;
+						}
+					}
+				}
+			}
+		}
+
+		.date,
+		.day {
+			color: $gray;
+		}
+	}
+
+	.schedule-list {
+		li {
+			+li {
+				margin-top: 5px;
+			}
+
+			a {
+				line-height: 20px;
+			}
+		}
+	}
+
+	.btn-schedule {
+		&.on {
+			border-bottom: 1px solid $primary;
+			color: $primary;
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		.top-info {
+			margin-bottom: 30px;
+
+			.text {
+				font-size: 22px;
+			}
+		}
+
+		.calendar-header {
+			.form-control {
+				font-size: $font-size-lg;
+			}
+		}
+
+		.btn-prev {
+			left: 0;
+		}
+
+		.btn-next {
+			right: 0;
+		}
+
+		.calendar-body {
+			table {
+				tbody {
+					tr {
+						&:last-child {
+							td {
+								border-bottom-color: $default;
+							}
+						}
+					}
+
+					td {
+						height: 120px;
+						padding: 16px;
+						border-left: 1px solid $border-base;
+
+						&:first-child {
+							border-left: 0;
+						}
+					}
+				}
+			}
+
+			.date {
+				font-size: $font-size-lg;
+			}
+
+			.day {
+				display: none;
+			}
+		}
+
+		.schedule-list {
+			margin-top: 4px;
+
+			li {
+				a {
+					font-size: $font-size-sm;
+					word-break: break-all;
+
+					&:hover,
+					&:focus {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+
+	@include media-breakpoint-down(md) {
+		margin: 0 -15px;
+
+		.top-info {
+			margin-bottom: 20px;
+		}
+
+		.calendar-header {
+			.btn-ctrl {
+				.text {
+					display: none;
+				}
+			}
+		}
+
+		.btn-prev {
+			left: 15px;
+		}
+
+		.btn-next {
+			right: 15px;
+		}
+
+		.calendar-body {
+			border-top: 2px solid $default;
+
+			table {
+
+				colgroup,
+				thead {
+					display: none;
+				}
+
+				tbody {
+					tr {
+						display: block;
+
+						td {
+							display: block;
+							height: auto;
+							padding: 11px 15px;
+
+							&:empty {
+								display: none;
+							}
+						}
+					}
+				}
+			}
+
+			.date,
+			.day {
+				font-size: $font-size-sm;
+			}
+		}
+
+		.schedule-list {
+			margin-top: 7px;
+
+			li {
+				a {
+					font-size: 13px;
+				}
+			}
+		}
+	}
+}
+
+#layer-schedule {
+	.popup-header {
+		padding: 0 35px 0 19px;
+		text-align: left;
+
+		.popup-title {
+			padding-top: 0;
+		}
+	}
+
+	.list {
+		li {
+			strong {
+				margin-right: 8px;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(lg) {
+		.list {
+			li {
+				font-size: $font-size-lg;
+
+				&:before {
+					top: 9px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+	<link rel="shortcut icon" href="../../../resources/user/_common/images/favicon.ico">
+	<link rel="stylesheet" href="../../../resources/user/_common/css/common.css">
+
+	<!-- JavaScript -->
+	<script src="../../../resources/user/_common/js/jquery-1.12.4.min.js"></script>
+
+	<!-- Plugins -->
+	<script src="../../../resources/user/_common/plugins/slick/slick.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/rwdImageMaps/jquery.rwdImageMaps.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/easypiechart/jquery.easypiechart.min.js"></script>
+	<script src="../../../resources/user/_common/plugins/chart/chart-2.9.3.min.js"></script>
+
+	<!-- I.N.UIX Components -->
+	<script src="../../../resources/user/_common/js/datepicker.js"></script>
+	<script src="../../../resources/user/_common/js/ui-global.js"></script>
+
+	<!-- TODO : 개발시 반드시 삭제, 레이아웃 세팅 JS -->
+	<script src="../../../resources/user/_guide/js/ui-layout-setting.js"></script>
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			$('.mayor-schedule .btn-schedule').on('click', function () {
+				$('.mayor-schedule .btn-schedule').removeClass('on');
+				$(this).addClass('on');
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<aside id="breadcrumb"></aside>
+		<div id="container">
+			<article id="content">
+				<div class="content-header">
+					<h2 class="content-title">주요일정</h2>
+				</div>
+				<div class="content-body">
+					<!-- 본문 영역 -->
+
+					<div class="container">
+						<div class="mayor-schedule">
+							<div class="top-info">
+								<p class="text">이달의 <span>주요일정</span>을 확인 할 수 있습니다.</p>
+							</div>
+							<div class="schedule-calendar">
+								<div class="calendar-header">
+									<div class="calendar-title">
+										<select class="form-control" title="연도">
+											<option>2025</option>
+											<option>2024</option>
+											<option>2023</option>
+											<option>2022</option>
+											<option selected>2021</option>
+											<option>2020</option>
+											<option>2019</option>
+											<option>2018</option>
+											<option>2017</option>
+											<option>2016</option>
+											<option>2015</option>
+											<option>2014</option>
+											<option>2013</option>
+											<option>2012</option>
+											<option>2011</option>
+											<option>2010</option>
+										</select>
+										<select class="form-control" title="월 (선택시 달력 갱신)">
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+											<option selected>6</option>
+											<option>7</option>
+											<option>8</option>
+											<option>9</option>
+											<option>10</option>
+											<option>11</option>
+											<option>12</option>
+										</select>
+									</div>
+									<div class="btn-ctrl">
+										<a href="#;" class="btn btn-prev">
+											<i class="ico ico-arr-left"></i>
+											<span class="text">이전달</span>
+										</a>
+										<a href="#;" class="btn btn-next">
+											<span class="text">다음달</span>
+											<i class="ico ico-arr-right"></i>
+										</a>
+									</div>
+								</div>
+								<div class="calendar-body">
+									<table>
+										<caption class="sr-only">주요일정 달력 정보(일, 월, 화, 수, 목, 금, 토) 제공</caption>
+										<colgroup>
+											<col span="6" style="width:14.285%">
+											<col>
+										</colgroup>
+										<thead>
+											<tr>
+												<th scope="col">일</th>
+												<th scope="col">월</th>
+												<th scope="col">화</th>
+												<th scope="col">수</th>
+												<th scope="col">목</th>
+												<th scope="col">금</th>
+												<th scope="col">토</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td></td>
+												<td></td>
+												<td>
+													<span class="date">1</span>
+													<span class="day">(화)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">공무원노조「제2차 단체협약 체결식」</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">2</span>
+													<span class="day">(수)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">코로나 19 대응 일일상황 보고회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">파주장단콩 웰빙마루 조성 현장 점검</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">3</span>
+													<span class="day">(목)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">혁신교육지방정부협의회 상반기 정기총회</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">4</span>
+													<span class="day">(금)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">코로나 19 대응 일일상황 보고회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">파주시 먹거리 종합전략(푸드플랜) 용역
+																중간보고회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">율곡수목원 개원식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">민주평통 파주시협의회 2분기 국내정기회의</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">5</span>
+													<span class="day">(토)</span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<span class="date">6</span>
+													<span class="day">(일)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">제66주년 현충일 추념식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">7</span>
+													<span class="day">(월)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">제226회 파주시의회 제1차 정례회 제1차
+																본회의</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">6월 제1차 확대간부회의</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">8</span>
+													<span class="day">(화)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">파주시-국립민속박물관 업무협약식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">9</span>
+													<span class="day">(수)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">코로나 19 대응 일일상황 보고회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">(사) 위드인 사람과함께 이웃돕기 전달식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">금촌1동 행복마을관리소 개소식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">10</span>
+													<span class="day">(목)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">마지~구읍 우회도로 개통식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">호우피해 하천개선복구공사 현장점검</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">11</span>
+													<span class="day">(금)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">도시재생 독서토론회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">코로나 19 대응 일일상황 보고회</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">12</span>
+													<span class="day">(토)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">제15회 파주단오제</a>
+														</li>
+													</ul>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<span class="date">13</span>
+													<span class="day">(일)</span>
+												</td>
+												<td>
+													<span class="date">14</span>
+													<span class="day">(월)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">운정로타리클럽 이웃돕기 전달식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">15</span>
+													<span class="day">(화)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">2021 주민자치회 위원 위촉식(장단출장소)</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">신도시~설문간 도로 개통식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">2021 주민자치회 위원 위촉식(월롱면)</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">16</span>
+													<span class="day">(수)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">코로나 19 대응 일일상황 보고회</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">17</span>
+													<span class="day">(목)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">광역급행 M7154번 개통식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">2021 주민자치회 위원 위촉식(탄현면)</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">18</span>
+													<span class="day">(금)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">코로나 19 대응 일일상황 보고회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">2021 주민자치회 위원 위촉식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">금촌 배드민턴전용구장 개·보수 사업 착공식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">19</span>
+													<span class="day">(토)</span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<span class="date">20</span>
+													<span class="day">(일)</span>
+												</td>
+												<td>
+													<span class="date">21</span>
+													<span class="day">(월)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">6월 2차 확대간부회의</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">새마을지도자 파주시협의회장 이취임식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">22</span>
+													<span class="day">(화)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">제226회 파주시의회</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">제1차 정례회 제2차 본회의</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">파주시-전통건축수리기술진흥재단 업무협약</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">파주시 지명위원회</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">23</span>
+													<span class="day">(수)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">2021 주민자치회 위원 위촉식(문산읍)</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">경기먹거리 그냥드림코너 개소식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">24</span>
+													<span class="day">(목)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">종교지도자협의회 이웃돕기 전달식</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">운정예방접종센터 개소식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">25</span>
+													<span class="day">(금)</span>
+													<ul class="schedule-list">
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">6.25전쟁 제71주년 기념행사</a>
+														</li>
+														<li>
+															<a href="#layer-schedule" class="btn-schedule"
+																onclick="openLayer('#layer-schedule', this); return false;">채색자원봉사자 발대식</a>
+														</li>
+													</ul>
+												</td>
+												<td>
+													<span class="date">26</span>
+													<span class="day">(토)</span>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<span class="date">27</span>
+													<span class="day">(일)</span>
+												</td>
+												<td>
+													<span class="date">28</span>
+													<span class="day">(월)</span>
+												</td>
+												<td>
+													<span class="date">29</span>
+													<span class="day">(화)</span>
+												</td>
+												<td>
+													<span class="date">30</span>
+													<span class="day">(수)</span>
+												</td>
+												<td></td>
+												<td></td>
+												<td></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="layer-popup hide" id="layer-schedule">
+						<div class="popup-inner">
+							<div class="popup-header">
+								<h2 class="popup-title">일정 제목</h2>
+							</div>
+							<div class="popup-body">
+								<ul class="list list1">
+									<li><strong>행사 일자</strong> 20210601</li>
+									<li><strong>행사 시간</strong> 10:00 ~ 10:30</li>
+									<li><strong>행사 장소</strong> 대회의실</li>
+								</ul>
+							</div>
+							<button type="button" class="btn btn-close-popup">닫기</button>
+						</div>
+					</div>
+
+					<!-- // 본문 영역 -->
+				</div>
+			</article>
+		</div>
+		<footer id="footer"></footer>
+	</div>
+</body>
+
+</html>

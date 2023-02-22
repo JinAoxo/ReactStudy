@@ -4,7 +4,6 @@
 .content-header {
   text-align: center;
 }
-
 @media (min-width: 1025px) {
   .content-header {
     margin: 0 0 65px;
@@ -16,7 +15,6 @@
     font-family: "s-core-dream", "malgun gothic", Arial, sans-serif;
   }
 }
-
 @media (max-width: 1024.98px) {
   .content-header {
     margin: 0 0 39.5px;
@@ -38,180 +36,142 @@
 .wrapper-html-guide .content-body {
   padding-bottom: 0;
 }
-
 .wrapper-html-guide .badge {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  margin-top: .45em;
+  margin-top: 0.45em;
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background-color: #f77120;
 }
-
 .wrapper-html-guide .row .col {
   display: table-cell;
   width: 1%;
 }
-
 .wrapper-html-guide .row .col:after {
   display: block;
   clear: both;
-  content: '';
+  content: "";
 }
-
 .wrapper-html-guide .row.row-auto {
   display: table;
   width: 100%;
 }
-
 .wrapper-html-guide .row.row-auto .col {
   width: auto;
 }
-
 .wrapper-html-guide .gutter-1 {
   margin-left: -2.5px;
   margin-right: -2.5px;
 }
-
 .wrapper-html-guide .gutter-1 .col {
   padding: 0 2.5px;
 }
-
 .wrapper-html-guide .gutter-1.row-auto {
   width: calc(100% + 10px);
 }
-
 .wrapper-html-guide .gutter-2 {
   margin-left: -5px;
   margin-right: -5px;
 }
-
 .wrapper-html-guide .gutter-2 .col {
   padding: 0 5px;
 }
-
 .wrapper-html-guide .gutter-2.row-auto {
   width: calc(100% + 20px);
 }
-
 .wrapper-html-guide .gutter-3 {
   margin-left: -7.5px;
   margin-right: -7.5px;
 }
-
 .wrapper-html-guide .gutter-3 .col {
   padding: 0 7.5px;
 }
-
 .wrapper-html-guide .gutter-3.row-auto {
   width: calc(100% + 30px);
 }
-
 .wrapper-html-guide .gutter-4 {
   margin-left: -10px;
   margin-right: -10px;
 }
-
 .wrapper-html-guide .gutter-4 .col {
   padding: 0 10px;
 }
-
 .wrapper-html-guide .gutter-4.row-auto {
   width: calc(100% + 40px);
 }
-
 .wrapper-html-guide .gutter-5 {
   margin-left: -12.5px;
   margin-right: -12.5px;
 }
-
 .wrapper-html-guide .gutter-5 .col {
   padding: 0 12.5px;
 }
-
 .wrapper-html-guide .gutter-5.row-auto {
   width: calc(100% + 50px);
 }
-
 .wrapper-html-guide .gutter-6 {
   margin-left: -15px;
   margin-right: -15px;
 }
-
 .wrapper-html-guide .gutter-6 .col {
   padding: 0 15px;
 }
-
 .wrapper-html-guide .gutter-6.row-auto {
   width: calc(100% + 60px);
 }
-
 .wrapper-html-guide .gutter-7 {
   margin-left: -17.5px;
   margin-right: -17.5px;
 }
-
 .wrapper-html-guide .gutter-7 .col {
   padding: 0 17.5px;
 }
-
 .wrapper-html-guide .gutter-7.row-auto {
   width: calc(100% + 70px);
 }
-
 .wrapper-html-guide .gutter-8 {
   margin-left: -20px;
   margin-right: -20px;
 }
-
 .wrapper-html-guide .gutter-8 .col {
   padding: 0 20px;
 }
-
 .wrapper-html-guide .gutter-8.row-auto {
   width: calc(100% + 80px);
 }
-
 .wrapper-html-guide .gutter-9 {
   margin-left: -22.5px;
   margin-right: -22.5px;
 }
-
 .wrapper-html-guide .gutter-9 .col {
   padding: 0 22.5px;
 }
-
 .wrapper-html-guide .gutter-9.row-auto {
   width: calc(100% + 90px);
 }
-
 .wrapper-html-guide .gutter-10 {
   margin-left: -25px;
   margin-right: -25px;
 }
-
 .wrapper-html-guide .gutter-10 .col {
   padding: 0 25px;
 }
-
 .wrapper-html-guide .gutter-10.row-auto {
   width: calc(100% + 100px);
 }
-
 @media (min-width: 1025px) {
   .wrapper-html-guide #content {
     padding: 0 180px;
   }
 }
-
 @media (max-width: 1024.98px) {
   .wrapper-html-guide .syntaxhighlighter.html {
     display: none;
   }
 }
-
 .wrapper-html-guide .icon-list {
   padding: 15px 10px 10px;
   display: -webkit-box;
@@ -221,11 +181,9 @@
       flex-wrap: wrap;
   text-align: center;
 }
-
 .wrapper-html-guide .icon-list .ico {
   background-color: rgba(255, 0, 0, 0.2);
 }
-
 .wrapper-html-guide .icon-list li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -242,7 +200,6 @@
           justify-content: space-between;
   margin: 10px;
 }
-
 .wrapper-html-guide .icon-list li p {
   margin-top: 10px;
 }
@@ -260,55 +217,45 @@
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.95);
 }
-
 #guide-nav .btn-collaspe {
   display: none;
 }
-
 #guide-nav .ico-xs-menu {
   width: 16px;
   height: 16px;
   line-height: 16px;
   background-image: url("../../_common/images/ico-xs-menu@2x.png");
 }
-
 #guide-nav .sidebar-title {
   border-bottom: 1px solid #ddd;
   font-size: 20px;
   padding-bottom: 10px;
   margin-bottom: 10px;
 }
-
 #guide-nav .nav-title {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 5px;
 }
-
 #guide-nav .guide-list {
   font-size: 14px;
 }
-
 #guide-nav li a small {
-  opacity: .8;
+  opacity: 0.8;
   display: none;
 }
-
 #guide-nav li a .ico {
   margin-top: -2px;
 }
-
 #guide-nav li.on {
   font-weight: bold;
   color: #1f76eb;
 }
-
 #guide-nav .etc-link {
   border-top: 1px solid #ddd;
   margin-top: 10px;
   padding-top: 8px;
 }
-
 #guide-nav .etc-link > li {
   border-bottom: 1px solid #ddd;
   margin-bottom: 5px;
@@ -316,35 +263,30 @@
   font-weight: 500;
   font-size: 14px;
 }
-
 #guide-nav .etc-link > li:only-child {
   border: 0;
   margin-bottom: 0;
   padding-bottom: 0;
 }
-
 #guide-nav .etc-link > li ul {
   margin: 5px 0;
   font-weight: normal;
   font-size: 12px;
 }
-
 #guide-nav .quick-link {
   font-size: 13px;
 }
-
 #guide-nav .ico-external-link {
   width: 11px;
   height: 11px;
 }
-
 @media (max-width: 1024.98px) {
   #guide-nav {
     max-height: 100%;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
-    -webkit-transition-duration: .3s;
-            transition-duration: .3s;
+    -webkit-transition-duration: 0.3s;
+            transition-duration: 0.3s;
     -webkit-transition-property: -webkit-transform;
     transition-property: -webkit-transform;
     transition-property: transform;
@@ -362,7 +304,7 @@
     height: 28px;
     color: #fff;
     line-height: 0;
-    opacity: .4;
+    opacity: 0.4;
     background-color: #000;
   }
   #guide-nav .btn-collaspe .close {
@@ -403,7 +345,7 @@
   padding: 4px 8px;
   border-radius: 2px;
   background-color: antiquewhite;
-  font-family: 'Courier New', "malgungothic", Courier;
+  font-family: "Courier New", "malgungothic", Courier;
   font-size: 14px;
 }
 
@@ -417,12 +359,10 @@
   border-top: 2px solid rgba(34, 34, 34, 0.8);
   border-bottom: 1px dashed rgba(34, 34, 34, 0.2);
 }
-
 .title-guide small {
   margin-left: 10px;
   color: #1f76eb;
 }
-
 @media (max-width: 1024.98px) {
   .title-guide {
     font-size: 20px;
@@ -437,13 +377,12 @@
 
 .box-tbd {
   text-align: center;
-  font-size: .30rem;
+  font-size: 0.3rem;
   color: #fff;
-  line-height: 1.00rem;
+  line-height: 1rem;
 }
-
 .box-tbd:after {
-  content: '디자인 수급예정';
+  content: "디자인 수급예정";
 }
 
 .bg-setting {
@@ -455,7 +394,6 @@
       flex-wrap: wrap;
   margin: -10px -5px;
 }
-
 .bg-setting span {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -489,7 +427,6 @@
   border-radius: 10px;
   padding: 20px 10px 15px;
 }
-
 .score-list li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -500,7 +437,6 @@
           flex-direction: column;
   text-align: center;
 }
-
 .score-list strong {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
@@ -509,14 +445,12 @@
   font-size: 14px;
   font-weight: 500;
 }
-
 .score-list .easy-pie-chart {
   position: relative;
   width: 60px;
   height: 60px;
   color: #999;
 }
-
 .score-list .easy-pie-chart .percent {
   position: absolute;
   display: -webkit-box;
@@ -532,4 +466,211 @@
   height: 100%;
   font-size: 18px;
   font-weight: bold;
+}
+
+/* 주요일정 */
+.mayor-schedule .top-info {
+  text-align: center;
+}
+.mayor-schedule .top-info .text {
+  color: #666;
+}
+.mayor-schedule .top-info .text span {
+  color: #333;
+}
+.mayor-schedule .schedule-calendar {
+  border-top: 2px solid #333;
+}
+.mayor-schedule .calendar-header {
+  position: relative;
+  padding: 14px 0;
+  text-align: center;
+}
+.mayor-schedule .calendar-header .form-control {
+  padding: 5px 60px 5px 15px;
+  border-radius: 20px;
+}
+.mayor-schedule .calendar-header .form-control + .form-control {
+  margin-left: 5px;
+}
+.mayor-schedule .calendar-title {
+  display: inline-block;
+}
+.mayor-schedule .btn-ctrl .btn {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.mayor-schedule .btn-ctrl .btn .ico:first-child {
+  margin-right: 10px;
+}
+.mayor-schedule .btn-ctrl .btn:hover, .mayor-schedule .btn-ctrl .btn:focus {
+  color: #2768bf;
+}
+.mayor-schedule .btn-ctrl .btn:hover .ico-arr-left, .mayor-schedule .btn-ctrl .btn:focus .ico-arr-left {
+  background-position: 0 -20px;
+}
+.mayor-schedule .btn-ctrl .btn:hover .ico-arr-right, .mayor-schedule .btn-ctrl .btn:focus .ico-arr-right {
+  background-position: -25px -20px;
+}
+.mayor-schedule .btn-ctrl .ico {
+  width: 21px;
+  height: 14px;
+  margin-top: 2px;
+  line-height: 14px;
+  background-image: url(../images/content/sp-arr.png);
+  background-size: auto 40px;
+}
+.mayor-schedule .btn-ctrl .text {
+  font-size: 16px;
+}
+.mayor-schedule .ico-arr-left {
+  margin-right: 10px;
+  background-position: 0 0;
+}
+.mayor-schedule .ico-arr-right {
+  margin-left: 10px;
+  background-position: -25px 0;
+}
+.mayor-schedule .calendar-body table th,
+.mayor-schedule .calendar-body table td {
+  border-bottom: 1px solid #e3e3e3;
+}
+.mayor-schedule .calendar-body table thead th {
+  height: 40px;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: #f3f8ff;
+}
+.mayor-schedule .calendar-body table thead th:first-child {
+  color: #e13224;
+}
+.mayor-schedule .calendar-body table tbody td {
+  vertical-align: top;
+}
+.mayor-schedule .calendar-body table tbody td:first-child .date {
+  color: #e13224;
+}
+.mayor-schedule .calendar-body .date,
+.mayor-schedule .calendar-body .day {
+  color: #666;
+}
+.mayor-schedule .schedule-list li + li {
+  margin-top: 5px;
+}
+.mayor-schedule .schedule-list li a {
+  line-height: 20px;
+}
+.mayor-schedule .btn-schedule.on {
+  border-bottom: 1px solid #1f76eb;
+  color: #1f76eb;
+}
+@media (min-width: 1025px) {
+  .mayor-schedule .top-info {
+    margin-bottom: 30px;
+  }
+  .mayor-schedule .top-info .text {
+    font-size: 22px;
+  }
+  .mayor-schedule .calendar-header .form-control {
+    font-size: 16px;
+  }
+  .mayor-schedule .btn-prev {
+    left: 0;
+  }
+  .mayor-schedule .btn-next {
+    right: 0;
+  }
+  .mayor-schedule .calendar-body table tbody tr:last-child td {
+    border-bottom-color: #333;
+  }
+  .mayor-schedule .calendar-body table tbody td {
+    height: 120px;
+    padding: 16px;
+    border-left: 1px solid #e3e3e3;
+  }
+  .mayor-schedule .calendar-body table tbody td:first-child {
+    border-left: 0;
+  }
+  .mayor-schedule .calendar-body .date {
+    font-size: 16px;
+  }
+  .mayor-schedule .calendar-body .day {
+    display: none;
+  }
+  .mayor-schedule .schedule-list {
+    margin-top: 4px;
+  }
+  .mayor-schedule .schedule-list li a {
+    font-size: 14px;
+    word-break: break-all;
+  }
+  .mayor-schedule .schedule-list li a:hover, .mayor-schedule .schedule-list li a:focus {
+    color: #1f76eb;
+  }
+}
+@media (max-width: 1024.98px) {
+  .mayor-schedule {
+    margin: 0 -15px;
+  }
+  .mayor-schedule .top-info {
+    margin-bottom: 20px;
+  }
+  .mayor-schedule .calendar-header .btn-ctrl .text {
+    display: none;
+  }
+  .mayor-schedule .btn-prev {
+    left: 15px;
+  }
+  .mayor-schedule .btn-next {
+    right: 15px;
+  }
+  .mayor-schedule .calendar-body {
+    border-top: 2px solid #333;
+  }
+  .mayor-schedule .calendar-body table colgroup,
+  .mayor-schedule .calendar-body table thead {
+    display: none;
+  }
+  .mayor-schedule .calendar-body table tbody tr {
+    display: block;
+  }
+  .mayor-schedule .calendar-body table tbody tr td {
+    display: block;
+    height: auto;
+    padding: 11px 15px;
+  }
+  .mayor-schedule .calendar-body table tbody tr td:empty {
+    display: none;
+  }
+  .mayor-schedule .calendar-body .date,
+  .mayor-schedule .calendar-body .day {
+    font-size: 14px;
+  }
+  .mayor-schedule .schedule-list {
+    margin-top: 7px;
+  }
+  .mayor-schedule .schedule-list li a {
+    font-size: 13px;
+  }
+}
+
+#layer-schedule .popup-header {
+  padding: 0 35px 0 19px;
+  text-align: left;
+}
+#layer-schedule .popup-header .popup-title {
+  padding-top: 0;
+}
+#layer-schedule .list li strong {
+  margin-right: 8px;
+}
+@media (min-width: 1025px) {
+  #layer-schedule .list li {
+    font-size: 16px;
+  }
+  #layer-schedule .list li:before {
+    top: 9px;
+  }
 }
