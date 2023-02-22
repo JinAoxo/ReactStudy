@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>현재화면명 | 메뉴명 | 사이트명</title>
+
+	<!-- JavaScript -->
+	<script src="/resources/user/js/jquery-1.12.4.min.js"></script>
+
+	<!-- <link href="https://vjs.zencdn.net/8.0.3/video-js.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/8.0.3/video.js"></script> -->
+
+	<!-- 기본 셋팅이 좀 다름 -->
+	<!-- <link href="https://vjs.zencdn.net/7.12.6/video-js.css" rel="stylesheet">
+	<script src="https://vjs.zencdn.net/7.12.6/video.js"></script>
+	<script src="https://vjs.zencdn.net/7.12.6/videojs-controls.js"></script> -->
+
+	<!-- <link href="../node_modules/video.js/dist/video-js.css" rel="stylesheet"> -->
+	<!-- <script src="../node_modules/video.js/dist/video.js"></script> -->
+
+	<script src="//players.brightcove.net/921483702001/Uj7Yz80yM_default/index.min.js"></script>
+
+	<!-- <script src="https://players.brightcove.net/videojs-quality-menu/1/videojs-quality-menu.min.js"></script> -->
+	<script src="//players.brightcove.net/videojs-ima3/3/videojs.ima3.min.js"></script>
+	<script src="//players.brightcove.net/videojs-resolution-switcher/2/videojs-resolution-switcher.min.js"></script>
+	<script src="//players.brightcove.net/videojs-live-metrics/1/videojs.live_metrics.min.js"></script>
+	<script src="//players.brightcove.net/videojs-contrib-hls/5/videojs-contrib-hls.min.js"></script>
+	<script src="//players.brightcove.net/videojs-contrib-ads/5/videojs-contrib-ads.min.js"></script>
+	<script src="//players.brightcove.net/videojs-contrib-dash/3/videojs-contrib-dash.min.js"></script>
+	<script src="//players.brightcove.net/videojs-contrib-quality-levels/2/videojs-contrib-quality-levels.min.js">
+	</script>
+	<script src="//players.brightcove.net/videojs-contrib-ads/5/videojs.ads.css"></script>
+	<script src="//players.brightcove.net/videojs-resolution-switcher/2/videojs-resolution-switcher.css"></script>
+
+	<link rel="stylesheet" href="/resources/user/css/content.css">
+
+	<!-- 페이지 개별 스크립트 -->
+	<script>
+		$(document).ready(function () {
+			// var player = videojs('myPlayerID');
+			videojs.getPlayer('myPlayerID').ready(function () {
+				var myPlayer = this;
+			});
+			// Live 버튼 추가
+			myPlayer.getChild('controlBar').addChild('LiveToggle');
+
+			// 해상도 설정 버튼 추가
+			myPlayer.getChild('controlBar').addChild('ResolutionSwitcher');
+
+			// 실시간 채팅창 추가
+			var chatOptions = {
+				global: true,
+				iframe: true,
+				id: 'my-chat',
+				src: 'http://www.example.com/chat',
+				width: '300px',
+				height: '500px',
+				scrolling: 'no'
+			};
+			myPlayer.on('loadedmetadata', function () {
+				myPlayer.chat(chatOptions);
+			});
+		});
+	</script>
+	<style>
+		.vjs-control-bar {
+			background-color: #1f1f1f;
+			border: 1px solid #333;
+			border-radius: 0px;
+			margin: 0px;
+			height: 40px;
+		}
+
+		.vjs-live-control,
+		.vjs-resolution-button,
+		.vjs-chat-button {
+			font-size: 16px;
+			color: #fff;
+			padding: 10px 20px;
+			border: none;
+			cursor: pointer;
+		}
+
+		.vjs-live-control {
+			background-color: #cc0605;
+			margin-right: 20px;
+		}
+
+		.vjs-resolution-button,
+		.vjs-chat-button {
+			background-color: #252525;
+		}
+
+		.vjs-resolution-menu-button .vjs-menu-content .vjs-menu-item {
+			font-size: 16px;
+			color: #fff;
+			background-color: #252525;
+			cursor: pointer;
+		}
+
+		.vjs-chat-button .vjs-icon-placeholder:before {
+			content: "\f0e6";
+			font-family: FontAwesome;
+			margin-right: 5px;
+		}
+
+		.vjs-resolution-button .vjs-icon-placeholder:before {
+			content: "\f108";
+			font-family: FontAwesome;
+			margin-right: 5px;
+		}
+
+		/* 1111 */
+		.vjs-control-bar {
+			background-color: #333;
+		}
+
+		.vjs-control-bar .vjs-live-control {
+			color: #fff;
+			border: none;
+			background-color: #c00;
+		}
+
+		.vjs-control-bar .vjs-resolution-button {
+			color: #fff;
+			border: none;
+			background-color: #333;
+		}
+
+		.vjs-control-bar .vjs-chat-button {
+			color: #fff;
+			border: none;
+			background-color: #333;
+		}
+
+		.vjs-control-bar .vjs-resolution-menu-button .vjs-menu-content .vjs-menu-item {
+			color: #fff;
+			background-color: #333;
+		}
+
+		.vjs-control-bar .vjs-chat-button .vjs-icon-placeholder:before {
+			content: "\f075";
+			font-family: FontAwesome;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="container">
+			<!-- 본문 영역 -->
+			<div class="container">
+				<video id="myPlayerID" data-video-id="5831704295001" data-account="921483702001" data-player="Uj7Yz80yM"
+					data-embed="default" data-application-id class="video-js" controls width="640" height="360">
+					<source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></video></video>
+
+				<!-- <video id="my-video" class="video-js vjs-default-skin">
+					<source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></video>
+				<div id="my-chat"></div>
+				<h2 class="content-title">video js</h2> -->
+
+			</div>
+			<!-- // 본문 영역 -->
+
+		</div>
+	</div>
+
+</body>
+
+
+</html>
