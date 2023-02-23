@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="format-detection" content="telephone=no">
+	<title>KAVECON</title>
+	<link href="../assets/images/favicon.ico" rel="shortcut icon">
+	<link href="../assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+	<nav id="skip">
+		<ul>
+			<li><a href="#content">콘텐츠 바로가기</a></li>
+			<li><a href="#gnb">주메뉴 바로가기</a></li>
+			<li><a href="#footer">푸터 바로가기</a></li>
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<header id="header"></header>
+		<article id="content">
+			<div class="container">
+				<!-- 본문 영역 -->
+				<h3 class="page-title">MY CONCERT</h3>
+				<div class="myconcert-area">
+					<ul class="card-list">
+						<!-- 데이터가 없는 경우 -->
+						<li class="card no-data">
+							<span>구입한 공연이 없습니다.</span>
+						</li>
+						<!-- // 데이터가 없는 경우 -->
+
+						<li class="card">
+							<div class="item-header">
+								<div class="img-area"><img src="../assets/images/img-concert-sample.jpg" alt="img-concert-sample1">
+								</div>
+							</div>
+							<div class="item-body">
+								<div class="inner">
+									<strong class="tit">Maecenas hendrerit ex nisi</strong>
+									<ul class="list-details">
+										<li><strong>라이브</strong><span class="text">09/25/2022 18:00</span></li>
+										<li><strong>information</strong><span class="text">BLANK2Y First Fanmeet online livestream</span>
+										</li>
+										<li><strong>사용기한</strong><span class="text">94일 남음</span></li>
+									</ul>
+								</div>
+								<div class="btn-group">
+									<span class="date"><em>구매일:</em><span>10/09/2022</span></span>
+									<button type="submit" class="btn btn-md btn-round btn-primary"
+										onclick="openModal('#layer-movie'); return false;">PLAY</button>
+								</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="item-header">
+								<div class="img-area"><img src="../assets/images/img-concert-sample.jpg" alt="img-concert-sample1">
+								</div>
+							</div>
+							<div class="item-body">
+								<div class="inner">
+									<strong class="tit">Maecenas hendrerit ex nisi, ac tempusMaecenas hendrerit ex nisi, ac
+										tempus Maecenas hendrerit ex nisi, ac tempus</strong>
+									<ul class="list-details">
+										<li><strong>라이브</strong><span class="text">09/25/2022 18:00</span>
+										</li>
+										<li><strong>information</strong><span class="text">BLANK2Y First Fanmeet online livestream</span>
+										</li>
+										<li><strong>사용기한</strong><span class="text">시청 기한이 종료되었습니다.</span>
+										</li>
+									</ul>
+								</div>
+								<div class="btn-group">
+									<span class="date"><em>구매일:</em><span>10/09/2022</span></span>
+									<!-- 구매한 영상 시청 기한이 종료 시 : 문구 표기 PLAY 버튼 ENDED로 변경 -->
+									<button type="submit" class="btn btn-md btn-round btn-outline-gray">ENDED</button>
+								</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="item-header">
+								<div class="img-area"><img src="../assets/images/img-concert-sample.jpg" alt="img-concert-sample1">
+								</div>
+							</div>
+							<div class="item-body">
+								<div class="inner">
+									<strong class="tit">Maecenas hendrerit ex nisi, ac tempus</strong>
+									<ul class="list-details">
+										<li><strong>라이브</strong>
+											<span class="text">1111111111111111111111111111111111111111111111111111</span></li>
+										<li><strong>information</strong>
+											<span class="text">222222222222222222222222222222222222222222222222</span></li>
+										<li><strong>사용기한</strong>
+											<span class="text">333333333333333333333333333333333333333333333</span></li>
+									</ul>
+								</div>
+								<div class="btn-group">
+									<span class="date"><em>구매일:</em><span>10/09/2022</span></span>
+									<button type="submit" class="btn btn-md btn-round btn-primary">PLAY</button>
+								</div>
+							</div>
+						</li>
+						<li class="card">
+							<div class="item-header">
+								<div class="img-area"><img src="../assets/images/img-concert-sample.jpg" alt="img-concert-sample1">
+								</div>
+							</div>
+							<div class="item-body">
+								<div class="inner">
+									<strong class="tit">Maecenas hendrerit ex nisi, ac tempus</strong>
+									<ul class="list-details">
+										<li><strong>라이브</strong><span class="text">1111111111111</span></li>
+										<li><strong>information</strong><span class="text">2222222222222222222222</span></li>
+										<li><strong>사용기한</strong><span class="text">33333333</span></li>
+									</ul>
+								</div>
+								<div class="btn-group">
+									<span class="date"><em>구매일:</em><span>10/09/2022</span></span>
+									<button type="submit" class="btn btn-md btn-round btn-primary">PLAY</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<!-- //본문 영역 -->
+			</div>
+		</article>
+		<footer id="footer"></footer>
+	</div>
+
+	<!-- Modal Popup : .modal-full -->
+	<div class="modal-popup modal-full hide" id="layer-movie">
+		<div class="dimed"></div>
+		<div class="popup-inner">
+			<div class="movie-detail">
+				<div class="movie-area">
+					<!-- <div style="width: 100%; height: 100%">Movie Area</div> -->
+					<div class="video-wrap">
+						<div class="video-header">
+							<span class="label label-blur label-primary">Live</span><strong class="title">Hynn's Last Vlog 30 :: 그동안
+								Hynn's Vlo</strong>
+							<!-- <div class="btn-group">
+								<div class="video-setting">
+									<button type="button" class="btn-setting">setting</button>
+									<div class="setting-wrap">
+										<ul>
+											<li><button type="button">1080p<span class="label-hd">HD</span></button></li>
+											<li><button type="button">720p<span class="label-hd">HD</span></button></li>
+											<li><button type="button">540p</button></li>
+											<li><button type="button">350p</button></li>
+											<li><button type="button">270p</button></li>
+											<li><button type="button">자동</button></li>
+										</ul>
+									</div>
+								</div>
+								<button class="btn-full">full</button>
+								<button class="btn-close">X</button>
+							</div> -->
+						</div>
+						<div class="video-body">
+							<!-- 라이브 카운트다운 화면 -->
+							<div class="live-countdown">
+								<div class="time">01 : 12 : 32</div>
+								<p>라이브가 곧 시작합니다.</p>
+							</div>
+
+							<!-- 준비중 화면  -->
+							<!-- <div class="live-countdown">
+								<div class="time">01 : 12 : 32</div>
+								<p>라이브 상태를 확인하고 있습니다. 잠시만 기다려주세요.</p>
+							</div> -->
+
+							<!-- <video id="myPlayer" class="video-js vjs-fluid vjs-16-9" controls preload="auto">
+								<source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+								<p class="vjs-no-js">
+									To view this video please enable JavaScript, and consider upgrading to a web browser that
+									<a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+								</p>
+							</video> -->
+						</div>
+					</div>
+				</div>
+
+				<!-- 채팅 영역 (미사용시 제거, 너비 변경시 style 값 변경) -->
+				<!-- <div class="chat-area" style="width: 35%">
+					<div style="width: 100%; height: 100%; background-color: blue">
+						Chat Area
+					</div>
+				</div> -->
+			</div>
+			<button type="button" class="btn btn-close-popup">Close</button>
+		</div>
+	</div>
+
+	<!-- JavaScript -->
+	<script src="../assets/js/jquery-1.12.4.min.js"></script>
+	<script src="../assets/js/jquery.marquee.min.js"></script>
+	<script src="../assets/js/slick.min.js"></script>
+
+	<!-- TODO : 레이아웃 세팅 JS - 개발시 반드시 삭제 -->
+	<script src="../assets/js/ui-layout-setting.js"></script>
+
+	<!-- 공통 UI 컴포넌트 -->
+	<script src="../assets/js/ui-common.js"></script>
+	<script>
+		// 페이지 개별 스크립트
+		$(document).ready(function () {
+			var player = videojs('myPlayer', {
+				controls: true,
+				autoplay: true,
+				// preload: 'auto',
+				// width: 540,
+				// height: 320,
+				controlBar: {
+					volumePanel: {
+						inline: false,
+						vertical: true
+					},
+
+					qualityMenuButton: {
+						inline: false,
+						title: "Quality"
+					},
+
+					qualitySelector: true,
+					playToggle: {
+						order: 0,
+						align: 'center'
+					},
+					// customControlSpacer: {
+					// 	order: 1
+					// },
+					// rewind: {
+					// 	order: 2
+					// },
+					// forward: {
+					// 	order: 3
+					// },
+					currentTimeDisplay: {},
+					timeDivider: {},
+					durationDisplay: {},
+					progressControl: {},
+					// volumeControl: {},
+					fullscreenToggle: {},
+					// qualityMenu: {
+					// 	useResolutionLabels: true
+					// }
+				}
+			});
+
+			// player.hlsQualitySelector({
+			// 	diplayCurrentQuality: true,
+			// });
+
+			// myPlayer.qualityMenu({
+			// 	defaultResolution: '720p'
+			// });
+
+			// 아래 동작안함
+			// var player = videojs('myPlayer');
+
+			// player.ready(function () {
+			// 	var qualitySelector = player.qualityLevels();
+
+			// 	if (qualitySelector) {
+			// 		var menuButton = player.controlBar.addChild('qualityMenuButton');
+
+			// 		qualitySelector.on('addqualitylevel', function () {
+			// 			menuButton.updateLabel();
+			// 		});
+
+			// 		qualitySelector.on('change', function () {
+			// 			menuButton.updateLabel();
+			// 		});
+			// 	}
+			// });
+
+			// myPlayer.ready(function () {
+			var backButton = $('<button class="vjs-back-button vjs-control vjs-button">Back</button>');
+			var forwardButton = $('<button class="vjs-forward-button vjs-control vjs-button">Forward</button>');
+
+			backButton.on("click", function () {
+				player.currentTime(player.currentTime() - 5);
+			});
+			forwardButton.on("click", function () {
+				player.currentTime(player.currentTime() + 5);
+			});
+
+			player.on('play', function () {
+				$(".vjs-control-bar").append(backButton).append(forwardButton);
+			});
+
+			player.on('play', function () {
+				$(backButton).css('display', 'block');
+				$(forwardButton).css('display', 'block');
+			});
+
+			player.on('ended', function () {
+				$(backButton).hide();
+				$(forwardButton).hide();
+			});
+
+			var btnSetting = $('.video-setting .btn-setting');
+			var btnQuality = $('.video-setting .setting-wrap button');
+			btnSetting.click(function () {
+				$('.setting-wrap').toggleClass('on');
+			});
+			btnQuality.click(function () {
+				if ($('.setting-wrap').hasClass('on')) {
+					$('.setting-wrap').removeClass('on');
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>

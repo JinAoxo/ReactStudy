@@ -22,11 +22,15 @@
 	<!-- <script src="//players.brightcove.net/921483702001/Uj7Yz80yM_default/index.min.js"></script> -->
 	<!-- <script src="https://players.brightcove.net/1507807800001/default_default/index.min.js"></script> -->
 	<!-- <link rel="stylesheet" href="/resources/user/css/content.css"> -->
-	<link href="https://players.brightcove.net/videojs-overlay/lib/videojs-overlay.css" rel='stylesheet'>
+	<link href="https://players.brightcove.net/videojs-overlay/lib/videojs-overlay.css">
 
 	<!-- 페이지 개별 스크립트 -->
 
 	<style>
+		body {
+			margin: 0;
+		}
+
 		/* .vjs-controls-disabled .vjs-big-play-button, */
 		.bc-player-default_default:hover .vjs-big-play-button {
 			display: block;
@@ -146,6 +150,16 @@
 		.bc-player-default_default .vjs-menu-button-popup .vjs-menu .vjs-menu-item.vjs-selected {
 			background: #27C0A1;
 		}
+
+		.video-js .videoLiveChat {
+			order: 9;
+			padding-top: 7px;
+			background-repeat: no-repeat;
+			background-position: center center;
+			cursor: pointer;
+			/* background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='%23FFFFFF'%3e%3cpath d='M0 0h24v24H0z' fill='none'/%3e%3cpath d='M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z'/%3e%3c/svg%3e"); */
+			background-color: #27C0A1;
+		}
 	</style>
 </head>
 
@@ -206,136 +220,39 @@
 	<!-- <script src="https://players.brightcove.net/videojs-overlay/lib/videojs-overlay.js"></script> -->
 	<!-- 페이지 개별 스크립트 -->
 	<script>
-		// videojs.getPlayer('myPlayerID').on('loadedmetadata', function () {
-		// 	var myPlayer = this;
-		// 	myPlayer.muted(true);
-		// 	myPlayer.play();
-		// 	myPlayer.overlay({});
-		// 	// myPlayer.getChild('bigPlayButton').controlText('Play Audio');
-		// });
+		videojs.registerPlugin('videoLiveChat', function () {
+			var myPlayer = this,
+				liveChatBtn = [],
+				// spacer,
+				newElement = document.createElement('button');
+
+			myPlayer.on('loadstart', function () {
+				newElement.className = 'vjs-control videoLiveChat';
+				spacer = myPlayer.controlBar.customControlSpacer.el();
+				// spacer.setAttribute("style", "justify-content: flex-end;");
+				spacer.appendChild(newElement);
+				// liveChatBtn.push(newElement);
+				// var controls = myPlayer.controlBar.el('.vjs-subs-caps-button');
+				// controls.appendChild(liveChatBtn[0]);
+				spacer.setAttribute('style', 'justify-content: space-between;');
+				var subsCapsBtn = spacer.querySelector('.vjs-subs-caps-button');
+				spacer.insertBefore(newElement, subsCapsBtn.nextSibling);
+			})
+
+			// myPlayer.on('loadstart', function () {
+			// 	newElement.className = 'vjs-control videoLiveChat';
+			// 	var spacer = myPlayer.controlBar.customControlSpacer.el();
+			// 	spacer.setAttribute('style', 'justify-content: space-between;');
+			// 	var subsCapsBtn = spacer.querySelector('.vjs-subs-caps-button');
+			// 	spacer.insertBefore(newElement, subsCapsBtn.nextSibling);
+			// });
+		});
 
 		var myPlayer;
 		videojs.getPlayer('myPlayerID').ready(function () {
-			myPlayer = this;
-			myPlayer.muted(true);
-			// myPlayer.overlay({});
 			var myPlayer = this;
-			myPlayer.one("play", function () {
-				//If you want to start English as the caption automatically
-				myPlayer.textTracks()[1].mode = "showing";
-			});
-
-			// myPlayer.autoplay(false);
-
-			// controlBar: {
-			// 	qualityMenuButton: {
-			// 		inline: false,
-			// 		title: "Quality"
-			// 	},
-
-			// 	qualitySelector: true,
-			// 	playToggle: {
-			// 		order: 0,
-			// 		align: 'center'
-			// 	}
-			// }
-
-			// myPlayer.on('loadedmetadata', function () {
-			// 	// +++ Retrieve the menu options +++
-			// 	var menuOptions = myPlayer.controlBar.subsCapsButton.menu.children();
-			// 	// +++ Add flag to each menu option +++
-			// 	menuOptions.forEach(function (item) {
-			// 		if (item.track.language === 'de') {
-			// 			item.$('.vjs-menu-item-text').innerHTML = '🇩🇪 ' + item.track.label;
-			// 		}
-			// 	});
-
-			// 	menuOptions.forEach(function (item) {
-			// 		if (item.track.language === 'en') {
-			// 			item.$('.vjs-menu-item-text').innerHTML = '🇺🇸 ' + item.track.label;
-			// 		}
-			// 	});
-			// });
-
-			// jumpAmount = 5,
-			// 	controlBar,
-			// 	insertBeforeNode,
-			// 	newElementBB = document.createElement("div"),
-			// 	newElementFB = document.createElement("div"),
-			// 	newImageBB = document.createElement("img"),
-			// 	newImageFB = document.createElement("img");
-
-			// // +++ Assign IDs for later element manipulation +++
-			// newElementBB.id = "backButton";
-			// newElementFB.id = "forwardButton";
-
-			// // +++ Assign properties to elements and assign to parents +++
-			// newImageBB.setAttribute(
-			// 	"src",
-			// 	"https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-back-forward-buttons/back-button.png"
-			// );
-			// newElementBB.appendChild(newImageBB);
-			// newImageFB.setAttribute(
-			// 	"src",
-			// 	"https://player.support.brightcove.com/assets/images/code-samples/brightcove-player-sample-back-forward-buttons/forward-button.png"
-			// );
-			// newElementFB.appendChild(newImageFB);
-
-			// // +++ Get controlbar and insert elements +++
-			// controlBar = myPlayer.$(".vjs-control-bar");
-			// // Get the element to insert buttons in front of in conrolbar
-			// insertBeforeNode = myPlayer.$(".vjs-volume-panel");
-
-			// // Insert the button div in proper location
-			// controlBar.insertBefore(newElementBB, insertBeforeNode);
-			// controlBar.insertBefore(newElementFB, insertBeforeNode);
-
-			// // +++ Add event handlers to jump back or forward +++
-			// // Back button logic, don't jump to negative times
-			// newElementBB.addEventListener("click", function () {
-			// 	var newTime,
-			// 		rewindAmt = jumpAmount,
-			// 		videoTime = myPlayer.currentTime();
-			// 	if (videoTime >= rewindAmt) {
-			// 		newTime = videoTime - rewindAmt;
-			// 	} else {
-			// 		newTime = 0;
-			// 	}
-			// 	myPlayer.currentTime(newTime);
-			// });
-
-			// // Forward button logic, don't jump past the duration
-			// newElementFB.addEventListener("click", function () {
-			// 	var newTime,
-			// 		forwardAmt = jumpAmount,
-			// 		videoTime = myPlayer.currentTime(),
-			// 		videoDuration = myPlayer.duration();
-			// 	if (videoTime + forwardAmt <= videoDuration) {
-			// 		newTime = videoTime + forwardAmt;
-			// 	} else {
-			// 		newTime = videoDuration;
-			// 	}
-			// 	myPlayer.currentTime(newTime);
-			// });
-
-
-			// // +++ Retrieve info from mediainfo object +++
-			// linkURL = myPlayer.mediainfo.link.url,
-			// 	linkText = myPlayer.mediainfo.link.text;
-
-			// // +++ Build link string for the endscreen content +++
-			// hrefString =
-			// 	'<a href = "' +
-			// 	linkURL +
-			// 	'" target="_blank" rel="noopener noreferrer">' +
-			// 	linkText +
-			// 	"</a>";
-
-			// // +++ Call endscreen method +++
-			// myPlayer.customEndscreen({
-			// 	content: hrefString
-			// });
-
+			myPlayer.muted(true);
+			myPlayer.videoLiveChat();
 		});
 
 		// var player = videojs('myPlayerID', {

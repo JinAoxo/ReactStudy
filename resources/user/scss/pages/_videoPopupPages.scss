@@ -1,0 +1,331 @@
+.video-wrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.video-header {
+	position: absolute;
+	top: 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 100%;
+	height: 180px;
+	padding: 20px 40px;
+	background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+	// opacity: 0.6;
+	z-index: 10;
+
+	.btn-group {
+		margin-right: 10px;
+	}
+
+	.label-live {
+		position: relative;
+
+		// &::after {
+		// 	position: absolute;
+		// 	top: 60%;
+		// 	content: '';
+		// 	display: inline-block;
+		// 	width: 15px;
+		// 	height: 15px;
+		// 	margin-left: 5px;
+		// 	border-radius: 50%;
+		// 	background-color: red;
+		// 	transform: translateY(-50%);
+		// }
+	}
+}
+
+.video-setting {
+	position: relative;
+	display: inline-block;
+
+	.setting-wrap {
+		position: absolute;
+		top: 30px;
+		right: -50%;
+		display: none;
+		// width: 100px;
+		// height: 200px;
+		padding: 20px;
+		background-color: rgba($color: #000000, $alpha: 0.8);
+
+		&.on {
+			display: block;
+		}
+	}
+}
+
+.video-body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding-top: 25px;
+	background-color: #000000;
+
+	.live-countdown {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 10;
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		.time {
+			font-family: $font-family-title;
+			font-weight: 500;
+			font-size: 4.375rem;
+			line-height: 6rem;
+			letter-spacing: 0.2em;
+			color: #27C0A1;
+
+			+p {
+				margin-top: 20px;
+			}
+		}
+
+		p {
+			font-weight: 400;
+			font-size: 20px;
+			line-height: 29px;
+			color: #B3B3B3;
+		}
+	}
+}
+
+/* video API 커스텀 테스트 */
+.video-js {
+	position: relative;
+	border-style: double;
+	border-width: thick;
+	// border-color: red;
+
+	.vjs-menu-button .vjs-menu-content {
+		background-color: yellowgreen;
+		// opacity: 0.7;
+	}
+
+	//컨트롤 바 커스텀
+	.vjs-control-bar {
+		top: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		background: none;
+	}
+
+	//플레이 슬라이드 라인 전체(볼륨, 플레이)
+	.vjs-slider {
+		// background-color: #dcdcdc;
+		border: 1px solid red;
+		// opacity: 0.5;
+	}
+
+	//플레이 슬라이드 라인 전체(볼륨, 플레이) : 진행된 부분
+	.vjs-play-progress,
+	.vjs-slider-bar {
+		background: yellow;
+	}
+
+
+	//플레이 슬라이드 바 로딩 전 
+	.vjs-load-progress {
+		background: blue;
+
+		div {
+			background-color: #B37D5B;
+			opacity: 0.75;
+		}
+
+		// &.vjs-progress-holder {
+		// 	div {
+		// 		background-color: #B37D5B;
+		// 	}
+		// }
+	}
+
+
+	//하단 플레이 컨트롤 영역
+	.vjs-progress-control {
+		position: absolute;
+		bottom: 0;
+		display: block;
+		width: 100%;
+		height: 25px;
+		background-color: aqua;
+		opacity: .5;
+
+		// 마우스 hover 라인
+		.vjs-mouse-display {
+			background-color: red;
+		}
+
+		//하단 플레이 컨트롤 영역
+		&.vjs-control {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			display: block;
+		}
+	}
+
+	//가운데 플레이 버튼
+	.vjs-big-play-button {
+		display: none;
+		background-color: red;
+		/* opacity: .6; */
+	}
+
+	//플레이 컨트롤
+	.vjs-play-control {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+
+		position: absolute;
+		left: calc(50%);
+		width: 100px;
+		height: 100px;
+		background: blueviolet;
+		transform: translateX(-50%);
+	}
+
+	//플레이 컨트롤
+	.vjs-control {
+		position: absolute;
+		height: 25px;
+	}
+
+	//버튼 위치
+
+	.vjs-fullscreen-control,
+	.vjs-picture-in-picture-control {
+		right: 0;
+	}
+
+	.vjs-picture-in-picture-control {
+		display: none;
+	}
+
+	.vjs-time-control {
+		bottom: 0;
+	}
+
+	//전체화면
+	.vjs-fullscreen-control {
+		top: 0;
+	}
+
+	//볼륨 버튼
+	.vjs-mute-control {
+		// position: absolute;
+		// top: 0px;
+		// right: 0px;
+	}
+
+	.vjs-volume-level {
+		background: yellow;
+	}
+
+	.vjs-volume-panel {
+		top: 300px;
+		right: 0;
+
+		.vjs-volume-control.vjs-volume-vertical {
+			top: -90px;
+			left: auto;
+			right: 0;
+		}
+
+		&:active {
+			right: 0;
+
+			.vjs-volume-control.vjs-volume-vertical {
+				top: -90px;
+				left: auto;
+				right: 0;
+			}
+		}
+
+		&.vjs-hover {
+			.vjs-mute-control~.vjs-volume-control.vjs-volume-vertical {
+				top: -90px;
+				left: auto;
+				right: 0;
+			}
+
+			&:active {
+				right: 0;
+
+				.vjs-volume-control.vjs-volume-vertical {
+					top: -90px;
+					left: auto;
+					right: 0;
+				}
+			}
+		}
+	}
+
+	//영상시간 
+	.vjs-current-time {
+		display: block;
+		left: 0;
+	}
+
+	.vjs-duration {
+		display: block;
+		right: 0;
+	}
+
+	//라이브 버튼
+	&:not(.vjs-live) .vjs-seek-to-live-control {
+		display: block;
+		top: 0;
+
+		.vjs-icon-placeholder {
+			position: absolute;
+			right: -10px;
+
+			// &:before {
+			// 	width: 15px;
+			// 	height: 15px;
+			// }
+		}
+	}
+
+	.vjs-back-button {
+		left: 200px;
+		background-color: firebrick;
+	}
+
+	.vjs-forward-button {
+		right: 200px;
+		background-color: firebrick;
+	}
+
+	.vjs-play-control.vjs-ended {
+
+		.vjs-back-button,
+		.vjs-forward-button {
+			display: none;
+		}
+	}
+
+	//영상 끝난뒤 
+	.vjs-play-control.vjs-ended .vjs-icon-placeholder:before {
+		background-color: firebrick;
+	}
+
+	// .vjs-slider-horizontal {
+	// 	display: none;
+	// }
+
+	// .vjs-slider-vertical {
+	// 	display: block;
+	// }
+}
